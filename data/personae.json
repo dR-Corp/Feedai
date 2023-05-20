@@ -1,0 +1,2576 @@
+[
+    {
+        "id": 1,
+        "niche_id": 1,        
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Soucieux de l'environnement",
+                        "description": "Le persona accorde une grande importance à la préservation de la nature et aux problématiques écologiques"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Responsable ",
+                        "description": "Il cherche à adopter un mode de vie et une consommation responsables, en accord avec ses valeurs"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Engagé ",
+                        "description": "Il soutient activement les causes environnementales et sociales et est prêt à s'impliquer personnellement"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Mode éthique et durable",
+                        "description": "Le persona s'intéresse aux marques et aux produits respectueux de l'environnement et des droits des travailleurs"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Développement durable",
+                        "description": "Il se tient informé des enjeux du développement durable et s'intéresse aux solutions pour réduire son empreinte écologique"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Activités en plein air",
+                        "description": "Le persona apprécie les activités de plein air et cherche à se rapprocher de la nature"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités ",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Conscient des enjeux environnementaux",
+                        "description": "Le persona est informé des problématiques environnementales et cherche constamment à améliorer ses habitudes de consommation"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Curieux",
+                        "description": "Il est ouvert à la découverte de nouvelles marques et produits éco-responsables"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Ouvert d'esprit",
+                        "description": "Le persona est réceptif aux nouvelles idées et aux approches innovantes en matière de mode durable"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Exigeant",
+                        "description": "Il peut être critique et difficile à satisfaire en ce qui concerne la qualité, l'éthique et l'esthétique des produits"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Hésitant",
+                        "description": "Le persona peut être indécis lorsqu'il s'agit de faire un choix parmi différentes marques et produits durables"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Sensible au prix",
+                        "description": "Il peut être réticent à dépenser davantage pour des vêtements écologiques, malgré ses convictions environnementales"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Mode responsable",
+                        "description": "Le persona est passionné par la découverte de nouvelles marques et tendances éco-responsables"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Environnement et écologie",
+                        "description": "Il s'implique activement dans des causes et des projets liés à la protection de l'environnement"
+                    },
+                    {
+                        "id": 3,
+                        "name": "DIY et artisanat",
+                        "description": "Le persona apprécie les produits faits main et les projets créatifs liés à la mode durable"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Impact environnemental",
+                        "description": "Le persona craint les conséquences négatives de la mode traditionnelle sur l'environnement et les ressources naturelles"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Exploitation des travailleurs",
+                        "description": "Il est préoccupé par les conditions de travail des employés dans l'industrie de la mode et souhaite soutenir des marques éthiques"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Pollution et déchets",
+                        "description": "Le persona redoute l'accumulation de déchets et la pollution engendrée par la production et la consommation de vêtements non durables"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "niche_id": 2,        
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Soucieux de leur apparence",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels sont souvent soucieuses de leur apparence et cherchent à prendre soin de leur corps pour se sentir bien dans leur peau."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Méticuleux(se)",
+                        "description": "Les personnes qui prennent soin de leur peau, de leurs cheveux et de leur corps doivent être méticuleuses pour obtenir des résultats optimaux. Elles doivent suivre une routine de soins rigoureuse et être attentives aux détails."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Créatif(ve)",
+                        "description": "La beauté est un domaine où la créativité est très appréciée. Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être créatives en essayant de nouvelles tendances de maquillage ou de coiffure, en créant leur propre parfum ou en expérimentant avec différents produits de soins de la peau."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Passionné(e)",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels sont souvent passionnées par leur domaine d'intérêt. Elles peuvent passer des heures à chercher des produits de beauté, à regarder des tutoriels de maquillage ou à lire des articles sur les dernières tendances de soins de la peau."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Curieux(se)",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels sont souvent curieuses et aiment découvrir de nouveaux produits et de nouvelles tendances. Elles sont toujours à la recherche de nouveaux moyens d'améliorer leur apparence et de prendre soin d'elles-mêmes."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Patient(e)",
+                        "description": "Prendre soin de sa peau et de son corps demande souvent du temps et de la patience. Les personnes qui s'intéressent à la beauté et aux soins personnels doivent être patientes pour obtenir des résultats durables et satisfaisants."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Persévérant(e)",
+                        "description": "Les personnes qui prennent soin de leur peau et de leur corps doivent être persévérantes pour obtenir des résultats. Elles doivent souvent essayer différents produits et routines de soins avant de trouver ceux qui conviennent le mieux à leur type de peau ou de cheveux."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Maquillage ",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être passionnées par le maquillage et aimer expérimenter avec différentes couleurs, textures et techniques."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Soins de la peau",
+                        "description": "Prendre soin de sa peau est une partie importante de la routine de beauté de nombreuses personnes. Les personnes intéressées par cette niche peuvent s'intéresser aux différents types de soins de la peau, tels que les nettoyants, les toniques, les sérums, les crèmes hydratantes, les masques, etc."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Coiffure",
+                        "description": "Les cheveux sont un aspect important de l'apparence physique et peuvent être un sujet d'intérêt pour les personnes qui s'intéressent à la beauté et aux soins personnels. Les coiffures, les coupes, les couleurs et les soins capillaires peuvent tous être des sujets d'intérêt."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Fitness et santé",
+                        "description": "Les personnes qui prennent soin de leur apparence physique peuvent également s'intéresser au fitness et à la santé en général. Ils peuvent être intéressés par les régimes alimentaires sains, l'exercice physique régulier et la méditation."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Parfums et fragrances",
+                        "description": "Les parfums peuvent être un accessoire important pour les personnes intéressées par la beauté et les soins personnels. Ils peuvent être passionnés par les différentes notes olfactives et les différents types de parfums."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Mode et style",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent également être intéressées par la mode et le style en général. Ils peuvent être passionnés par les tendances de la mode, les accessoires, les chaussures, etc."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Nutrition et diététique",
+                        "description": "Les personnes qui prennent soin de leur corps peuvent également être intéressées par la nutrition et la diététique. Ils peuvent être passionnés par les aliments sains, les régimes alimentaires équilibrés et les suppléments nutritionnels."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités ",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Attentionné(e)",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être très attentionnées envers elles-mêmes et envers les autres. Elles peuvent être attentives aux détails et chercher à prendre soin de leur corps et de leur peau de manière optimale."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Créatif(ve)",
+                        "description": "La beauté est un domaine où la créativité est très appréciée. Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être créatives en expérimentant de nouvelles tendances de maquillage ou de coiffure, en créant leur propre parfum ou en expérimentant avec différents produits de soins de la peau."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Considérée",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être considérées et réfléchies. Elles peuvent prendre le temps de réfléchir à ce qui convient le mieux à leur type de peau ou de cheveux et chercher des produits qui sont sûrs et efficaces."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Persévérant(e)",
+                        "description": "Les personnes qui prennent soin de leur peau et de leur corps doivent être persévérantes pour obtenir des résultats. Elles doivent souvent essayer différents produits et routines de soins avant de trouver ceux qui conviennent le mieux à leur type de peau ou de cheveux."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Empathique",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être empathiques envers les autres. Elles peuvent comprendre les problèmes de peau ou de cheveux que les autres peuvent rencontrer et chercher à les aider en partageant leurs connaissances et en recommandant des produits qui ont fonctionné pour elles."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Passionné(e)",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels sont souvent passionnées par leur domaine d'intérêt. Elles peuvent passer des heures à chercher des produits de beauté, à regarder des tutoriels de maquillage ou à lire des articles sur les dernières tendances de soins de la peau."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Consciencieux(se)",
+                        "description": "Les personnes qui prennent soin de leur peau et de leur corps doivent être consciencieuses pour obtenir des résultats optimaux. Elles doivent suivre une routine de soins rigoureuse et être attentives aux détails pour s'assurer que leur corps est traité avec le plus grand soin possible."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Obsession",
+                        "description": "Certaines personnes peuvent devenir obsédées par leur apparence physique et les soins personnels, ce qui peut les amener à dépenser de grandes quantités d'argent ou à prendre des risques inutiles pour améliorer leur apparence."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Impatience",
+                        "description": "Les soins personnels demandent souvent du temps et de la patience pour obtenir des résultats durables et satisfaisants. Les personnes impatientes peuvent ne pas voir les résultats qu'elles souhaitent et abandonner trop rapidement leurs routines de soins."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Tendance à la critique",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent parfois être très critiques envers elles-mêmes et les autres en matière d'apparence physique."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Conformisme excessif",
+                        "description": "Certaines personnes peuvent être obsédées par les tendances de beauté et de soins personnels en cours, cherchant à copier aveuglément ce que les autres font sans réfléchir à ce qui convient le mieux à leur propre corps et à leur propre style."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Tendance à la superficialité",
+                        "description": "Certaines personnes peuvent accorder une trop grande importance à l'apparence physique et aux soins personnels, sans tenir compte d'autres aspects importants de la vie, tels que les relations, la santé mentale ou les accomplissements professionnels."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La découverte de nouveaux produits",
+                        "description": "Les personnes qui s'intéressent à la beauté et aux soins personnels peuvent être passionnées par la découverte de nouveaux produits de soins de la peau, de maquillage, de parfums, de produits capillaires, etc. Elles peuvent suivre de près les tendances et essayer différents produits pour trouver ceux qui conviennent le mieux à leur type de peau et de cheveux."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La création de contenus",
+                        "description": "Les personnes intéressées par la beauté et les soins personnels peuvent être passionnées par la création de contenus sur les réseaux sociaux, tels que des tutoriels de maquillage, des astuces de soins de la peau ou des vidéos de coiffure. Ils peuvent également tenir des blogs ou des chaînes YouTube pour partager leurs connaissances et expériences."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Les routines de soins personnels",
+                        "description": "Prendre soin de son corps et de sa peau peut être une passion pour certaines personnes. Elles peuvent aimer suivre une routine de soins rigoureuse et expérimenter avec différents produits pour trouver ceux qui fonctionnent le mieux pour elles."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Les tendances de beauté",
+                        "description": "Les personnes intéressées par la beauté et les soins personnels peuvent être passionnées par les tendances de beauté en cours. Ils peuvent suivre de près les dernières tendances en matière de maquillage, de coiffure, de soins de la peau, etc. et chercher à les incorporer dans leur propre routine de beauté."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La confiance en soi",
+                        "description": "Pour certaines personnes, la beauté et les soins personnels peuvent être une passion car cela leur permet de renforcer leur confiance en eux-mêmes et leur estime de soi. En prenant soin de leur corps et de leur apparence physique, elles peuvent se sentir plus en confiance et plus à l'aise dans leur peau."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Les événements de beauté",
+                        "description": "Les personnes intéressées par la beauté et les soins personnels peuvent être passionnées par les événements de beauté tels que les salons de beauté, les foires de beauté ou les défilés de mode. Ils peuvent aimer y assister pour découvrir de nouveaux produits et rencontrer d'autres passionnés de beauté."
+                    },
+                    {
+                        "id": 7,
+                        "name": "L'apprentissage ",
+                        "description": "Les personnes intéressées par la beauté et les soins personnels peuvent être passionnées par l'apprentissage. Ils peuvent aimer lire des livres, des blogs ou des articles sur les dernières tendances de beauté, les ingrédients de soins de la peau ou les techniques de maquillage. Ils peuvent également assister à des ateliers ou à des formations pour approfondir leurs connaissances."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La peur des produits chimiques",
+                        "description": "Certaines personnes peuvent avoir peur des produits chimiques présents dans les produits de soins de la peau et de beauté. Ils peuvent préférer des options naturelles ou biologiques pour éviter les produits chimiques potentiellement nocifs."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La peur de l'échec",
+                        "description": "Certaines personnes peuvent avoir peur de ne pas réussir à atteindre les résultats qu'elles souhaitent en matière de beauté et de soins personnels. Ils peuvent être préoccupés par l'apparition de boutons, de rides ou de cheveux abîmés et avoir peur de ne pas trouver les bons produits pour résoudre ces problèmes."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La peur de la douleur",
+                        "description": "Certaines personnes peuvent avoir peur de la douleur associée à certains traitements de beauté, tels que l'épilation à la cire, les soins du visage ou la manucure. Ils peuvent éviter certains traitements par peur de la douleur."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La peur du regard des autres",
+                        "description": "Certaines personnes peuvent avoir peur du regard des autres en ce qui concerne leur apparence physique. Ils peuvent être préoccupés par l'apparence de leur peau, de leurs cheveux ou de leurs ongles et avoir peur du jugement des autres."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La peur des coûts",
+                        "description": "Les soins de beauté peuvent être coûteux, ce qui peut être une source de stress pour certaines personnes. Ils peuvent avoir peur de dépenser trop d'argent pour les produits de soins de la peau, les produits capillaires ou les traitements de beauté."
+                    },
+                    {
+                        "id": 6,
+                        "name": "La peur de l'inconnu",
+                        "description": "Certaines personnes peuvent avoir peur de l'inconnu en matière de beauté et de soins personnels. Ils peuvent être préoccupés par l'utilisation de nouveaux produits ou de nouvelles techniques, par peur de ne pas savoir comment les utiliser correctement ou de ne pas obtenir les résultats souhaités."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "niche_id": 3,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Motivé(e)",
+                        "description": "Les personnes qui s'intéressent à la santé et au bien-être peuvent être très motivées pour atteindre leurs objectifs de santé, tels que perdre du poids, renforcer leur système immunitaire ou améliorer leur condition physique globale."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Responsable",
+                        "description": "Les personnes qui prennent leur santé et leur bien-être au sérieux peuvent être responsables et disciplinées dans leurs habitudes de vie. Ils peuvent prendre soin de leur corps en suivant une alimentation équilibrée, en faisant régulièrement de l'exercice et en dormant suffisamment."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Consciencieux(se)",
+                        "description": "Les personnes qui s'intéressent à la santé et au bien-être peuvent être consciencieuses dans leurs choix de vie. Ils peuvent être attentifs aux détails, tels que les étiquettes nutritionnelles des aliments ou les niveaux d'intensité de leur entraînement, pour s'assurer qu'ils prennent soin de leur corps de manière optimale."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Patient(e)",
+                        "description": "Les résultats en matière de santé et de bien-être ne se produisent pas du jour au lendemain. Les personnes qui s'intéressent à cette niche peuvent être patientes et persévérantes, en gardant à l'esprit que les changements durables nécessitent du temps et des efforts constants."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Équilibré(e)",
+                        "description": "Les personnes qui s'intéressent à la santé et au bien-être peuvent être équilibrées dans leur approche de la vie. Ils peuvent chercher à maintenir un équilibre entre leur travail, leur vie sociale et leurs habitudes de vie saines."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Curieux(se)",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être curieuses de découvrir de nouvelles pratiques ou de nouveaux produits de santé. Ils peuvent être ouverts à essayer de nouveaux aliments, de nouveaux suppléments ou de nouvelles méthodes d'entraînement pour améliorer leur santé et leur bien-être."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Autodiscipliné(e)",
+                        "description": "Les personnes qui s'intéressent à la santé et au bien-être peuvent être autodisciplinées. Ils peuvent être en mesure de maintenir des habitudes de vie saines, même en l'absence de supervision ou de motivation extérieure."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Nutrition",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par la nutrition et la science derrière les aliments. Ils peuvent être intéressés par la façon dont les aliments affectent le corps, la manière dont ils sont cultivés et préparés, et la manière dont ils peuvent être utilisés pour traiter certaines affections."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Fitness",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par le fitness et l'exercice. Ils peuvent être intéressés par les différentes méthodes d'entraînement, tels que la musculation, la course à pied, le yoga, etc. Ils peuvent également être intéressés par la façon dont l'exercice affecte le corps et l'esprit."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Méditation",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par la méditation et la pratique de la pleine conscience. Ils peuvent être intéressés par les bienfaits de la méditation sur la santé mentale et physique, et chercher à incorporer la méditation dans leur vie quotidienne."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Thérapies alternatives",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par les thérapies alternatives, telles que l'acupuncture, l'ostéopathie, la chiropractie, etc. Ils peuvent être intéressés par la façon dont ces thérapies peuvent aider à traiter certaines affections de manière non conventionnelle."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Développement personnel",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par le développement personnel et la croissance personnelle. Ils peuvent chercher à améliorer leur confiance en eux-mêmes, leur estime de soi et leur bien-être émotionnel."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Sommeil",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par le sommeil et la façon dont il affecte le corps et l'esprit. Ils peuvent être intéressés par les différents aspects du sommeil, tels que la qualité, la quantité et les phases du sommeil."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Soins naturels",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être passionnées par les soins naturels et les remèdes à base de plantes. Ils peuvent chercher à utiliser des produits naturels pour traiter certaines affections, tels que les huiles essentielles, les plantes médicinales, les probiotiques, etc."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Autonomie",
+                        "description": "Les personnes qui s'intéressent à la santé et au bien-être peuvent être autonomes, en prenant leur santé en main et en faisant des choix éclairés pour leur bien-être."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Écoute active",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être de bons auditeurs, en écoutant attentivement leur corps et en étant attentifs aux besoins de leur corps."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Capacité à se fixer des objectifs",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être capables de se fixer des objectifs clairs et réalisables pour améliorer leur santé et leur bien-être."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Flexibilité",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être flexibles dans leur approche, en s'adaptant aux changements de leur corps ou de leur environnement."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Capacité à apprendre de nouvelles compétences",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être désireuses d'apprendre de nouvelles compétences pour améliorer leur santé, comme la cuisine saine, l'exercice physique ou la relaxation."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Capacité à gérer le stress",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être capables de gérer le stress et l'anxiété de manière efficace, en utilisant des techniques telles que la méditation, la respiration profonde ou l'exercice physique."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Empathie",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être empathiques, en étant attentifs aux besoins des autres et en cherchant à les aider à améliorer leur propre santé et bien-être."
+                    }
+                ]
+            },{
+                "id": 3,
+                "name": "Défauts ",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Obsession",
+                        "description": "Certaines personnes peuvent devenir obsédées par leur santé et leur bien-être, en négligeant d'autres aspects importants de leur vie."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Perfectionnisme",
+                        "description": "Les personnes intéressées par la santé et le bien-être peuvent être perfectionnistes, en cherchant à atteindre des normes élevées et en se mettant la pression pour atteindre leurs objectifs de santé et de bien-être."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Impatience",
+                        "description": "Certaines personnes peuvent être impatientes dans leur quête pour atteindre leurs objectifs de santé et de bien-être, cherchant des résultats rapides au lieu de prendre le temps nécessaire pour un changement durable."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Dogmatisme",
+                        "description": "Certaines personnes peuvent être dogmatiques dans leur approche de la santé et du bien-être, en étant fermées à de nouvelles idées ou pratiques qui ne correspondent pas à leurs croyances actuelles."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Isolationnisme",
+                        "description": "Certaines personnes peuvent devenir isolées dans leur quête pour atteindre leurs objectifs de santé et de bien-être, en s'éloignant de leur famille et de leurs amis."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Stress excessif",
+                        "description": "Certaines personnes peuvent se stresser excessivement pour atteindre leurs objectifs de santé et de bien-être, en créant une pression sur eux-mêmes pour atteindre des normes élevées."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Compétitivité excessive",
+                        "description": "Certaines personnes peuvent devenir trop compétitives dans leur quête pour atteindre leurs objectifs de santé et de bien-être, en cherchant à surpasser les autres plutôt que de se concentrer sur leur propre santé et bien-être."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Nutrition",
+                        "description": "Si vous êtes passionné par la nutrition et la nourriture saine, vous pourriez vous intéresser à la création de recettes saines, à la recherche de produits alimentaires sains, ou encore à l'enseignement de la nutrition aux autres."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Fitness",
+                        "description": "Si vous êtes passionné par le fitness, vous pourriez être intéressé par la création de programmes d'entraînement, la recherche de nouvelles techniques d'exercice ou encore la formation de clients."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Yoga",
+                        "description": "Si vous êtes passionné par le yoga, vous pourriez vous intéresser à la création de cours de yoga, à la pratique du yoga pour la santé mentale ou encore à l'organisation d'événements de yoga."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Méditation",
+                        "description": "Si vous êtes passionné par la méditation, vous pourriez être intéressé par la création de programmes de méditation, la recherche de nouvelles techniques de méditation ou encore l'enseignement de la méditation aux autres."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Médecine alternative",
+                        "description": "Si vous êtes passionné par la médecine alternative, vous pourriez être intéressé par la recherche et la promotion de thérapies alternatives, comme l'acupuncture, l'homéopathie ou la chiropraxie."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Soins du corps",
+                        "description": "Si vous êtes passionné par les soins du corps, vous pourriez être intéressé par la création de produits de soins naturels, la recherche de nouvelles techniques de soins ou encore la formation de clients."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Coaching en développement personnel",
+                        "description": "Si vous êtes passionné par le développement personnel, vous pourriez être intéressé par le coaching en développement personnel, l'organisation d'événements de développement personnel ou encore l'écriture de livres sur le sujet."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La peur de la maladie",
+                        "description": "De nombreuses personnes ont peur de tomber malades, que ce soit d'une maladie chronique ou d'une maladie infectieuse. Dans cette niche, vous pourriez offrir des conseils pour prévenir les maladies, des informations sur les symptômes à surveiller, ou encore des solutions pour guérir ou soulager les symptômes."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La peur de la mort",
+                        "description": "La santé et le bien-être sont souvent liés à la peur de la mort, car de nombreuses maladies peuvent être mortelles. Dans cette niche, vous pourriez offrir des conseils pour vivre une vie plus saine et plus équilibrée, des techniques de gestion du stress ou encore des informations sur les pratiques de méditation pour aider à soulager cette peur."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La peur de prendre du poids",
+                        "description": "La peur de prendre du poids peut être un sujet de préoccupation important pour de nombreuses personnes. Dans cette niche, vous pourriez offrir des conseils pour maintenir un poids santé, des astuces pour perdre du poids de manière saine, ou encore des informations sur les troubles alimentaires et comment les surmonter."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La peur de l'échec",
+                        "description": "De nombreuses personnes peuvent avoir peur d'échouer dans leurs efforts pour améliorer leur santé et leur bien-être. Dans cette niche, vous pourriez offrir des conseils pour surmonter cette peur, des techniques pour se motiver et s'engager dans un mode de vie plus sain, ou encore des témoignages de personnes qui ont réussi à surmonter cette peur."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La peur de l'inconnu",
+                        "description": "Certaines personnes peuvent avoir peur de l'inconnu lorsqu'il s'agit de leur santé et de leur bien-être, en particulier lorsqu'il s'agit de prendre des décisions concernant leur traitement ou leur mode de vie. Dans cette niche, vous pourriez offrir des informations fiables et des conseils pour aider les gens à comprendre leur santé et à prendre des décisions éclairées."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "niche_id": 4,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Pratique",
+                        "description": "Les personnes intéressées par cette niche sont souvent très pratiques et cherchent des solutions pratiques et efficaces pour améliorer leur maison et leur jardin."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Créatif",
+                        "description": "Les passionnés de la décoration intérieure et de l'aménagement paysager ont souvent un sens de la créativité et de l'esthétique développé pour créer des espaces uniques et originaux."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Patience",
+                        "description": "L'aménagement d'une maison ou d'un jardin peut être un processus lent et laborieux, donc une certaine dose de patience est souvent nécessaire pour atteindre les résultats souhaités."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Minutie",
+                        "description": "Les personnes intéressées par cette niche peuvent être très méticuleuses et attentives aux détails, que ce soit dans la décoration ou dans l'entretien de leur jardin."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Passion",
+                        "description": "Les amateurs de la niche Maison et Jardin sont souvent passionnés par l'art de la décoration et/ou du jardinage. Ils peuvent y passer beaucoup de temps et d'énergie pour créer leur espace de rêve."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Persévérance",
+                        "description": "Les projets de bricolage et de jardinage peuvent parfois être difficiles et décourageants, donc une certaine persévérance est souvent nécessaire pour les mener à bien."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Organisation",
+                        "description": "Pour gérer efficacement leur temps et leurs ressources, les passionnés de la niche Maison et Jardin peuvent être très organisés et méthodiques dans leur approche."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Curiosité",
+                        "description": "Les amateurs de cette niche peuvent être curieux de découvrir de nouvelles idées, astuces et techniques pour améliorer leur maison et leur jardin."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Autonomie",
+                        "description": "Les personnes intéressées par la niche Maison et Jardin peuvent être très autonomes et préférer faire les choses elles-mêmes plutôt que de payer pour des services professionnels."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Respectueux de l'environnement",
+                        "description": "De plus en plus de personnes dans cette niche sont soucieuses de l'environnement et cherchent des moyens écologiques pour améliorer leur maison et leur jardin."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Décoration intérieure",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent avoir un intérêt particulier pour la décoration intérieure, l'aménagement d'espaces et la mise en valeur des objets décoratifs."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Jardinage",
+                        "description": "Le jardinage peut être un intérêt majeur pour les personnes intéressées par cette niche, qu'il s'agisse de cultiver des légumes, des fleurs, ou de créer des espaces verts pour se détendre et se ressourcer."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Bricolage",
+                        "description": "Les personnes intéressées par la niche Maison et jardin peuvent avoir un intérêt pour le bricolage et la rénovation, qu'il s'agisse de petits projets de décoration ou de rénovations plus importantes."
+                    },
+                    {
+                        "id": 4,
+                        "name": "DIY (Do It Yourself)",
+                        "description": "Les amateurs de cette niche peuvent être intéressés par le mouvement DIY, qui encourage les gens à créer eux-mêmes leurs propres objets décoratifs et mobiliers pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Architecture d'intérieur",
+                        "description": "Les passionnés de cette niche peuvent avoir un intérêt pour l'architecture d'intérieur, l'optimisation de l'espace et la création de designs fonctionnels et esthétiques."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Feng shui",
+                        "description": "Les personnes intéressées par la niche Maison et jardin peuvent avoir un intérêt pour le feng shui, qui est une pratique chinoise visant à harmoniser l'énergie des espaces de vie."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Paysagisme",
+                        "description": "Les passionnés de cette niche peuvent avoir un intérêt pour le paysagisme, qui est l'art de la conception et de l'aménagement de jardins, de parcs et de paysages extérieurs."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Décoration extérieure",
+                        "description": "Les personnes intéressées par cette niche peuvent avoir un intérêt pour la décoration extérieure, qu'il s'agisse de l'aménagement de terrasses, de patios ou de la décoration de jardins."
+                    },
+                    {
+                        "id": 9,
+                        "name": "DIY écologique",
+                        "description": "Les passionnés de cette niche peuvent avoir un intérêt pour le DIY écologique, qui consiste à créer des objets de décoration et des solutions d'aménagement éco-responsables pour la maison et le jardin."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Économie d'énergie",
+                        "description": "Les personnes intéressées par cette niche peuvent avoir un intérêt pour l'économie d'énergie, en cherchant à améliorer l'efficacité énergétique de leur maison et à réduire leur impact sur l'environnement."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Créativité",
+                        "description": "Les personnes intéressées par cette niche peuvent avoir une grande créativité pour créer des designs uniques et originaux pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Patience",
+                        "description": "L'aménagement et l'entretien de la maison et du jardin peuvent être des processus longs et laborieux, donc la patience est une qualité importante pour atteindre les résultats souhaités."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Minutie",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent être très attentifs aux détails, que ce soit pour la décoration intérieure ou l'entretien du jardin."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Curiosité",
+                        "description": "Les amateurs de cette niche peuvent être curieux de découvrir de nouvelles idées et de nouvelles tendances pour améliorer leur maison et leur jardin."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Organisation",
+                        "description": "Les personnes intéressées par cette niche peuvent être très organisées et méthodiques dans leur approche, pour gérer leur temps et leurs ressources efficacement."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Flexibilité",
+                        "description": "Les projets de décoration et d'aménagement peuvent parfois nécessiter une certaine flexibilité pour s'adapter aux contraintes et aux imprévus."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Autonomie",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent être très autonomes et préférer faire les choses eux-mêmes plutôt que de payer pour des services professionnels."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Attention aux détails",
+                        "description": "Les amateurs de cette niche peuvent être très attentifs aux détails pour créer des espaces de vie harmonieux et esthétiques."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Persévérance",
+                        "description": "Les projets de bricolage et de jardinage peuvent être difficiles et décourageants, donc la persévérance est une qualité importante pour les mener à bien."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Respectueux de l'environnement",
+                        "description": "De plus en plus de personnes dans cette niche sont soucieuses de l'environnement et cherchent des moyens écologiques pour améliorer leur maison et leur jardin. La qualité de respecter l'environnement est donc essentielle pour eux."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Perfectionnisme",
+                        "description": "Les personnes intéressées par cette niche peuvent être perfectionnistes, ce qui peut parfois entraîner des retards ou des dépenses supplémentaires."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Impatience",
+                        "description": "Bien que la patience soit une qualité importante dans cette niche, certaines personnes peuvent être impatientes et vouloir des résultats rapides, ce qui peut les amener à prendre des décisions précipitées."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Manque de confiance en soi",
+                        "description": "Les amateurs de la niche Maison et jardin peuvent parfois manquer de confiance en eux, ce qui peut les empêcher d'explorer de nouvelles idées et de prendre des risques créatifs."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Procrastination",
+                        "description": "Les projets de décoration et d'aménagement peuvent être longs et fastidieux, ce qui peut amener certaines personnes à procrastiner et à remettre les choses à plus tard."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Difficulté à déléguer",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent avoir du mal à déléguer certaines tâches à des professionnels, préférant tout faire eux-mêmes."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Trop sensible aux critiques",
+                        "description": "Les personnes intéressées par cette niche peuvent être très attachées à leur maison et leur jardin, ce qui peut les rendre très sensibles aux critiques et aux commentaires négatifs."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Rigidité",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent parfois être rigides dans leurs idées et leurs approches, ce qui peut les empêcher d'explorer de nouvelles idées et de prendre des risques créatifs."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Difficulté à prendre des décisions",
+                        "description": "Avec tant d'options disponibles pour la décoration et l'aménagement, certaines personnes peuvent avoir du mal à prendre des décisions et à se fixer sur un projet."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Tendance à négliger les tâches d'entretien",
+                        "description": "Bien que la décoration et l'aménagement soient importants, certaines personnes peuvent avoir tendance à négliger les tâches d'entretien, ce qui peut entraîner des problèmes à long terme."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Dépenses excessives",
+                        "description": "Les passionnés de la niche Maison et jardin peuvent être tentés de dépenser plus que nécessaire pour leurs projets de décoration et d'aménagement, ce qui peut entraîner des problèmes financiers à long terme."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Décoration intérieure",
+                        "description": "La décoration intérieure peut être une passion pour les personnes intéressées par cette niche, qui aiment créer des espaces de vie uniques et confortables."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Jardinage",
+                        "description": "Le jardinage peut être une passion pour les amateurs de cette niche, qui aiment cultiver des plantes, des légumes et des fleurs pour créer des jardins magnifiques et productifs."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Bricolage",
+                        "description": "Le bricolage peut être une passion pour les passionnés de la niche Maison et jardin, qui aiment créer et rénover des objets de décoration et des meubles pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Design",
+                        "description": "Le design peut être une passion pour les personnes intéressées par cette niche, qui aiment créer des espaces fonctionnels et esthétiques pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Paysagisme",
+                        "description": "Le paysagisme peut être une passion pour les passionnés de cette niche, qui aiment créer des designs de paysages extérieurs, tels que des jardins, des parcs et des terrains de golf."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Architecture",
+                        "description": "L'architecture peut être une passion pour les personnes intéressées par cette niche, qui aiment créer des designs d'intérieur et d'extérieur pour des espaces résidentiels et commerciaux."
+                    },
+                    {
+                        "id": 7,
+                        "name": "DIY (Do It Yourself)",
+                        "description": "Le DIY peut être une passion pour les amateurs de la niche Maison et jardin, qui aiment créer eux-mêmes des objets de décoration et des meubles pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Feng shui",
+                        "description": "Le Feng shui peut être une passion pour les passionnés de cette niche, qui aiment créer des espaces de vie harmonieux et équilibrés en utilisant les principes du Feng shui."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Photographie de la nature",
+                        "description": "La photographie de la nature peut être une passion pour les personnes intéressées par cette niche, qui aiment capturer la beauté des jardins et des paysages extérieurs."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Écologie",
+                        "description": "L'écologie peut être une passion pour les passionnés de la niche Maison et jardin, qui aiment utiliser des techniques et des matériaux écologiques pour créer des espaces de vie durables et respectueux de l'environnement."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Peur de l'insécurité",
+                        "description": "Les gens peuvent avoir peur de ne pas se sentir en sécurité chez eux. Cela peut inclure la peur des cambriolages, des intrus, des incendies ou des accidents domestiques."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Peur des problèmes de santé",
+                        "description": "Les gens peuvent avoir peur des problèmes de santé liés à leur environnement domestique, tels que les moisissures, les produits chimiques nocifs, les allergènes et les parasites."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Peur des dépenses",
+                        "description": "Les gens peuvent avoir peur de dépenser trop d'argent pour les réparations ou les améliorations de leur maison et de leur jardin, ou de ne pas avoir les moyens de se permettre les améliorations qu'ils aimeraient apporter."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Peur de ne pas être à la hauteur",
+                        "description": "Les gens peuvent avoir peur de ne pas être à la hauteur en matière d'entretien de leur maison et de leur jardin, de ne pas avoir les compétences nécessaires pour effectuer les réparations ou les améliorations eux-mêmes, ou de ne pas savoir comment choisir les bons produits pour leur maison et leur jardin."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Peur de ne pas être respectueux de l'environnement",
+                        "description": "Les gens peuvent avoir peur de ne pas être respectueux de l'environnement dans leur façon d'entretenir leur maison et leur jardin, ou de ne pas savoir comment faire des choix durables et écologiques."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Peur des catastrophes naturelles",
+                        "description": "Les gens peuvent avoir peur des catastrophes naturelles qui peuvent endommager leur maison et leur jardin, comme les tempêtes, les inondations, les tremblements de terre ou les incendies de forêt."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Peur de ne pas avoir un espace fonctionnel",
+                        "description": "Les gens peuvent avoir peur de ne pas avoir suffisamment d'espace pour vivre confortablement ou pour stocker leurs affaires, ou de ne pas savoir comment organiser leur maison et leur jardin de manière efficace pour répondre à leurs besoins quotidiens."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "niche_id": 5,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Curieux(se)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets ont souvent une grande curiosité et un désir de découvrir de nouvelles technologies et de nouveaux appareils."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Innovateur(trice)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être innovatrices, cherchant à créer de nouvelles solutions et à trouver des moyens uniques d'utiliser les appareils existants."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Passionné(e)",
+                        "description": "Les personnes qui s'intéressent à l'électronique et aux gadgets peuvent être passionnées par les dernières technologies et les appareils les plus récents, passant des heures à lire des articles sur les nouveautés et à discuter des dernières innovations."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Méticuleux(se)",
+                        "description": "Les personnes qui s'intéressent à l'électronique et aux gadgets doivent souvent être très méticuleuses pour comprendre comment fonctionnent les appareils et comment les utiliser de manière efficace."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Analytique",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être très analytiques, cherchant à comprendre les spécifications techniques et les détails de fonctionnement des différents appareils."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Créatif(ve)",
+                        "description": "Les personnes qui s'intéressent à l'électronique et aux gadgets peuvent être créatives, cherchant à trouver de nouveaux moyens d'utiliser les appareils existants ou de créer des appareils innovants."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Patient(e)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets doivent souvent faire preuve de patience pour comprendre comment fonctionnent les appareils et pour résoudre les problèmes qui peuvent survenir."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Appareils mobiles",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être passionnées par les derniers smartphones, tablettes et autres appareils mobiles."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Ordinateurs et périphériques",
+                        "description": "Les ordinateurs et les périphériques tels que les imprimantes, les scanners et les souris peuvent également être des sujets d'intérêt pour les personnes intéressées par l'électronique et les gadgets."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Électronique grand public",
+                        "description": "Les appareils grand public tels que les téléviseurs, les haut-parleurs, les lecteurs Blu-ray et les consoles de jeu peuvent également intéresser les personnes intéressées par l'électronique et les gadgets."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Gadgets domestiques intelligents",
+                        "description": "Les gadgets domestiques intelligents tels que les thermostats intelligents, les ampoules intelligentes et les serrures intelligentes peuvent intéresser les personnes intéressées par l'électronique et les gadgets."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Drones et caméras",
+                        "description": "Les drones et les caméras peuvent être des sujets d'intérêt pour les personnes intéressées par la photographie et la vidéographie."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Accessoires pour appareils",
+                        "description": "Les accessoires pour les appareils électroniques tels que les étuis pour téléphones, les claviers sans fil et les écouteurs peuvent également être des sujets d'intérêt pour les personnes intéressées par l'électronique et les gadgets."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Créatif(ve)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être très créatives dans leur approche de l'utilisation et de la modification de ces dispositifs. Ils peuvent chercher à personnaliser leur appareil ou à créer de nouvelles utilisations pour les gadgets existants."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Curieux(se)",
+                        "description": "Les personnes qui s'intéressent à l'électronique et aux gadgets peuvent être très curieuses et chercher à comprendre comment fonctionnent les dispositifs qu'elles utilisent. Ils peuvent être motivés par la compréhension des mécanismes sous-jacents de la technologie."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Ingénieux(se)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être très ingénieuses dans leur approche de l'utilisation des dispositifs. Ils peuvent chercher des solutions créatives pour résoudre des problèmes ou améliorer les fonctionnalités des appareils existants."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Technophile",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être passionnées par la technologie en général. Ils peuvent être curieux des dernières innovations technologiques et suivre les tendances dans l'industrie de la technologie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Précis(e)",
+                        "description": "Les personnes qui s'intéressent à l'électronique et aux gadgets doivent être précises dans leur approche de la manipulation et de la modification des appareils. Ils doivent être attentifs aux détails et veiller à ne pas causer de dommages lors de l'utilisation ou de la modification des dispositifs."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Méticuleux(se)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être très méticuleuses dans leur approche de la manipulation et de la modification des appareils. Ils doivent être attentifs aux détails et veiller à ce que chaque composant soit manipulé avec soin."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Innovant(e)",
+                        "description": "Les personnes intéressées par l'électronique et les gadgets peuvent être très innovantes dans leur approche de l'utilisation et de la modification des appareils. Ils peuvent chercher à créer de nouvelles utilisations pour les gadgets existants ou à inventer de nouveaux dispositifs."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Problèmes de connectivité",
+                        "description": "les appareils électroniques peuvent parfois avoir des difficultés à se connecter à d'autres appareils ou à Internet, ce qui peut entraîner des retards ou des interruptions dans l'utilisation."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Batteries défectueuses",
+                        "description": "les batteries peuvent parfois ne pas fonctionner correctement, se décharger rapidement ou ne pas se charger du tout, ce qui peut limiter l'utilisation de l'appareil."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Écrans endommagés",
+                        "description": "les écrans peuvent être fragiles et se fissurer facilement, ce qui peut rendre l'appareil inutilisable ou difficile à utiliser."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Problèmes de stockage",
+                        "description": "les appareils électroniques peuvent parfois manquer d'espace de stockage ou avoir des problèmes de mémoire, ce qui peut entraîner des ralentissements ou des plantages."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Problèmes de qualité audio/vidéo",
+                        "description": "les appareils électroniques peuvent avoir des problèmes de qualité audio ou vidéo, tels que des bruits parasites, des images floues ou des problèmes de son, qui peuvent nuire à l'expérience utilisateur."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Problèmes de fiabilité",
+                        "description": "les appareils électroniques peuvent parfois être peu fiables, se bloquer fréquemment ou ne pas fonctionner correctement, ce qui peut être frustrant pour l'utilisateur."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Problèmes de compatibilité",
+                        "description": "certains appareils électroniques peuvent avoir des problèmes de compatibilité avec d'autres appareils ou logiciels, ce qui peut limiter leur utilisation ou leur efficacité."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Problèmes de sécurité",
+                        "description": "les appareils électroniques peuvent être vulnérables aux attaques de virus, de logiciels malveillants ou de piratage, ce qui peut compromettre la sécurité des données et des informations personnelles de l'utilisateur."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Programmation",
+                        "description": "la programmation est l'une des compétences clés dans le domaine de l'électronique et des gadgets, car elle permet de créer des applications et des logiciels pour contrôler des appareils électroniques."
+                    },
+                    {
+                        "id": 2,
+                        "name": "DIY (Do It Yourself)",
+                        "description": "si vous êtes passionné par la création de choses à partir de zéro, le bricolage et la construction de gadgets électroniques à partir de composants électroniques pourraient être une activité passionnante."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Jeux vidéo",
+                        "description": "les jeux vidéo sont souvent basés sur la technologie électronique et les gadgets, et les joueurs passionnés peuvent être intéressés par la création de leurs propres consoles de jeu ou la modification de consoles existantes."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Photographie et vidéo",
+                        "description": "la photographie et la vidéo peuvent également être des passions liées à la niche Électronique et gadgets, car les appareils photo et les caméras vidéo sont souvent équipés de technologies électroniques avancées."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Musique",
+                        "description": "les gadgets électroniques tels que les synthétiseurs, les boîtes à rythmes et les contrôleurs MIDI sont souvent utilisés pour créer de la musique électronique, et les passionnés de musique pourraient trouver l'exploration de ces technologies fascinante."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Internet des objets (IoT)",
+                        "description": "l'Internet des objets est une technologie émergente qui permet aux objets physiques d'être connectés à Internet et de communiquer entre eux. Les passionnés d'électronique et de gadgets peuvent trouver l'exploration de l'IoT fascinante."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Robotique",
+                        "description": "les robots sont des machines programmables qui peuvent être contrôlées électroniquement. Les passionnés de robotique peuvent être intéressés par la création de robots, la programmation de mouvements et la conception de circuits électroniques pour contrôler les robots."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Drones",
+                        "description": "les drones sont des gadgets électroniques populaires qui peuvent être utilisés pour la photographie aérienne, la livraison de colis et bien plus encore. Les passionnés de drones peuvent être intéressés par la construction de drones personnalisés et la programmation de leurs mouvements."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La peur de la perte de données",
+                        "description": "Les utilisateurs peuvent avoir peur de perdre toutes leurs données précieuses stockées sur leurs appareils électroniques en raison de problèmes de sauvegarde ou de défaillance de l'appareil."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La peur de la panne soudaine",
+                        "description": "Les utilisateurs peuvent craindre que leurs appareils électroniques tombent en panne soudainement, ce qui peut les laisser sans communication ou les empêcher de travailler."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La peur de la sécurité",
+                        "description": "Les utilisateurs peuvent avoir peur que leurs données personnelles et leurs informations de compte soient compromises en raison de failles de sécurité ou de piratage."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La peur de l'obsolescence",
+                        "description": "Les utilisateurs peuvent craindre que leurs appareils électroniques deviennent rapidement obsolètes, ce qui les oblige à dépenser constamment de l'argent pour des mises à jour ou des remplacements."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La peur de la complexité",
+                        "description": "Les utilisateurs peuvent craindre de ne pas être en mesure de comprendre comment utiliser correctement leurs appareils électroniques ou de se sentir dépassés par les technologies plus récentes."
+                    },
+                    {
+                        "id": 6,
+                        "name": "La peur de l'addiction",
+                        "description": "Les utilisateurs peuvent craindre de devenir trop dépendants de leurs appareils électroniques, ce qui peut nuire à leur vie sociale et à leur bien-être mental."
+                    },
+                    {
+                        "id": 7,
+                        "name": "La peur de la surveillance",
+                        "description": "Les utilisateurs peuvent craindre que leurs activités en ligne soient surveillées par des tiers, ce qui peut violer leur vie privée et leur sécurité en ligne."
+                    },
+                    {
+                        "id": 8,
+                        "name": "La peur de la dépendance à la technologie",
+                        "description": "Les utilisateurs peuvent craindre de perdre leur indépendance et leur capacité à fonctionner sans l'aide de la technologie en raison de leur dépendance à leurs appareils électroniques."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "niche_id": 6,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Empathique",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être empathiques envers leurs animaux, en étant attentifs à leurs besoins et en leur fournissant des soins appropriés."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Responsable",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être responsables en prenant soin de leur animal, en leur fournissant de la nourriture, de l'eau, de l'exercice, des soins vétérinaires et en s'assurant qu'ils sont en sécurité."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Patient",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être patients, en particulier avec les animaux qui ont besoin de plus de temps pour s'adapter à leur nouvel environnement ou pour apprendre de nouvelles habitudes."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Affectueux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être affectueux avec leurs animaux, en passant du temps à jouer avec eux, à les caresser et à leur donner de l'affection."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Attentif",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être attentifs aux signes de comportement ou de santé de leur animal, afin de pouvoir répondre à leurs besoins rapidement."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Patient",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être patients, en particulier avec les animaux qui ont besoin de plus de temps pour s'adapter à leur nouvel environnement ou pour apprendre de nouvelles habitudes."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Compréhensif",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être compréhensifs envers leur animal, en étant attentifs à leur comportement et à leur communication non-verbale pour mieux comprendre leurs besoins et leurs désirs."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Les sports canins",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par les sports canins tels que l'agilité, le flyball, le frisbee canin et d'autres activités sportives qui peuvent être pratiquées avec leur animal de compagnie."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La formation des animaux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par la formation des animaux, en utilisant des méthodes positives et des techniques de renforcement pour enseigner des commandes et des comportements à leur animal."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Les soins de santé des animaux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par les soins de santé des animaux, en apprenant à reconnaître les signes de maladie ou de blessure chez leur animal, en étant capable d'administrer les médicaments ou les traitements nécessaires, ou en consultant un vétérinaire pour des soins plus avancés."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Les activités de plein air",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par les activités de plein air, telles que la randonnée, le camping, la pêche et autres activités qui peuvent être pratiquées avec leur animal de compagnie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La photographie d'animaux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par la photographie d'animaux, en prenant des photos de leur animal de compagnie et en partageant ces photos sur les réseaux sociaux."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Les produits pour animaux de compagnie",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par les produits pour animaux de compagnie, en cherchant les dernières tendances en matière d'aliments, de jouets, de litières, de brosses, de colliers, etc."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Les activités communautaires avec les animaux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être intéressés par les activités communautaires avec les animaux, telles que les événements de collecte de fonds, les fêtes d'anniversaire pour animaux de compagnie, les défilés de costumes pour animaux de compagnie et autres événements similaires."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Bienveillant",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être bienveillants envers leur animal de compagnie, en leur fournissant des soins appropriés et en étant attentifs à leurs besoins."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Compatissant",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être compatissants envers les autres animaux, en contribuant à des causes pour la protection des animaux ou en adoptant des animaux de refuge."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Fidèle",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être fidèles envers leur animal de compagnie, en étant constants dans leur affection, leur attention et leur soin."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Patient",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être patients, en particulier avec les animaux qui ont besoin de plus de temps pour s'adapter à leur nouvel environnement ou pour apprendre de nouvelles habitudes."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Responsable",
+                        "description": "Les propriétaires d'animaux de compagnie doivent être responsables en prenant soin de leur animal, en leur fournissant de la nourriture, de l'eau, de l'exercice, des soins vétérinaires et en s'assurant qu'ils sont en sécurité."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Consciencieux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être consciencieux envers leur animal de compagnie, en veillant à ce que leur animal ait une alimentation équilibrée, suffisamment d'exercice et des soins vétérinaires réguliers."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Affectueux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent être affectueux avec leur animal, en passant du temps à jouer avec eux, à les caresser et à leur donner de l'affection."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Impulsif",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être impulsifs dans la prise de décisions concernant leur animal, telles que l'achat de nouveaux jouets ou d'aliments, sans prendre en compte les conséquences à long terme."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Négligent",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être négligents envers leur animal de compagnie, en omettant de fournir une alimentation adéquate, un exercice suffisant ou des soins vétérinaires réguliers."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Possessif",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être possessifs envers leur animal de compagnie, en étant jaloux ou en refusant de partager la responsabilité de leur animal avec d'autres personnes."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Anxieux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être anxieux au sujet de leur animal de compagnie, en s'inquiétant constamment de leur bien-être ou de leur sécurité."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Inflexible",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être inflexibles dans leur approche envers leur animal de compagnie, en refusant de s'adapter à leurs besoins changeants ou à leurs préférences."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Trop permissif",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être trop permissifs envers leur animal de compagnie, en leur permettant de faire des comportements qui ne sont pas souhaitables ou en manquant d'établir des limites claires."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Méfiant",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent parfois être méfiants envers d'autres personnes ou animaux qui pourraient entrer en contact avec leur animal de compagnie, en réduisant leur socialisation ou leur interaction avec les autres."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Dressage canin",
+                        "description": "Beaucoup de propriétaires de chiens souhaitent améliorer les compétences de leurs compagnons et les faire obéir à des commandes spécifiques. Ils peuvent être passionnés par les techniques de dressage canin et les méthodes de renforcement positif pour aider leur animal à apprendre."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Soins des animaux",
+                        "description": "Les passionnés de soins aux animaux peuvent être intéressés par les différentes façons de prendre soin de leur animal de compagnie, comme le toilettage, le brossage des dents, le nettoyage des oreilles, etc. Ils peuvent également être intéressés par les régimes alimentaires appropriés pour leur animal de compagnie."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Élevage d'animaux",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent également être passionnés par l'élevage et la reproduction d'animaux. Ils peuvent être intéressés par les techniques de reproduction, la sélection de races et le processus d'élevage en général."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Activités en plein air",
+                        "description": "De nombreux propriétaires d'animaux de compagnie aiment passer du temps à l'extérieur avec leur animal de compagnie. Ils peuvent être passionnés par les activités en plein air comme la randonnée, le camping, la pêche ou les promenades dans la nature avec leur animal de compagnie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Sport canin",
+                        "description": "Certains propriétaires de chiens sont passionnés par les sports canins, comme l'agilité, l'obéissance, le frisbee et le flyball. Ils peuvent passer beaucoup de temps à entraîner leur animal pour les compétitions."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Photographie d'animaux",
+                        "description": "Les passionnés de photographie peuvent être intéressés par la capture des moments précieux de leur animal de compagnie. Ils peuvent passer beaucoup de temps à apprendre les techniques de photographie et à prendre des photos de haute qualité de leur animal de compagnie."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Rescue animalier",
+                        "description": "Certains propriétaires d'animaux de compagnie peuvent être passionnés par les animaux sauvages et abandonnés. Ils peuvent être impliqués dans des organisations de sauvetage d'animaux, les aider à trouver un foyer aimant et contribuer à la sensibilisation à la cause animale."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Peur de la perte de son animal de compagnie",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent avoir peur de perdre leur animal de compagnie, que ce soit en raison d'une maladie, d'un accident ou de la vieillesse. Cette peur peut les amener à être très attentifs à la santé de leur animal et à prendre des précautions pour éviter les dangers potentiels."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Peur des maladies animales",
+                        "description": "Les propriétaires d'animaux de compagnie peuvent avoir peur que leur animal contracte une maladie, en particulier celles qui sont transmissibles à l'homme. Cette peur peut les amener à être très vigilants quant à la vaccination et à la prévention des maladies chez leur animal."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Peur des comportements agressifs",
+                        "description": "Certains propriétaires peuvent avoir peur de la réaction agressive de leur animal de compagnie, en particulier s'il s'agit d'un chien. Cette peur peut les amener à être très prudents quant à la socialisation de leur animal et à chercher de l'aide professionnelle pour aider leur animal à surmonter ces comportements."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Peur de la perte de contrôle",
+                        "description": "Les propriétaires peuvent avoir peur de ne pas être en mesure de contrôler leur animal de compagnie, en particulier s'il est de grande taille ou s'il a des comportements imprévisibles. Cette peur peut les amener à chercher des conseils et de l'aide professionnelle pour aider à renforcer leur relation avec leur animal de compagnie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Peur des frais vétérinaires élevés",
+                        "description": "Les propriétaires peuvent avoir peur des coûts élevés associés aux soins vétérinaires, en particulier en cas d'urgence ou de maladie chronique. Cette peur peut les amener à souscrire à une assurance pour animaux de compagnie ou à prévoir un budget pour les frais vétérinaires."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Peur de la séparation",
+                        "description": "Les propriétaires peuvent avoir peur de laisser leur animal de compagnie seul à la maison ou de le confier à quelqu'un d'autre pendant leur absence. Cette peur peut les amener à être très attachés à leur animal de compagnie et à chercher des solutions pour minimiser le stress de la séparation, comme l'embauche d'un promeneur de chiens ou la socialisation de leur animal."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Peur des préjugés",
+                        "description": "Certains propriétaires d'animaux de compagnie peuvent avoir peur de subir des préjugés ou des discriminations en raison de la race ou de la taille de leur animal. Cette peur peut les amener à être très sensibles aux comportements et aux attitudes des autres envers leur animal de compagnie, et à chercher à sensibiliser les autres à la diversité et à l'inclusion dans le monde des animaux de compagnie."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "niche_id": 7,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Curieux",
+                        "description": "les enfants sont souvent curieux et aiment découvrir de nouvelles choses, expérimenter et explorer leur environnement."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Imaginatif",
+                        "description": "les enfants ont une grande imagination et aiment créer des mondes imaginaires à travers leurs jouets."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Affectueux",
+                        "description": "les enfants aiment les jouets qui leur permettent d'exprimer leur affection envers les autres, comme les peluches ou les poupées."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Créatif",
+                        "description": "les enfants aiment les jouets qui leur permettent d'exprimer leur créativité, comme les kits d'artisanat ou les blocs de construction."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Actif",
+                        "description": "les enfants ont souvent beaucoup d'énergie et aiment les jouets qui leur permettent de bouger et de se dépenser, comme les ballons, les vélos et les trottinettes."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Curieux de la nature",
+                        "description": "les enfants aiment les jouets qui leur permettent de découvrir la nature et les animaux, comme les jumelles, les livres sur la nature et les insectes en plastique."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Éducatif",
+                        "description": "les enfants sont curieux et aiment apprendre de nouvelles choses, donc les jouets éducatifs qui enseignent des compétences de base sont très populaires, comme les puzzles, les jeux de mémoire et les jeux de société."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Sociaux",
+                        "description": "les enfants aiment interagir avec leurs pairs et les adultes, donc les jouets qui encouragent les interactions sociales sont très populaires, comme les jeux de rôle et les jeux de groupe."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Animaux",
+                        "description": "les enfants aiment souvent les animaux et les jouets qui les représentent, comme les peluches, les figurines ou les kits d'exploration de la nature."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Sciences et découvertes",
+                        "description": "les enfants sont souvent curieux et aiment découvrir de nouvelles choses, donc les jouets qui leur permettent d'explorer le monde autour d'eux, comme les télescopes, les kits de chimie ou les maquettes de planètes, sont très populaires."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Sport",
+                        "description": "les enfants ont souvent beaucoup d'énergie et aiment se dépenser, donc les jouets qui les encouragent à bouger et à se dépenser, comme les ballons, les vélos et les trottinettes, sont très appréciés."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Arts et création",
+                        "description": "les enfants ont une grande imagination et aiment créer, donc les jouets qui leur permettent d'exprimer leur créativité, comme les kits d'artisanat, les peintures et les dessins, sont très populaires."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Musique",
+                        "description": "les enfants aiment souvent la musique et les jouets qui leur permettent de découvrir la musique, comme les instruments de musique pour enfants, les CD de chansons pour enfants et les jouets musicaux, sont très appréciés."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Technologie",
+                        "description": "les enfants sont souvent attirés par les gadgets et les jouets qui intègrent la technologie, comme les robots, les drones, les jouets télécommandés et les jeux vidéo pour enfants."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Personnages et univers de fiction",
+                        "description": "les enfants aiment souvent les personnages de fiction et les jouets qui les représentent, comme les jouets de super-héros, les jouets de dessins animés et les jouets de films pour enfants."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Durabilité",
+                        "description": "les jouets pour enfants doivent être durables et résistants aux chocs, aux chutes et aux manipulations fréquentes."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Sécurité",
+                        "description": "les jouets pour enfants doivent être conçus en toute sécurité, avec des matériaux non toxiques et sans risque d'étouffement ou de blessure."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Éducatif",
+                        "description": "les jouets pour enfants peuvent être éducatifs, en enseignant des compétences de base telles que la coordination œil-main, la résolution de problèmes et la créativité."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Stimulation sensorielle",
+                        "description": "les jouets pour enfants peuvent stimuler les sens, en utilisant des couleurs vives, des textures intéressantes et des sons attrayants."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Accessible",
+                        "description": "les jouets pour enfants doivent être accessibles à toutes les capacités physiques et tous les niveaux de développement, en offrant des options pour tous les âges et toutes les capacités."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Facile à utiliser",
+                        "description": "les jouets pour enfants doivent être faciles à utiliser et à manipuler, avec des instructions claires et simples."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Polyvalent",
+                        "description": "les jouets pour enfants peuvent être polyvalents, offrant de multiples façons de jouer et de s'amuser, en permettant aux enfants de découvrir de nouvelles façons d'utiliser leurs jouets."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Écologique",
+                        "description": "les jouets pour enfants peuvent être fabriqués à partir de matériaux durables et respectueux de l'environnement, en minimisant l'impact environnemental."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Fragilité",
+                        "description": "les jouets destinés aux enfants doivent être suffisamment robustes pour résister à une utilisation normale et à une manipulation maladroite."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Risque d'étouffement",
+                        "description": "les jouets contenant de petites pièces doivent comporter un avertissement et être conçus de manière à minimiser le risque d'ingestion accidentelle."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Danger de coupure",
+                        "description": "les bords tranchants ou les parties saillantes des jouets peuvent constituer un danger pour les enfants, surtout s'ils sont jeunes et maladroits."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Non-conformité aux normes de sécurité",
+                        "description": "les jouets doivent être conformes aux normes de sécurité applicables et comporter des avertissements appropriés."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Toxicité",
+                        "description": "les matériaux utilisés dans la fabrication des jouets doivent être non toxiques et ne pas présenter de risque pour la santé des enfants."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Difficulté à utiliser",
+                        "description": "les jouets doivent être conçus de manière à être facilement utilisables par les enfants, sans nécessiter une assistance excessive de la part des adultes."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Manque d'intérêt ou de stimulation",
+                        "description": "les jouets doivent être suffisamment intéressants et stimulants pour que les enfants continuent à les utiliser et à s'y intéresser sur le long terme."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Mauvaise qualité",
+                        "description": "les jouets de mauvaise qualité peuvent se casser facilement ou présenter d'autres problèmes, ce qui peut être frustrant pour les enfants et les décourager de les utiliser."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Prix trop élevé",
+                        "description": "les jouets doivent être proposés à un prix raisonnable pour que les parents puissent se les permettre sans difficulté financière."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Non-adaptabilité",
+                        "description": "les jouets ne doivent pas être trop compliqués pour que les enfants ne puissent pas les utiliser selon leur tranche d'âge et leur développement."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Les jouets de construction",
+                        "description": "Les enfants aiment souvent construire et créer, ce qui en fait une passion populaire pour cette niche. Les marques comme Lego, K'Nex et Meccano offrent une grande variété de jouets de construction pour les enfants de tous âges."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Les jeux de société",
+                        "description": "Les jeux de société sont également très populaires auprès des enfants, car ils leur permettent de jouer en groupe et de socialiser. Des jeux comme Monopoly, Scrabble Junior, La Bonne Paye et le Uno sont des exemples de jeux de société qui conviennent bien aux enfants."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Les animaux en peluche",
+                        "description": "Les enfants aiment souvent les animaux en peluche, car ils sont mignons et câlins. Les marques comme Ty et Build-A-Bear Workshop offrent une grande variété d'animaux en peluche pour les enfants."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Les voitures et les trains miniatures",
+                        "description": "Les enfants peuvent également être passionnés par les voitures et les trains miniatures. Les marques comme Hot Wheels, Matchbox et Thomas & Friends proposent des jouets de qualité pour les enfants qui aiment les véhicules miniatures."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La science et la technologie",
+                        "description": "Les enfants qui s'intéressent à la science et à la technologie peuvent également être passionnés par cette niche. Des jouets comme les kits de robotique, les microscopes pour enfants et les télescopes sont de bons exemples de jouets scientifiques pour les enfants."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La peur des jouets qui font du bruit",
+                        "description": "Certains enfants peuvent avoir peur des jouets qui font du bruit fort ou inattendu. Les parents peuvent être attentifs aux réactions de leur enfant et choisir des jouets plus silencieux ou leur apprendre à jouer avec prudence."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La peur des jouets qui ressemblent à des animaux",
+                        "description": "Certains jouets peuvent ressembler à des animaux réels, ce qui peut effrayer certains enfants. Les parents peuvent aider leur enfant à se familiariser avec le jouet progressivement et lui expliquer que c'est un objet inoffensif."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La peur des jeux de simulation",
+                        "description": "Certains jeux de simulation peuvent sembler trop réels pour les enfants et leur faire peur. Les parents peuvent s'assurer que les jeux choisis sont adaptés à l'âge et à la sensibilité de leur enfant."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La peur des jouets électroniques",
+                        "description": "Les jouets électroniques peuvent être intimidants pour certains enfants, car ils peuvent sembler compliqués ou difficiles à utiliser. Les parents peuvent aider leur enfant à comprendre le fonctionnement du jouet et lui montrer comment l'utiliser en toute sécurité."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La peur des jouets à mouvement automatique",
+                        "description": "tains jouets peuvent avoir un mouvement automatique qui peut sembler effrayant pour certains enfants. Les parents peuvent aider leur enfant à comprendre que le jouet est inoffensif et qu'il est conçu pour bouger de manière prévisible."
+                    },
+                    {
+                        "id": 6,
+                        "name": "La peur des jouets qui représentent des personnages effrayants",
+                        "description": "Certains enfants peuvent être effrayés par les jouets qui représentent des personnages effrayants, tels que des monstres, des zombies ou des personnages de films d'horreur. Les parents peuvent être attentifs aux réactions de leur enfant et éviter d'acheter des jouets qui pourraient les effrayer. Si l'enfant souhaite jouer avec de tels jouets, les parents peuvent lui expliquer que ce ne sont que des objets imaginaires et que ce n'est pas réel."
+                    },
+                    {
+                        "id": 7,
+                        "name": "La peur des jouets qui évoquent des situations dangereuses",
+                        "description": "Certains jouets peuvent évoquer des situations dangereuses, telles que des armes, des explosions ou des accidents de voiture. Les parents peuvent être attentifs aux réactions de leur enfant et éviter d'acheter des jouets qui pourraient les effrayer. Si l'enfant souhaite jouer avec de tels jouets, les parents peuvent lui expliquer que ce ne sont que des objets imaginaires et qu'il est important de jouer en toute sécurité."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "niche_id": 8,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Créativité",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une forte inclination pour la créativité. Ils aiment créer de nouvelles choses, explorer de nouvelles idées et mettre leur imagination à profit."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Curiosité",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une grande curiosité intellectuelle. Ils cherchent à comprendre les choses, à explorer de nouveaux domaines et à apprendre continuellement."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Persévérance",
+                        "description": "Les personnes qui aiment les loisirs et les passions sont souvent très persévérantes. Ils sont prêts à travailler dur pour atteindre leurs objectifs et à persévérer malgré les obstacles."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Passion",
+                        "description": "Comme son nom l'indique, la niche des loisirs et des passions attire les personnes qui ont une passion pour quelque chose. Les personnes qui aiment cette niche sont souvent passionnées par leur activité préférée, qu'il s'agisse de la musique, des sports ou de toute autre activité."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Flexibilité",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une grande flexibilité. Ils sont prêts à essayer de nouvelles choses, à changer de direction lorsque cela est nécessaire et à s'adapter à des situations nouvelles et imprévues."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Socialisation",
+                        "description": "Les personnes qui aiment les loisirs et les passions sont souvent très sociables. Ils aiment partager leur passion avec d'autres personnes, rencontrer de nouvelles personnes partageant les mêmes centres d'intérêt et échanger des idées et des expériences."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Indépendance",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une grande indépendance. Ils aiment travailler seuls et ont souvent leur propre façon de faire les choses."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La musique",
+                        "description": "Les amateurs de musique ont souvent une passion pour l'expression artistique et la créativité. Ils peuvent s'intéresser à différents genres musicaux, à la composition musicale, aux performances en direct ou à l'écoute de musique enregistrée."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Les sports",
+                        "description": "Les amateurs de sports peuvent s'intéresser à une variété d'activités sportives, qu'il s'agisse de sports d'équipe comme le football, le basket-ball, le volley-ball ou de sports individuels comme le tennis, le golf ou le cyclisme. Ils peuvent également s'intéresser aux événements sportifs professionnels ou suivre de près les performances de leurs athlètes préférés."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Les loisirs créatifs",
+                        "description": "Les amateurs de loisirs créatifs peuvent s'intéresser à des activités telles que le dessin, la peinture, la sculpture, la poterie, la couture, le tricot ou le crochet. Ils aiment créer de nouvelles choses avec leurs mains et exprimer leur créativité."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La cuisine",
+                        "description": "Les amateurs de cuisine aiment explorer de nouvelles saveurs, de nouvelles recettes et de nouvelles techniques culinaires. Ils peuvent s'intéresser à la cuisine de différents pays, à la cuisine végétarienne ou végane, ou à la pâtisserie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Les voyages",
+                        "description": "Les amateurs de voyages peuvent s'intéresser à l'exploration de nouveaux lieux, de nouvelles cultures et de nouvelles expériences. Ils peuvent être intéressés par le tourisme local ou international, les voyages d'aventure ou les voyages culinaires."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Les jeux",
+                        "description": "Les amateurs de jeux peuvent s'intéresser à une variété de jeux, qu'il s'agisse de jeux de société, de jeux vidéo, de jeux de cartes ou de jeux de rôle. Ils peuvent également s'intéresser aux tournois de jeux en ligne ou en personne."
+                    },
+                    {
+                        "id": 7,
+                        "name": "La lecture",
+                        "description": "Les amateurs de lecture peuvent s'intéresser à une variété de genres, qu'il s'agisse de romans, de poésie, de science-fiction, de biographies ou d'autres types de littérature. Ils aiment explorer de nouveaux univers et se plonger dans des histoires captivantes."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Créativité",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une grande créativité. Ils ont l'aptitude à imaginer de nouvelles idées, à trouver des solutions novatrices et à exprimer leur créativité dans leur domaine d'intérêt."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Curiosité",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent une grande curiosité intellectuelle. Ils sont désireux d'en savoir plus sur leur domaine d'intérêt, de découvrir de nouvelles techniques, de nouveaux outils ou de nouveaux moyens de s'améliorer."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Patience",
+                        "description": "Les personnes qui aiment les loisirs et les passions ont souvent besoin de patience pour perfectionner leur pratique ou leur art. Ils comprennent que la maîtrise nécessite du temps et de la persévérance, et sont prêts à consacrer des heures de travail acharné pour atteindre leurs objectifs."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Passion",
+                        "description": "Les personnes qui aiment les loisirs et les passions sont souvent passionnées par leur domaine d'intérêt. Ils sont engagés et dévoués à leur activité, prêts à investir leur temps et leur énergie pour réaliser leur potentiel et atteindre leurs objectifs."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Flexibilité",
+                        "description": "Les personnes qui aiment les loisirs et les passions doivent souvent être flexibles et s'adapter à des situations imprévues. Ils doivent être prêts à changer de plan, à ajuster leur pratique ou leur stratégie, à expérimenter de nouvelles techniques ou de nouveaux équipements."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Persévérance",
+                        "description": "Les personnes qui aiment les loisirs et les passions doivent souvent persévérer pour atteindre leurs objectifs. Ils comprennent que la maîtrise nécessite du temps et de la patience, et sont prêts à travailler dur pour améliorer leur pratique et atteindre leurs objectifs."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Ouverture d'esprit",
+                        "description": "Les personnes qui aiment les loisirs et les passions doivent souvent être ouvertes d'esprit pour réussir. Ils doivent être prêts à apprendre de nouvelles techniques, à écouter les critiques constructives, à s'adapter à de nouvelles situations ou à de nouveaux publics, et à se remettre en question pour s'améliorer."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Perfectionnisme",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être perfectionnistes, ce qui peut parfois les empêcher de terminer un projet ou de prendre des risques créatifs."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Impatience",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être impatientes de voir les résultats de leur travail et peuvent avoir du mal à être patientes dans leur pratique ou leur apprentissage."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Égoïsme",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent parfois être égoïstes en consacrant tout leur temps et leur énergie à leur passion, au détriment de leur famille ou de leurs amis."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Procrastination",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir tendance à procrastiner lorsqu'il s'agit de travailler sur leur passion, ce qui peut les empêcher de progresser rapidement."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Élitisme",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent parfois être élitistes envers ceux qui ne partagent pas leur passion ou qui ne pratiquent pas leur activité de la même manière qu'eux."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Obsession",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent parfois devenir obsédées par leur passion, ce qui peut nuire à leur équilibre mental et émotionnel."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Difficulté à accepter les critiques",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir du mal à accepter les critiques constructives, car elles sont très attachées à leur travail et à leur créativité."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Musique",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées de musique, que ce soit en écoutant, en jouant ou en créant leur propre musique."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Photographie",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées de photographie, en capturant des moments, des paysages ou des portraits à travers leur appareil photo."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Artisanat",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées par l'artisanat, en créant des objets uniques et personnalisés à partir de matériaux bruts."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Sports",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées par les sports, que ce soit en pratiquant, en regardant ou en s'entraînant à une discipline sportive."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Cuisine",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées de cuisine, en créant de nouvelles recettes ou en expérimentant avec différents ingrédients et techniques culinaires."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Voyage",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées de voyage, en explorant de nouveaux endroits, en découvrant de nouvelles cultures et en rencontrant de nouvelles personnes."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Écriture",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent être passionnées d'écriture, en créant des histoires, des poèmes ou des essais sur des sujets qui les passionnent."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Peur de l'échec",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur de l'échec dans leur pratique, ce qui peut les empêcher de prendre des risques ou de tenter des expérimentations créatives."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Peur du jugement",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur du jugement des autres sur leur travail créatif, ce qui peut les empêcher de partager leur passion avec les autres."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Peur de la critique",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur des critiques constructives sur leur travail, ce qui peut les empêcher de progresser et d'améliorer leur pratique."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Peur de l'inconnu",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur de l'inconnu lorsqu'il s'agit d'explorer de nouvelles techniques, de nouveaux matériaux ou de nouvelles formes d'expression."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Peur de ne pas être à la hauteur",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur de ne pas être à la hauteur de leurs propres attentes ou de celles des autres, ce qui peut les empêcher de se lancer dans des projets créatifs ambitieux."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Peur de perdre leur passion",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur de perdre leur passion ou leur inspiration créative, ce qui peut les amener à ressentir de l'anxiété ou de la pression pour continuer à créer."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Peur de la monotonie",
+                        "description": "Les personnes qui aiment les loisirs et les passions peuvent avoir peur de la monotonie ou de la routine dans leur pratique créative, ce qui peut les amener à chercher constamment de nouvelles façons de s'exprimer et de se renouveler."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "niche_id": 9,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Méticuleux",
+                        "description": "Les collectionneurs peuvent être très précis et attentifs aux détails, veillant à ce que leurs objets soient bien organisés et en parfait état."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Curieux",
+                        "description": "Les collectionneurs ont souvent une grande curiosité intellectuelle, recherchant constamment de nouveaux objets à ajouter à leur collection et apprenant tout ce qu'ils peuvent sur ces objets."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Persévérant",
+                        "description": "Les collectionneurs peuvent faire preuve de persévérance et de patience pour trouver l'objet qu'ils recherchent depuis longtemps ou pour compléter leur collection"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Passionné",
+                        "description": "Les collectionneurs sont souvent passionnés par leur hobby, et peuvent être prêts à consacrer beaucoup de temps, d'argent et d'énergie à leur collection."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Organisé",
+                        "description": "Les collectionneurs doivent être organisés pour gérer leur collection, en gardant une trace des objets, en établissant des priorités et en trouvant des moyens de stocker et de protéger leurs objets."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Sélectif",
+                        "description": "Les collectionneurs peuvent être très sélectifs quant aux objets qu'ils choisissent d'ajouter à leur collection, recherchant uniquement les objets les plus intéressants ou les plus rares."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Visionnaire",
+                        "description": "Les collectionneurs peuvent avoir une vision claire de ce qu'ils veulent dans leur collection, en ayant une idée précise de ce qu'ils veulent et en travaillant pour y arriver."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Histoire",
+                        "description": "Les collectionneurs peuvent être intéressés par l'histoire de leurs objets, recherchant les origines et les histoires derrière chaque objet."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Design",
+                        "description": "Les collectionneurs peuvent être intéressés par l'aspect esthétique de leurs objets, appréciant les belles lignes, les couleurs et les matériaux."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Rare",
+                        "description": "Les collectionneurs peuvent être attirés par les objets rares ou uniques, cherchant des pièces rares pour compléter leur collection."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Thématique",
+                        "description": "Les collectionneurs peuvent avoir des collections basées sur un thème ou un sujet particulier, comme les timbres, les pièces de monnaie ou les jouets anciens."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Historique",
+                        "description": "Les collectionneurs peuvent être intéressés par des objets historiques ou des souvenirs liés à des événements importants ou des personnalités célèbres."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Artistique",
+                        "description": "Les collectionneurs peuvent collectionner des objets d'art, comme des peintures, des sculptures ou des céramiques."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Personnalisé",
+                        "description": "Les collectionneurs peuvent être intéressés par des objets personnalisés ou uniques, comme des bijoux faits à la main ou des vêtements vintage."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Patience",
+                        "description": "Les collectionneurs doivent souvent faire preuve de patience pour trouver les objets qu'ils cherchent ou pour compléter leur collection."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Détail orienté",
+                        "description": "Les collectionneurs ont souvent une grande attention aux détails, veillant à ce que chaque objet soit parfaitement conservé et bien documenté."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Organisation",
+                        "description": "Les collectionneurs doivent être organisés pour gérer leur collection, en gardant une trace des objets, en établissant des priorités et en trouvant des moyens de stocker et de protéger leurs objets."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Connaissance",
+                        "description": "Les collectionneurs doivent avoir une connaissance approfondie de leurs objets, en apprenant sur leur histoire, leur provenance et leur valeur."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Créativité",
+                        "description": "Les collectionneurs peuvent être créatifs dans la façon dont ils présentent leur collection, en trouvant des moyens intéressants et uniques de montrer leurs objets."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Détermination",
+                        "description": "Les collectionneurs doivent souvent faire preuve de détermination pour trouver les objets qu'ils cherchent ou pour compléter leur collection, surtout lorsqu'il s'agit d'objets rares ou difficiles à trouver."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Gestion financière",
+                        "description": "Les collectionneurs doivent souvent gérer leur budget avec soin, en veillant à ne pas dépenser trop d'argent sur leur collection."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Obsession",
+                        "description": "Les collectionneurs peuvent parfois devenir obsédés par leur collection, consacrant trop de temps et d'énergie à leur hobby."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Compulsion",
+                        "description": "Les collectionneurs peuvent avoir des comportements compulsifs, achetant des objets même s'ils n'en ont pas besoin ou s'ils ne peuvent pas se les permettre."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Rigidité",
+                        "description": "Les collectionneurs peuvent parfois être rigides dans leur approche, refusant de changer ou de s'adapter même lorsque cela pourrait être bénéfique pour leur collection."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Manque de lâcher prise",
+                        "description": "Les collectionneurs peuvent avoir du mal à se séparer de certains objets de leur collection, même s'ils n'en ont plus besoin ou s'ils ont des doubles."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Isolement social",
+                        "description": "Les collectionneurs peuvent parfois s'isoler socialement en consacrant trop de temps à leur collection et en négligeant d'autres relations et activités."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Dépense excessive",
+                        "description": "Les collectionneurs peuvent dépenser trop d'argent sur leur hobby, en sacrifiant d'autres aspects de leur vie pour leur collection."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Tendance à la compétition",
+                        "description": "Les collectionneurs peuvent parfois entrer en compétition les uns avec les autres pour trouver les objets les plus rares ou les plus précieux, ce qui peut créer de la tension et des conflits."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Timbres",
+                        "description": "Les collectionneurs de timbres peuvent être passionnés par l'histoire, la provenance et la rareté des timbres."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Pièces de monnaie",
+                        "description": "Les collectionneurs de pièces de monnaie peuvent être fascinés par la valeur historique et monétaire des pièces rares."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Jouets anciens",
+                        "description": "Les collectionneurs de jouets anciens peuvent avoir une passion pour les jouets vintage ou pour les jouets rares et uniques."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Cartes de sport",
+                        "description": "Les collectionneurs de cartes de sport peuvent être passionnés par les statistiques et l'histoire des sports, ainsi que par la rareté des cartes."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Art",
+                        "description": "Les collectionneurs d'art peuvent être passionnés par l'esthétique, l'histoire et la signification des œuvres d'art."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Vinyles",
+                        "description": "Les collectionneurs de vinyles peuvent être passionnés par la musique et l'histoire des enregistrements vinyles."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Objets de collection en série",
+                        "description": "Les collectionneurs d'objets de collection en série, comme les figurines ou les miniatures, peuvent être passionnés par les personnages ou les thèmes représentés par les objets."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "La peur de perdre ou de se faire voler leur collection",
+                        "description": "Les collectionneurs peuvent avoir peur de perdre leur collection, soit en laissant les objets se détériorer, soit en laissant quelqu'un les voler."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La peur de manquer un objet rare",
+                        "description": "Les collectionneurs peuvent avoir peur de manquer l'occasion d'acheter un objet rare ou unique pour leur collection."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La peur de la critique",
+                        "description": "Les collectionneurs peuvent avoir peur d'être critiqués pour leur hobby ou leur collection, en particulier si elle est considérée comme étrange ou inutile."
+                    },
+                    {
+                        "id": 4,
+                        "name": "La peur de ne pas avoir assez de place",
+                        "description": "Les collectionneurs peuvent avoir peur de ne pas avoir suffisamment d'espace pour leur collection, en particulier si elle continue de croître."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La peur de la perte de valeur",
+                        "description": "Les collectionneurs peuvent avoir peur que leur collection perde de la valeur, soit en raison de la détérioration des objets, soit en raison de la baisse de la demande."
+                    },
+                    {
+                        "id": 6,
+                        "name": "La peur de manque de temps",
+                        "description": "Les collectionneurs peuvent avoir peur de ne pas avoir suffisamment de temps pour consacrer à leur hobby, en particulier si cela interfère avec d'autres aspects de leur vie."
+                    },
+                    {
+                        "id": 7,
+                        "name": "La peur de se lasser de leur collection",
+                        "description": "Les collectionneurs peuvent avoir peur de se lasser de leur collection, en particulier si elle devient routinière ou monotone."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "niche_id": 10,
+        "personnalite": [
+            {
+                "id": 1,
+                "name": "Traits de caractère",
+                "slug": "traits_caractere",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Généreux",
+                        "description": "les gens qui aiment offrir des cadeaux et célébrer les occasions spéciales sont souvent généreux et aiment faire plaisir à leurs proches."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Attentionné",
+                        "description": "ceux qui sont sensibles aux occasions spéciales et qui aiment offrir des cadeaux ont souvent un côté attentionné, prenant en compte les intérêts et les goûts des autres."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Créatif",
+                        "description": "l'envie d'offrir des cadeaux originaux ou de créer des moments uniques peut impliquer un esprit créatif pour trouver des idées de cadeaux ou d'expériences spéciales."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Festif",
+                        "description": "les personnes qui aiment célébrer les occasions spéciales ont souvent un esprit festif et apprécient les moments de convivialité."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Perspicace",
+                        "description": "la capacité de comprendre les besoins et les désirs des autres peut aider à choisir des cadeaux qui plairont vraiment."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Réfléchi",
+                        "description": "prendre le temps de réfléchir et de planifier à l'avance peut aider à créer des moments mémorables et à offrir des cadeaux qui ont une signification particulière."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Empathique",
+                        "description": "l'empathie peut aider à se mettre à la place des autres et à comprendre ce qui est important pour eux, ce qui peut être utile lors du choix de cadeaux."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Intérêts personnels",
+                "slug": "interets_personnels",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Les passionnés de la cuisine",
+                        "description": "Les gens qui aiment cuisiner et expérimenter de nouvelles recettes pourraient être intéressés par des livres de cuisine, des ustensiles de cuisine spécialisés, des cours de cuisine ou des abonnements à des box culinaires."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Les amateurs de voyages",
+                        "description": "Les personnes qui aiment explorer de nouveaux endroits et cultures pourraient être intéressées par des guides de voyage, des équipements de voyage, des expériences de voyage uniques ou des cartes du monde décoratives."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Les sportifs",
+                        "description": "Les amateurs de sports pourraient être intéressés par des équipements de sport, des vêtements de sport, des billets pour des événements sportifs ou des abonnements à des magazines de sport."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Les passionnés de musique",
+                        "description": "Les gens qui aiment écouter de la musique, aller à des concerts ou jouer d'un instrument pourraient être intéressés par des écouteurs de qualité, des billets de concert, des instruments de musique ou des abonnements à des services de streaming musical."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Les amateurs d'art",
+                        "description": "Les personnes qui apprécient l'art et la culture pourraient être intéressées par des livres d'art, des visites de musées, des abonnements à des magazines d'art ou des reproductions d'œuvres d'art célèbres."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Les passionnés de la nature",
+                        "description": "Les gens qui aiment passer du temps à l'extérieur et découvrir la nature pourraient être intéressés par des équipements de camping, des abonnements à des magazines de plein air, des livres sur la faune et la flore ou des expériences de randonnée."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Les passionnés de technologie",
+                        "description": "Les personnes qui s'intéressent aux dernières innovations technologiques pourraient être intéressées par des gadgets électroniques, des ordinateurs portables, des smartphones haut de gamme ou des abonnements à des magazines de technologie. Bien sûr, voici quelques exemples d'intérêts personnels qui pourraient se rapprocher de la cible de la niche."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Les amateurs de vin",
+                        "description": "Les personnes qui apprécient le vin pourraient être intéressées par des accessoires pour la dégustation de vin, des abonnements à des clubs de vin, des cours de dégustation de vin ou des voyages dans des régions viticoles."
+                    },
+                    {
+                        "id": 9,
+                        "name": "Les passionnés de la mode",
+                        "description": "Les gens qui aiment la mode pourraient être intéressés par des accessoires de mode, des bijoux, des vêtements de créateurs, des chaussures de qualité ou des abonnements à des magazines de mode."
+                    },
+                    {
+                        "id": 10,
+                        "name": "Les amoureux des animaux de compagnie",
+                        "description": "Les personnes qui aiment les animaux de compagnie pourraient être intéressées par des jouets pour animaux de compagnie, des articles de soin pour animaux de compagnie, des lits pour animaux de compagnie ou des portraits personnalisés de leurs animaux de compagnie."
+                    },
+                    {
+                        "id": 11,
+                        "name": "Les fans de cinéma et de télévision",
+                        "description": "Les amateurs de films et de séries pourraient être intéressés par des DVD, des Blu-ray, des abonnements à des services de streaming, des affiches de films ou des accessoires liés à leurs films et séries préférés."
+                    },
+                    {
+                        "id": 12,
+                        "name": "Les amateurs de livres",
+                        "description": "Les personnes qui aiment lire pourraient être intéressées par des livres, des liseuses électroniques, des abonnements à des clubs de livres ou des accessoires pour la lecture."
+                    },
+                    {
+                        "id": 13,
+                        "name": "Les fans de jeux de société",
+                        "description": "Les personnes qui aiment les jeux de société pourraient être intéressées par des jeux de société populaires, des jeux de société pour enfants, des jeux de société pour adultes ou des accessoires pour les jeux de société."
+                    },
+                    {
+                        "id": 14,
+                        "name": "Les amateurs de loisirs créatifs",
+                        "description": "Les personnes qui aiment les loisirs créatifs pourraient être intéressées par des fournitures d'art et d'artisanat, des kits de bricolage, des cours d'art et d'artisanat ou des livres sur les loisirs créatifs."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Qualités",
+                "slug": "qualite",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Originalité",
+                        "description": "Les cadeaux et les occasions spéciales sont souvent l'occasion de montrer à quel point on connaît et on apprécie une personne. Un cadeau original peut ainsi montrer que l'on a pris le temps de réfléchir à ce qui pourrait plaire à la personne."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Personnalisation",
+                        "description": "Les cadeaux personnalisés sont toujours très appréciés car ils montrent que l'on a pris le temps de créer quelque chose d'unique pour la personne. On peut par exemple ajouter le nom ou les initiales de la personne sur le cadeau."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Émotion",
+                        "description": "Les occasions spéciales sont souvent chargées d'émotions et de sentiments. Les cadeaux qui reflètent ces émotions peuvent ainsi avoir une grande valeur pour la personne qui les reçoit."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Qualité",
+                        "description": "Les cadeaux de qualité sont toujours appréciés car ils durent dans le temps et témoignent de l'importance que l'on accorde à la personne. Il peut s'agir de produits artisanaux, de bijoux en or ou en argent, ou encore de produits de haute qualité."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Utilité",
+                        "description": "Les cadeaux qui ont une utilité pratique peuvent également être appréciés. Par exemple, un livre sur le sujet préféré de la personne, un accessoire de cuisine pour un ami qui adore cuisiner, ou encore un équipement sportif pour un ami qui aime faire de l'exercice."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Esthétique",
+                        "description": "Les cadeaux qui sont beaux et esthétiques peuvent également avoir un grand impact. Il peut s'agir d'un objet décoratif pour la maison, d'un bijou élégant ou d'un vêtement de haute qualité."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Originalité",
+                        "description": "Les occasions spéciales sont souvent l'occasion de sortir de l'ordinaire et d'offrir quelque chose d'inhabituel. Les cadeaux originaux peuvent ainsi marquer les esprits et rester dans les mémoires pendant longtemps."
+                    },
+                    {
+                        "id": 8,
+                        "name": "Éco-responsabilité",
+                        "description": "De plus en plus de personnes sont sensibles à la préservation de l'environnement et cherchent des cadeaux respectueux de l'environnement. Les cadeaux éco-responsables peuvent ainsi être une bonne option, comme des produits fabriqués à partir de matériaux recyclés ou des cadeaux durables et réutilisables."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Défauts",
+                "slug": "defaut",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Manque de personnalisation",
+                        "description": "Les cadeaux et les occasions spéciales sont souvent l'occasion de montrer à quel point on connaît et on apprécie une personne. Si un cadeau manque de personnalisation, il peut sembler impersonnel et peu réfléchi."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Qualité insuffisante",
+                        "description": "Les cadeaux de qualité sont importants pour de nombreuses personnes. Si un cadeau est de qualité inférieure, il risque de se casser rapidement et de ne pas durer dans le temps, ce qui peut être décevant pour la personne qui le reçoit."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Manque d'originalité",
+                        "description": "Les cadeaux et les occasions spéciales sont souvent l'occasion de sortir de l'ordinaire et d'offrir quelque chose d'inhabituel. Si un cadeau manque d'originalité, il peut sembler banal et peu réfléchi."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Manque d'émotion",
+                        "description": "Les occasions spéciales sont souvent chargées d'émotions et de sentiments. Si un cadeau manque d'émotion, il risque de manquer de sens et de ne pas toucher la personne qui le reçoit."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Accessibilité insuffisante",
+                        "description": "Les cadeaux qui sont inaccessibles en termes de prix peuvent être exclusifs et luxueux, mais peuvent aussi exclure une partie des clients qui cherchent des cadeaux abordables et accessibles. Il est important de proposer des options pour tous les budgets."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Manque d'esthétique",
+                        "description": "Les cadeaux qui manquent d'esthétique peuvent décevoir la personne qui les reçoit. Il est important de proposer des cadeaux qui soient à la fois beaux et pratiques."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Manque d'écologie",
+                        "description": "Les cadeaux qui ne sont pas respectueux de l'environnement peuvent déplaire à des clients soucieux de l'écologie et de la durabilité. Il est important de proposer des options éco-responsables pour répondre à leurs attentes."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Passions",
+                "slug": "passion",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Les voyages",
+                        "description": "Les cadeaux qui rappellent des souvenirs de voyages ou qui aident à préparer de futurs voyages peuvent être très appréciés. Cela peut inclure des guides de voyage, des accessoires de voyage ou des souvenirs de destinations préférées."
+                    },
+                    {
+                        "id": 2,
+                        "name": "La cuisine",
+                        "description": "Les cadeaux liés à la cuisine, comme des livres de recettes, des ustensiles de cuisine spécialisés ou des cours de cuisine, peuvent être une excellente option pour les personnes passionnées de cuisine."
+                    },
+                    {
+                        "id": 3,
+                        "name": "La mode",
+                        "description": "Les cadeaux liés à la mode, comme des bijoux, des vêtements ou des accessoires de mode, peuvent être une bonne option pour les personnes qui suivent les dernières tendances et aiment s'habiller avec style."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Les loisirs créatifs",
+                        "description": "Les cadeaux liés aux loisirs créatifs, comme des kits de broderie, des fournitures pour le scrapbooking ou des cours de peinture, peuvent être une excellente option pour les personnes qui aiment créer et fabriquer des choses."
+                    },
+                    {
+                        "id": 5,
+                        "name": "La musique",
+                        "description": "Les cadeaux liés à la musique, comme des écouteurs de haute qualité, des billets de concert ou des cours de musique, peuvent être une bonne option pour les personnes passionnées de musique et de concerts."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Les sports",
+                        "description": "Les cadeaux liés aux sports, comme des équipements de sport, des billets pour des matchs ou des cours de fitness, peuvent être une bonne option pour les personnes passionnées de sport."
+                    },
+                    {
+                        "id": 7,
+                        "name": "La nature",
+                        "description": "Les cadeaux liés à la nature, comme des livres sur la faune et la flore, des accessoires pour les randonnées ou des produits de soins naturels, peuvent être une excellente option pour les personnes qui aiment passer du temps à l'extérieur et qui sont sensibles à la préservation de l'environnement."
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Peurs",
+                "slug": "peur",
+                "elements": [
+                    {
+                        "id": 1,
+                        "name": "Peur de ne pas choisir le bon cadeau",
+                        "description": "Les cadeaux et les occasions spéciales peuvent être une source de pression pour certaines personnes qui craignent de ne pas trouver le cadeau idéal. Il est important de proposer des options variées et de donner des conseils pour aider les clients à faire le meilleur choix."
+                    },
+                    {
+                        "id": 2,
+                        "name": "Peur de ne pas respecter les traditions",
+                        "description": "Les occasions spéciales peuvent être chargées de traditions et de rituels. Certains clients peuvent avoir peur de ne pas respecter ces traditions et de commettre une erreur. Il est important de proposer des cadeaux qui soient en accord avec les traditions et les attentes culturelles."
+                    },
+                    {
+                        "id": 3,
+                        "name": "Peur de dépenser trop",
+                        "description": "Les cadeaux et les occasions spéciales peuvent représenter un coût important pour certains clients, qui peuvent craindre de dépenser trop. Il est important de proposer des options pour tous les budgets et de donner des conseils pour aider les clients à faire des choix économiques."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Peur de manquer de temps",
+                        "description": "Les cadeaux et les occasions spéciales peuvent être sources de stress pour les clients qui manquent de temps pour les préparer. Il est important de proposer des options pratiques et rapides pour aider les clients à se faciliter la vie."
+                    },
+                    {
+                        "id": 5,
+                        "name": "Peur de ne pas être original",
+                        "description": "Les cadeaux et les occasions spéciales peuvent être l'occasion de sortir de l'ordinaire et d'offrir quelque chose d'inhabituel. Certains clients peuvent avoir peur de manquer d'originalité et de ne pas surprendre la personne qui reçoit le cadeau. Il est important de proposer des cadeaux originaux et créatifs pour répondre à leurs attentes."
+                    },
+                    {
+                        "id": 6,
+                        "name": "Peur de ne pas être à la hauteur des attentes",
+                        "description": "Les occasions spéciales comme les mariages, les anniversaires importants ou les fêtes de fin d'année peuvent être source de stress pour les clients qui craignent de ne pas être à la hauteur des attentes de la personne qui reçoit le cadeau. Il est important de proposer des options de cadeaux de qualité qui répondent aux attentes des clients."
+                    },
+                    {
+                        "id": 7,
+                        "name": "Peur de ne pas être compris",
+                        "description": "Les cadeaux peuvent être l'occasion de montrer à quelqu'un à quel point on le connaît bien. Cependant, certains clients peuvent avoir peur de ne pas être compris et de proposer un cadeau qui ne correspond pas aux goûts ou aux intérêts de la personne qui le reçoit. Il est important de proposer des options de cadeaux personnalisés qui reflètent les goûts et les intérêts de la personne qui reçoit le cadeau."
+                    }
+                ]
+            }
+        ]
+    }
+]

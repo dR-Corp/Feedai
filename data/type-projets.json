@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Boutique Ecom",
+        "slug": "boutique-ecom"
+    },
+    {
+        "id": 2,
+        "name": "Business physique",
+        "slug": "business-physique"
+    },
+    {
+        "id": 3,
+        "name": "Community management",
+        "slug": "community-management"
+    },
+    {
+        "id": 4,
+        "name": "Createur de contenu Web",
+        "slug": "createur-contenu-web"
+    },
+    {
+        "id": 5,
+        "name": "Freelance",
+        "slug": "freelance"
+    },
+    {
+        "id": 6,
+        "name": "Projet personnalisé",
+        "slug": "projet-personnalise"
+    }
+]

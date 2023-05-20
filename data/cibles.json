@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "slug": "tranche_age",
+        "name": "Tranche d'âge",
+        "elements": [
+            "10-25ans", 
+            "25-45ans", 
+            "45-60ans"
+        ]
+    },
+    {
+        "id": 2,
+        "slug": "genre",
+        "name": "Genre",
+        "elements": [
+            "Masculin", 
+            "Féminin", 
+            "Masculin & Féminin"
+        ]
+    },
+    {
+        "id": 3,
+        "slug": "canaux_achat",
+        "name": "Canaux d'achat préférés",
+        "elements": [
+            "Boutique en ligne", 
+            "réseaux sociaux", 
+            "magasins éphémères"
+        ]
+    },
+    {
+        "id": 4,
+        "slug": "frequence_achat",
+        "name": "Fréquence d'achat",
+        "elements": [
+            "Tous les mois",
+            "Tous les 2-3 mois",
+            "Tous les 3-4 mois",
+            "Tous les 5-6 mois"
+        ]
+    },
+    {
+        "id": 5,
+        "slug": "montant_moyen",
+        "name": "Montant moyen dépensé",
+        "elements": [
+            "50-100 €",
+            "100-200 €",
+            "200-500 €",
+            "500-1000 €"
+        ]
+    }
+]
+

@@ -1,0 +1,141 @@
+[
+    {
+        "id": 1,
+        "name": "Vêtements et accessoires",
+        "slug": "vetements-et-accesssoires",
+        "sous_categories": [
+            "Vêtements écologiques et durables",
+            "Mode éthique et écologique", 
+            "Vêtements pour bébés et enfants",
+            "Vêtements de sport et athleisure",
+            "Vêtements pour femmes enceintes",
+            "Vêtements grande taille",
+            "Accessoires faits main (bijoux, sacs, foulards)"
+        ],
+        "elements" : [
+            {
+                "id": 1,
+                "name" : "Mode éthique et écologique"
+            },
+            {
+                "id": 2,
+                "name" : "Vêtements pour bébés et enfants"
+            },
+            {
+                "id": 3,
+                "name" : "Vêtements de sport et athleisure"
+            },
+            {
+                "id": 4,
+                "name" : "Vêtements pour femmes enceintes"
+            },
+            {
+                "id": 5,
+                "name" : "Vêtements grande taille"
+            },
+            {
+                "id": 6,
+                "name" : "Accessoires faits main (bijoux, sacs, foulards)"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Beauté et soins personnels",
+        "sous_categories": [
+            "Cosmétiques naturels et biologiques", 
+            "Produits pour le soin des cheveux",
+            "Produits pour le soin de la peau",
+            "Produits de rasage et soins pour hommes",
+            "Parfums et fragrances"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Santé et bien-être",
+        "sous_categories": [
+            "Compléments alimentaires et vitamines", 
+            "Aliments diététiques et sans allergènes",
+            "Produits de fitness et équipements d'exercice",
+            "Huiles essentielles et aromathérapie",
+            "Thérapies alternatives et holistiques"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Maison et jardin",
+        "sous_categories": [
+            "Décoration d'intérieur et objets design", 
+            "Meubles et luminaires",
+            "Literie et linge de maison",
+            "Jardinage et accessoires de jardin",
+            "Produits de cuisine et ustensiles"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Électronique et gadgets",
+        "sous_categories": [
+            "Accessoires pour smartphones et tablettes", 
+            "Objets connectés et domotique",
+            "Drones et accessoires",
+            "Audio et équipements musicaux",
+            "Gaming et accessoires pour jeux vidéo"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Animaux de compagnie",
+        "sous_categories": [
+            "Nourriture et accessoires pour chiens", 
+            "Nourriture et accessoires pour chats",
+            "Produits pour oiseaux, reptiles et petits animaux",
+            "Jouets et vêtements pour animaux",
+            "Soins et santé des animaux"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Enfants et jouets",
+        "sous_categories": [
+            "Jouets éducatifs et d'apprentissage", 
+            "Jeux de société et casse-têtes",
+            "Articles de fête et déguisements",
+            "Livres et supports d'apprentissage",
+            "Artisanat et activités créatives"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Loisirs et passions",
+        "sous_categories": [
+            "Matériel de photographie et accessoires", 
+            "Fournitures d'art et de peinture",
+            "Articles de sport et de plein air",
+            "Voyages et équipements de camping",
+            "Instruments de musique et accessoires"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Collections et objets uniques",
+        "sous_categories": [
+            "Objets de collection et antiquités", 
+            "Artisanat et créations locales",
+            "Articles vintage et rétro",
+            "Objets d'art et de décoration",
+            "Produits faits main et personnalisés"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Cadeaux et occasions spéciales",
+        "sous_categories": [
+            "Cadeaux personnalisés et sur mesure", 
+            "Articles de mariage et accessoires",
+            "Cadeaux pour anniversaires, fêtes et autres événements",
+            "Emballages cadeaux et cartes de vœux",
+            "Expériences et abonnements en cadeau"
+        ]
+    }
+]
