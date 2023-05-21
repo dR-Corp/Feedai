@@ -86,9 +86,8 @@
                                     
                                     <div class="dropdown font-sans-serif">
                                         <button
-                                            class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none ms-2"
-                                            type="button" id="email-settings" data-bs-toggle="dropdown"
-                                            data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span
+                                            class="btn btn-falcon-default text-600 btn-sm ms-2" id="btn-update"
+                                            type="button" aria-haspopup="true" aria-expanded="false"><span
                                                 class="fas fa-edit"></span></button>
                                         <button
                                             class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none ms-2"
@@ -114,7 +113,7 @@
                                 <form class="row g-3">
                                     <div class="col-lg-12">
                                         <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"><?php echo $historics['title'];?></h5></label>
-                                        <textarea class="form-control py-4" id="details" name="intro" cols="30"
+                                        <textarea class="form-control py-4" readOnly id="details" name="intro" cols="30"
                                             rows="13">
                                             <?php if ($historics != null) :?>
                                                 <?php echo json_decode($historics['details']);?>
@@ -162,7 +161,7 @@
                                             <input class="form-control" id="prompt" type="text" name="prompt"
                                                 placeholder="Entre votre requête ici" />
                                         </div>
-                                        <a class="btn btn-falcon-primary btn-sm " id="btn-prompt" >Lancer</a>
+                                        <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-spin"></i> Lancer</a>
                                     </form>
                                 </div>
                             </div>
@@ -239,8 +238,13 @@
     <!-- script js -->
     <?php include('script.php') ?>
     <script>
-            
+        $('#btn-update').on('click', function() {
+            $('#details').prop('readOnly', false);
+        });
         $('#btn-prompt').on('click', function() {
+
+            $('#form-activer-loader').hide();
+            $('.btn-falcon-primary').addClass('disabled');
             //on ajoute chaque élément dans la variable object prompt
             prompt_req = $('#prompt').val();
             user_id = 2 ;
@@ -294,7 +298,6 @@
                             // window.location.replace("contenu.php.php");
                         }
                     });
-                   
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -339,6 +342,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer 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'       
+                    // 'Authorization': 'Bearer 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'       
                 },
                 body: JSON.stringify({
                     prompt: prompt,
