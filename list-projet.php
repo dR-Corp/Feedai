@@ -455,7 +455,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -474,7 +474,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -533,70 +533,59 @@
             $('#form-activer-loader').show()
             $(e.target).prop('disabled', true)
 
-            filteredBesoins = besoins.filter(obj => obj.choosed === true)
-            filteredMotivations = motivations.filter(obj => obj.choosed === true)
-            filteredPositionnements = positionnements.filter(obj => obj.choosed === true)
-            filteredProfils = profils.filter(obj => obj.choosed === true)
 
-            const prompt_recap = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
-                Voici les besoins satisfaits par le ou les produits impliqués dans ce projet ${JSON.stringify(filteredBesoins)}.
-                Voici les motivations pour utiliser le ou les produits impliqués dans ce projet ${JSON.stringify(filteredMotivations)}.
-                Voici les positionnement possibles pour le ou les produits impliqués dans ce projet ${JSON.stringify(filteredPositionnements)}.
-                Voici les profils fictifs pouvant représenter un potentiel client pour notre projet en vue d\'atteindre notre objectif ${JSON.stringify(filteredProfils)}.
-                A partir de ces informations, et vos bases de connaissances du domaine, veuillez générer 
-                - un récapitulatif sur le projet, 
-                - un profil type à partir des profil
-                - les objectifs à court terme intéressant,
-                - les tâches à mettre en place et 
-                - quelques propositions de stratégies interessantes à place. 
-                Renvoi le résultat au format HTML avec les balises nécessaires à un affichage structuré !`;
+            // partie à revoir *****************************************************************
 
-            const recap = await send_request_2(prompt_recap)
-            console.log(recap)
+            selectedBesoins = besoins.filter(obj => obj.choosed === true)
+            selectedMotivations = motivations.filter(obj => obj.choosed === true)
+            selectedPositionnements = positionnements.filter(obj => obj.choosed === true)
+            selectedProfils = profils.filter(obj => obj.choosed === true)
 
-            const description = {
-                profils: filteredProfils,
-                positionnement: filteredPositionnements,
-                motivations: filteredMotivations,
-                besoins: filteredBesoins,
-                recapitulatif: recap
-            }
+            const prompt_description = `Voici les informations suivantes sur un projet e-commerce : ${projet}.
+                Voici les besoins satisfaits par le ou les produits impliqués dans ce projet ${selectedBesoins}.
+                Voici les motivations pour utiliser le ou les produits impliqués dans ce projet ${selectedMotivations}.
+                Voici les positionnement possibles pour le ou les produits impliqués dans ce projet ${selectedPositionnements}.
+                Voici les profils fictifs pouvant représenter un potentiel client pour notre projet en vue d\'atteindre notre objectif ${selectedProfils}.
+                A partir de ces informations, veuillez générer : un récapitulatif (structuré en html) du le projet, un profil type à partir des profils sélectionné et des suggestions sur :
+                - des objectifs à court terme intéressant,
+                - des tâches à réaliser pour l'atteinte de ces objectifs,
+                - des stratégies markétings intéressante à adopter dans la même optique. 
+                Veuillez renvoyer le résultat sous forme d'un objet JSON, avec la structure suivantes, et assurez-vous que ce résultat peut être analysé par un JSON.parse() sans erreur. 
+                {
+                    "recapitulatif": "",
+                    "profil": "",
+                    "suggestions": {
+                        "objectifs": [{"id": 1, "objectif": ""},...],
+                        "taches": [{"id": 1, "tache": ""},...],
+                        "strategies": [{"id": 1, "strategie": ""},...],
+                        "titres": [{"id": 1, "titre": ""},...]
+                    }
+                }`;
 
-            // requete pour activer le projet, 
-            // enregistrer le récap, 
-            // enregistrer les profils, 
-            $.ajax({ 
+            const description = await send_request(prompt_description)
+            console.log(description)
+
+            // const data = {
+            // }
+            // fin de la partie à revoir ***************************************************************
+
+            $.ajax({
                 type: "POST",
                 url: "Projet/activer.php",
                 data: {
                     id: currentID,
+                    profils: selectedProfils,
+                    positionnements: selectedPositionnements,
+                    motivations: selectedMotivations,
+                    besoins: selectedBesoins,
                     description: description
                 },
                 success: async function(response) {
-
-                    // $('#page-1 :input').prop('disabled', false);
-                    // $('#page-2 :input').prop('disabled', false);
-                    // $('#form-activer-loader').hide()
-                    // $(e.target).prop('disabled', false)
                     
-                    response = JSON.parse(response);
-                    console.log(response.alert, response.alert_message);
+                    // response = JSON.parse(response);
+                    // console.log(response.alert, response.alert_message, response.alert_data);
 
-                    //gestion du centre de suggestion
-
-                    // const prompt_suggestions = `Voici les informations suivantes sur un projet e-commerce : ${description}.
-                    //     En utilisant ces informations, veuillez générer pour ce projet : les objectifs à court terme intéressant, les tâches à mettre en oeuvre, les titres de contenus web à qui pourrait être redigés, des stratégies interessantes à place.
-                    //     Renvoi lz résultat sous forme d'un objet JSON, avec une structure similaire à celle-ci.
-                    //     [
-                    //         [{"id": 1, "objectif": ""},...]
-                    //         [{"id": 1, "tache": ""},...]
-                    //         [{"id": 1, "strategie": ""},...]
-                    //         [{"id": 1, "titre": ""},...]
-                    //     ]`;
-
-                    // const suggestions = await send_request_2(prompt_suggestions)
-                    // suggestions = JSON.parse(suggestions)
-                    // console.log(suggestions)
+                    console.log(JSON.parse(response));
 
                     $('#form-activer-loader').hide()
                     $(e.target).prop('disabled', false)
