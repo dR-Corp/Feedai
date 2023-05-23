@@ -61,12 +61,12 @@
                 </div>
                 <?php
                         include('db_connexion.php');
-                        $id = 2;
-                        $sql = 'SELECT * FROM historics WHERE projet_id = :id ORDER BY id DESC LIMIT 1';
+                        $projet_id = 8;
+                        $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id ORDER BY projet_id DESC LIMIT 1';
                         // $stmt = $db->query($sql);
                         // $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         $stmt = $db->prepare($sql);
-                        $stmt->execute(array(':id' => $id));
+                        $stmt->execute(array(':projet_id' => $projet_id));
                         $historics = $stmt->fetch(PDO::FETCH_ASSOC);
                         
                     ?>
@@ -110,7 +110,10 @@
                                 </div>
                             </div>
                             <div class="card-body bg-light">
-                                <form class="row g-3">
+                                
+                                <div id="div-redaction" class="border p-4">Aucun contenu à afficher pour le moment !</div>
+
+                                <form id="form-edit-redaction" class="row g-3">
                                     <div class="col-lg-12">
                                         <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"><?php echo $historics['title'];?></h5></label>
                                         <textarea class="form-control py-4" readOnly id="details" name="intro" cols="30"
@@ -128,7 +131,7 @@
                         </div>
                         <!-- <?php
                             include('db_connexion.php');
-                            $projet_id = 2;
+                            $projet_id = 8;
                             $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id  ORDER BY id DESC';
                             $stmt = $db->prepare($sql);
                             $stmt->execute(array(':projet_id' => $projet_id));
@@ -161,13 +164,13 @@
                                             <input class="form-control" id="prompt" type="text" name="prompt"
                                                 placeholder="Entre votre requête ici" />
                                         </div>
-                                        <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-spin"></i> Lancer</a>
+                                        <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-pulse"></i> Lancer</a>
                                     </form>
                                 </div>
                             </div>
                             <?php
                                 include('db_connexion.php');
-                                $projet_id = 2;
+                                $projet_id = 8;
                                 $user_id = 1;
                                 $sql = 'SELECT * FROM contenu_web WHERE projet_id = :projet_id AND user_id = :user_id ORDER BY id DESC';
                                 $stmt = $db->prepare($sql);
@@ -189,19 +192,111 @@
 
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <h5 class="mb-0">Suggestions de Feed ai</h5>
+                                    <h5 class="mb-0">Suggestions de contenu</h5>
                                 </div>
-                                <div class="card-body bg-light">
-                                    <h5 class="fs-0">Ceci est un exemple de suggestion</h5>
-                                    <p class="fs--1">Transfer this account to another user or to an organization where
-                                        you have the ability to create repositories.</p><a
-                                        class="btn btn-falcon-warning d-block" href="#!">Utiliser</a>
-                                    <div class="border-dashed-bottom my-4"></div>
-                                    <h5 class="fs-0">Bon encore une autre</h5>
-                                    <p class="fs--1">Once you delete a account, there is no going back. Please be
-                                        certain.</p><a class="btn btn-falcon-warning d-block" href="#!">Utiliser</a>
-                                </div>
+                                <div id="suggestions" class="card-body bg-light"></div>
                             </div>
+
+                            <script>
+
+                                var projet_id = 8;
+
+                                function rediger_suggestion(id) {
+                                    
+                                    $.ajax({
+                                        url: 'get_titre_suggestion.php',
+                                        method: 'GET',
+                                        data: {
+                                            id: id
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            console.log(response);
+                                            var titre = response;
+                                            var prompt = 'Redige moi un contenu web sur le titre ' + titre.contenu
+                                            
+                                            $("#prompt").val(prompt)
+                                            supprimer_suggestion(titre.id)
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+
+                                }
+                                
+                                function supprimer_suggestion(id) {
+                                    
+                                    $.ajax({
+                                        url: 'del_titres_suggestions.php',
+                                        method: 'GET',
+                                        data: {
+                                            id: id
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            console.log(response);
+                                            // actualisation de la liste des suggestions
+                                            show_titres_suggestions(projet_id);
+                                            // $("#suggestion_"+id).hide()
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+
+                                }
+
+                                $(document).ready(function() {
+                                    projet_id = 8;
+                                    show_titres_suggestions(projet_id);
+                                });
+
+                                function show_titres_suggestions(projet_id) { 
+
+                                    var id_projet = 8; // à récupérer du projet actif
+
+                                    $.ajax({
+                                        url: 'get_titres_suggestions.php',
+                                        method: 'GET',
+                                        data: {
+                                            id_projet: id_projet
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            var titres = response;
+
+                                            var cardBody = $('#suggestions');
+                                            cardBody.html("")
+
+                                            if(titres.length > 0) {
+
+                                                $.each(titres, function(index, titre) {
+                                                    var suggestion = $('<div id="suggestion_'+titre.id+'" class="suggestion"></div>');
+                                                    var fsContainer = $('<div class="fs--1 d-flex justify-content-start align-items-start"></div>');
+                                                    var iconContainer = $('<div class="d-flex px-2"></div>');
+                                                    var redigerLink = $('<a href="#!" onclick="rediger_suggestion(' + titre.id + ')" class="mx-2" title="rediger"><i class="fas fa-pen"></i></a>');
+                                                    var supprimerLink = $('<a href="#!" onclick="supprimer_suggestion(' + titre.id + ')" title="supprimer"><i class="fas fa-trash text-secondary"></i></a>');
+                                                    var titreElement = $('<p></p>').text(titre.contenu);
+                                                    var borderDiv = $('<div class="border-dashed-bottom mb-3"></div>');
+
+                                                    iconContainer.append(redigerLink, supprimerLink);
+                                                    fsContainer.append(iconContainer, titreElement);
+                                                    suggestion.append(fsContainer, borderDiv);
+                                                    cardBody.append(suggestion);
+                                                });
+                                            }
+                                            else {
+                                                cardBody.html('<div class="fs--1"><p>Aucune suggestion</p></div>');
+                                            }
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+                                }
+
+                            </script>
 
                             <!-- <div class="card mb-3 overflow-hidden">
                                 <div class="card-header">
@@ -238,17 +333,29 @@
     <!-- script js -->
     <?php include('script.php') ?>
     <script>
+        
+        $('#form-edit-redaction').hide()
+
         $('#btn-update').on('click', function() {
             $('#details').prop('readOnly', false);
+            $('#form-edit-redaction').show()
+            $('#div-redaction').hide()
         });
-        $('#btn-prompt').on('click', function() {
+        
+        $('#form-activer-loader').hide();
+        // $('#div-redaction').hide()
 
-            $('#form-activer-loader').hide();
+        $('#btn-prompt').on('click', function() {
+            
+            $('#form-edit-redaction').hide()
+
+            $('#form-activer-loader').show();
             $('.btn-falcon-primary').addClass('disabled');
+
             //on ajoute chaque élément dans la variable object prompt
             prompt_req = $('#prompt').val();
-            user_id = 2 ;
-            projet_id = 2 ;
+            user_id = 1;
+            projet_id = 8;
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'Projet/detail.php',
@@ -262,17 +369,28 @@
 
                     let prompt = 'Soit les informations suivantes sur un projet e-commerce. ' + JSON.stringify(projet) + '. ';
 
+                    // const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
+                    //     À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
+                    //     ${prompt_req} 
+                    //     Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}
+                    //     Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`;
+
                     const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
                         À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
                         ${prompt_req} 
-                        Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}
-                        Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`;
+                        Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}.
+                        Le contenu de body doit âtre donc contenu web redigé de A à Z (article de blog ou fiche de produit, ...) et structuré en html avec titre (balises h3) et sous titre (balises h5).
+                        Assurez-vous que l'onjet final peut être analysé par JSON.parse() sans erreur.`;
 
                     const all = await send_request(prompt_all)
                     // console.log(all);
                     console.log(all.titre);
                     console.log(all.body);
                     $('#details').html(all.body)
+
+                    $('#div-redaction').show()
+                    $('#div-redaction').html(all.body)
+
                     $('#titrePrompt').html(all.titre)     
 
                    // Créez un objet historic et assignez les valeurs correspondantes
@@ -298,6 +416,9 @@
                             // window.location.replace("contenu.php.php");
                         }
                     });
+
+                    $('#form-activer-loader').hide();
+                    $('.btn-falcon-primary').removeClass('disabled');
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -341,8 +462,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'       
-                    // 'Authorization': 'Bearer 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'       
+                    'Authorization': 'Bearer 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'  
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -369,7 +489,7 @@
 
                     var html = '';
                     for (var i = 0; i < historics.length; i++) {
-                        html += '<div class="card-body bg-light border-top">' +
+                        html += '<div class="bg-light border-bottom mt-3">' +
                                     '<p class="fs-0">' + historics[i].title + '</p>' +
                                 '</div>';
                     }
@@ -385,7 +505,7 @@
         function listRessource(user_id,projet_id){
              //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
              const data = {
-                projet_id : 2,
+                projet_id : 8,
                 user_id : 1
              }
             $.ajax({
@@ -398,7 +518,7 @@
 
                     var html = '';
                     for (var i = 0; i < contentWeb.length; i++) {
-                        html += '<div class="card-body bg-light border-top">' +
+                        html += '<div class="bg-light border-bottom mt-3">' +
                                     '<p class="fs-0">' + contentWeb[i].titre + '</p>' +
                                 '</div>';
                     }
@@ -413,7 +533,7 @@
 
         $(document).ready(function() {
             // Appel de la fonction listHistorics() après le chargement complet de la page
-            var projet_id = 2 ;
+            var projet_id = 8;
             var user_id = 2 ;
             listHistorics(projet_id);
             listRessource(user_id,projet_id);

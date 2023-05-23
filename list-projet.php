@@ -455,7 +455,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -474,7 +474,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
