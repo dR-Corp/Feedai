@@ -28,7 +28,33 @@
                 <?php include('header.php') ?>
 
                 <div class="row mb-3"></div>
-
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="card bg-100 shadow-none border">
+                                <div class="row gx-0 flex-between-center">
+                                    <div class="col-sm-auto d-flex align-items-center"><img class="ms-n2"
+                                            src="assets/img/illustrations/crm-bar-chart.png" alt="" width="90" />
+                                        <div>
+                                            <h6 class="text-primary fs--1 mb-0">Centre </h6>
+                                            <h4 class="text-primary fw-bold mb-0">ressources <span
+                                                    class="text-info fw-medium">ia</span></h4>
+                                        </div><img class="ms-n4 d-md-none d-lg-block"
+                                            src="assets/img/illustrations/crm-line-chart.png" alt="" width="150" />
+                                    </div>
+                                    <div class="col-md-auto p-3">
+                                        <form class="row gx-2">
+                                            <div class="col-auto"><small>Projets : </small></div>
+                                            <div class="col-auto">
+                                                <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
+                                                </select>
+                                            </div>
+                                            <!-- </div> -->
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 
                 <div class="row g-0">
                     <div class="col-lg-8 pe-lg-2">

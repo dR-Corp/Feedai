@@ -37,8 +37,8 @@
                                         src="assets/img/illustrations/crm-bar-chart.png" alt="" width="90" />
                                     <div>
                                         <h6 class="text-primary fs--1 mb-0">Gestion de </h6>
-                                        <h4 class="text-primary fw-bold mb-0">Stratégie et <span
-                                                class="text-info fw-medium">marketing</span></h4>
+                                        <h4 class="text-primary fw-bold mb-0">stratégies et marketing <span
+                                                class="text-info fw-medium">ia</span></h4>
                                     </div><img class="ms-n4 d-md-none d-lg-block"
                                         src="assets/img/illustrations/crm-line-chart.png" alt="" width="150" />
                                 </div>
@@ -46,8 +46,8 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                        <select class="form-select form-select-sm" id="listProjet">
-                                        </select>
+                                            <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
+                                            </select>
                                         </div>
                                         <!-- </div> -->
                                     </form>

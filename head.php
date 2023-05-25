@@ -40,6 +40,11 @@
 
     <link href="vendors/fullcalendar/main.min.css" rel="stylesheet">
     <link href="vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet"> -->
+
     
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));

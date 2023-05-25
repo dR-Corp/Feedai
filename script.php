@@ -34,6 +34,44 @@
         $('#action-loader').hide()
     }
     $('#action-loader').hide();
+
+</script>
+<script>
+    user_id = 1;
+    load_projet(user_id);
+    function load_projet(user_id){
+             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+        $.ajax({
+            url: 'Projet/liste.php',
+            method: 'POST', 
+            data: {user_id:user_id}, 
+            success: function(response) {
+                // $('#result').html(response);
+                var projet = JSON.parse(response);
+                // Pour définir une variable de session
+                if(!localStorage.getItem('isActif')){
+                    console.log('isActif nest pas');
+                    localStorage.setItem('isActif', projet[0].id);
+                    // var isActif = localStorage.getItem('isActif');
+                }else{
+                    console.log("isActif existe");
+                    var isActif = localStorage.getItem('isActif');
+                }
+
+                console.log(isActif);
+
+                var html = '<option selected disabled>Choisir notre projet...</option>';
+                for (var i = 0; i < projet.length; i++) {
+                    html += `<option ${isActif == projet[i].id ? 'selected' : ''} value="${projet[i].id}">${projet[i].nom}</option>`;
+                }
+
+                $('#projets').html(html);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus, errorThrown);
+            }
+        });
+    }
 </script>
 
 <script src="vendors/fullcalendar/main.min.js"></script>
@@ -41,6 +79,8 @@
 <script src="vendors/dayjs/dayjs.min.js"></script>
 <script src="vendors/lottie/lottie.min.js"> </script>
 <script src="vendors/prism/prism.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
 
 <!-- <div id="action-loader" class="text-center h-100 w-100" style="padding-top: 40vh; position: fixed; z-index: 99999; top: 0; left: 0; background-color: rgba(0,0,0,0.25);">
     <div class="lottie mx-auto" style="width: 100px; height: 100px" data-options='{"path":"assets/img/animated-icons/loading-square.json"}'></div>

@@ -46,7 +46,7 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                        <select class="form-select form-select-sm" id="listProjet">
+                                        <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
                                         </select>
                                         </div>
                                         <!-- </div> -->
@@ -56,9 +56,20 @@
                         </div>
                     </div>
                 </div>
-                    
+                <?php
+                        include('db_connexion.php');
+                        $projet_id = 8;
+                        $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id ORDER BY projet_id DESC LIMIT 1';
+                        // $stmt = $db->query($sql);
+                        // $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute(array(':projet_id' => $projet_id));
+                        $historics = $stmt->fetch(PDO::FETCH_ASSOC);
+                        
+                    ?>
+
                 <div class="row g-0">
-                    <div class="col-lg-8 pe-lg-2 partieContenu">
+                    <div class="col-lg-8 pe-lg-2">
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <h5 class="mb-0">Contenu généré</h5>
@@ -96,27 +107,26 @@
                                 </div>
                             </div>
                             <div class="card-body bg-light">
-                                <form class="row g-3">
+                                
+                                <div id="div-redaction" class="border p-4">Aucun contenu à afficher pour le moment !</div>
+
+                                <form id="form-edit-redaction" class="row g-3">
                                     <div class="col-lg-12">
                                         <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"></h5></label>
                                         <textarea class="form-control py-4" readOnly id="details" name="intro" cols="30"
                                             rows="13"></textarea>
                                     </div>
-                                    <!-- <div class="col-12 d-flex justify-content-end">
-                                        <button class="btn btn-primary" type="submit">Update </button>
-                                    </div> -->
                                 </form>
                             </div>
                         </div>
-                       
+                    
                         <div class="card mb-3">
-                            <div class="card-header">
-                                <h5 class="mb-0">Historiques</h5>
+                            <div class="card-header"> <h5 class="mb-0">Historique</h5></div>
+                            <div class="card-body bg-light" id="historic">   
                             </div>
-                            <div class="card-body bg-light" id="historic"></div>
                         </div>
                     </div>
-                  
+
                     <div class="col-lg-4 ps-lg-2">
                         <div class="sticky-sidebar">
                             <div class="card mb-3 overflow-hidden">
@@ -130,30 +140,121 @@
                                             <input class="form-control" id="prompt" type="text" name="prompt"
                                                 placeholder="Entre votre requête ici" />
                                         </div>
-                                        <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-spin"></i> Lancer</a>
+                                        <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-pulse"></i> Lancer</a>
                                     </form>
                                 </div>
                             </div>
-                            <div class="card mb-3 overflow-hidden" id="partieRessources">
-                                <div class="card-header"><h5 class="mb-0">Ressources</h5></div>
-                                <div class="card-body bg-light border-top" id="ressources"></div> 
+                            <div class="card mb-3 overflow-hidden">
+                                <div class="card-header"> <h5 class="mb-0">Ressources</h5> </div>
+                                <div class="card-body bg-light border-top" id="ressources"></div>
                             </div>
-
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <h5 class="mb-0">Suggestions de Feed ai</h5>
+                                    <h5 class="mb-0">Suggestions de contenu</h5>
                                 </div>
-                                <div class="card-body bg-light">
-                                    <h5 class="fs-0">Ceci est un exemple de suggestion</h5>
-                                    <p class="fs--1">Transfer this account to another user or to an organization where
-                                        you have the ability to create repositories.</p><a
-                                        class="btn btn-falcon-warning d-block" href="#!">Utiliser</a>
-                                    <div class="border-dashed-bottom my-4"></div>
-                                    <h5 class="fs-0">Bon encore une autre</h5>
-                                    <p class="fs--1">Once you delete a account, there is no going back. Please be
-                                        certain.</p><a class="btn btn-falcon-warning d-block" href="#!">Utiliser</a>
-                                </div>
+                                <div id="suggestions" class="card-body bg-light"></div>
                             </div>
+
+                            <script>
+
+                                var projet_id = 8;
+
+                                function rediger_suggestion(id) {
+                                    
+                                    $.ajax({
+                                        url: 'get_titre_suggestion.php',
+                                        method: 'GET',
+                                        data: {
+                                            id: id
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            console.log(response);
+                                            var titre = response;
+                                            var prompt = 'Redige moi un contenu web sur le titre ' + titre.contenu
+                                            
+                                            $("#prompt").val(prompt)
+                                            supprimer_suggestion(titre.id)
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+
+                                }
+                                
+                                function supprimer_suggestion(id) {
+                                    
+                                    $.ajax({
+                                        url: 'del_titres_suggestions.php',
+                                        method: 'GET',
+                                        data: {
+                                            id: id
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            console.log(response);
+                                            // actualisation de la liste des suggestions
+                                            show_titres_suggestions(projet_id);
+                                            // $("#suggestion_"+id).hide()
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+
+                                }
+
+                                $(document).ready(function() {
+                                    projet_id = 8;
+                                    show_titres_suggestions(projet_id);
+                                });
+
+                                function show_titres_suggestions(projet_id) { 
+
+                                    var id_projet = 8; // à récupérer du projet actif
+
+                                    $.ajax({
+                                        url: 'get_titres_suggestions.php',
+                                        method: 'GET',
+                                        data: {
+                                            id_projet: id_projet
+                                        },
+                                        dataType: 'json',
+                                        success: function(response) {
+                                            var titres = response;
+
+                                            var cardBody = $('#suggestions');
+                                            cardBody.html("")
+
+                                            if(titres.length > 0) {
+
+                                                $.each(titres, function(index, titre) {
+                                                    var suggestion = $('<div id="suggestion_'+titre.id+'" class="suggestion"></div>');
+                                                    var fsContainer = $('<div class="fs--1 d-flex justify-content-start align-items-start"></div>');
+                                                    var iconContainer = $('<div class="d-flex px-2"></div>');
+                                                    var redigerLink = $('<a href="#!" onclick="rediger_suggestion(' + titre.id + ')" class="mx-2" title="rediger"><i class="fas fa-pen"></i></a>');
+                                                    var supprimerLink = $('<a href="#!" onclick="supprimer_suggestion(' + titre.id + ')" title="supprimer"><i class="fas fa-trash text-secondary"></i></a>');
+                                                    var titreElement = $('<p></p>').text(titre.contenu);
+                                                    var borderDiv = $('<div class="border-dashed-bottom mb-3"></div>');
+
+                                                    iconContainer.append(redigerLink, supprimerLink);
+                                                    fsContainer.append(iconContainer, titreElement);
+                                                    suggestion.append(fsContainer, borderDiv);
+                                                    cardBody.append(suggestion);
+                                                });
+                                            }
+                                            else {
+                                                cardBody.html('<div class="fs--1"><p>Aucune suggestion</p></div>');
+                                            }
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.log("Une erreur s'est produite : " + error);
+                                        }
+                                    });
+                                }
+
+                            </script>
 
                             <!-- <div class="card mb-3 overflow-hidden">
                                 <div class="card-header">
@@ -190,19 +291,27 @@
     <!-- script js -->
     <?php include('script.php') ?>
     <script>
+
         $('#btn-update').on('click', function() {
             $('#details').prop('readOnly', false);
+            $('#form-edit-redaction').show()
+            $('#div-redaction').hide()
         });
+        
+        $('#form-activer-loader').hide();
+        // $('#div-redaction').hide()
 
         $('#btn-prompt').on('click', function() {
-            var isActif = localStorage.getItem('isActif');
+            
+            $('#form-edit-redaction').hide()
 
             $('#form-activer-loader').show();
             $('.btn-falcon-primary').addClass('disabled');
+
             //on ajoute chaque élément dans la variable object prompt
             prompt_req = $('#prompt').val();
-            user_id = 2 ;
-            projet_id = isActif;
+            user_id = 1;
+            projet_id = 8;
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'Projet/detail.php',
@@ -216,17 +325,28 @@
 
                     let prompt = 'Soit les informations suivantes sur un projet e-commerce. ' + JSON.stringify(projet) + '. ';
 
+                    // const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
+                    //     À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
+                    //     ${prompt_req} 
+                    //     Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}
+                    //     Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`;
+
                     const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
                         À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
                         ${prompt_req} 
-                        Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}
-                        Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`;
+                        Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}.
+                        Le contenu de body doit âtre donc contenu web redigé de A à Z (article de blog ou fiche de produit, ...) et structuré en html avec titre (balises h3) et sous titre (balises h5).
+                        Assurez-vous que l'onjet final peut être analysé par JSON.parse() sans erreur.`;
 
                     const all = await send_request(prompt_all)
                     // console.log(all);
                     console.log(all.titre);
                     console.log(all.body);
                     $('#details').html(all.body)
+
+                    $('#div-redaction').show()
+                    $('#div-redaction').html(all.body)
+
                     $('#titrePrompt').html(all.titre)     
 
                    // Créez un objet historic et assignez les valeurs correspondantes
@@ -252,6 +372,9 @@
                             // window.location.replace("contenu.php.php");
                         }
                     });
+
+                    $('#form-activer-loader').hide();
+                    $('.btn-falcon-primary').removeClass('disabled');
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -262,15 +385,14 @@
 
         $('#btn-ajouter').on('click', function() {
             //on ajoute chaque élément dans la variable object prompt
-            var isActif = localStorage.getItem('isActif');
-
+          
             const contentWeb = {
-                projet_id : isActif,
+                projet_id : 2,
                 user_id : 1,
                 titre : $('#titrePrompt').text(),
                 contenu : $('#details').val(),
             }
-            // console.log(contentWeb);
+            console.log(contentWeb);
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'ContentWeb/ajouter.php',
@@ -291,24 +413,12 @@
         
         });
 
-        $('#listProjet').on('change', function() {
-            var projetActif = $(this).val();
-            // console.log(projetActif);
-            localStorage.removeItem('isActif');
-            localStorage.setItem('isActif', projetActif);
-            var isActif = localStorage.getItem('isActif');
-            console.log(isActif);
-            // Recharger la page
-            location.reload();
-        });
-
         async function send_request(prompt) {
             const apiResponse = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'       
-                    // 'Authorization': 'Bearer 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'       
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -324,35 +434,23 @@
 
         function listHistorics(projet_id){
              //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
-             var isActif = localStorage.getItem('isActif');
-
-            console.log(isActif);
             $.ajax({
                 url: 'Historics/liste.php',
                 method: 'POST', 
-                data: { id: isActif }, 
+                data: { id: projet_id }, 
                 success: function(response) {
                     // $('#result').html(response);
                     var historics = JSON.parse(response);
-                    var lastHistoric = historics[0];
-                    // console.log(historics[0]);
+                    console.log(historics.length);
 
-                    if (historics.length === 0) {
-                        $('#partieContenu').hide(); 
-                    } else {
-                        var html = '';
-                        for (var i = 0; i < historics.length; i++) {
-                            html += '<div class="card-body bg-light border-top">' +
-                                        '<p class="fs-0">' + historics[i].title + '</p>' +
-                                    '</div>';
-                        }
-
-                        $('#historic').html(html);
-                        $('#titrePrompt').html(lastHistoric.title);
-                        $('#details').html(JSON.parse(lastHistoric.details));
-                        $('#partieContenu').show(); 
-
+                    var html = '';
+                    for (var i = 0; i < historics.length; i++) {
+                        html += '<div class="bg-light border-bottom mt-3">' +
+                                    '<p class="fs-0">' + historics[i].title + '</p>' +
+                                '</div>';
                     }
+
+                    $('#historic').html(html);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -361,14 +459,12 @@
         }
 
         function listRessource(user_id,projet_id){
-            //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
-            var isActif = localStorage.getItem('isActif');
-
-            const data = {
+             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+             var isActif = localStorage.getItem('isActif');
+             const data = {
                 projet_id : isActif,
                 user_id : 1
-            }
-
+             }
             $.ajax({
                 url: 'ContentWeb/liste.php',
                 method: 'POST', 
@@ -376,20 +472,15 @@
                 success: function(response) {
                     // $('#result').html(response);
                     var contentWeb = JSON.parse(response);
-                    // console.log(contentWeb);
-                    if (contentWeb.length === 0) {
-                        $('#partieRessources').hide(); 
-                    } else {
-                        var html = '';
-                        for (var i = 0; i < contentWeb.length; i++) {
-                            html += '<div class="card-body bg-light border-top">' +
-                                        '<p class="fs-0">' + contentWeb[i].titre + '</p>' +
-                                    '</div>';
-                        }
 
-                        $('#ressources').html(html);
-                        $('#partieRessources').show(); 
+                    var html = '';
+                    for (var i = 0; i < contentWeb.length; i++) {
+                        html += '<div class="bg-light border-bottom mt-3">' +
+                                    '<p class="fs-0">' + contentWeb[i].titre + '</p>' +
+                                '</div>';
                     }
+
+                    $('#ressources').html(html);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -397,61 +488,27 @@
             });
         }
 
-        function listProjet(user_id){
-             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
-             const data = {
-                user_id : 1
-             }
-            $.ajax({
-                url: 'Projet/liste.php',
-                method: 'POST', 
-                data: data, 
-                success: function(response) {
-                    // $('#result').html(response);
-                    var projet = JSON.parse(response);
-                    // Pour définir une variable de session
-                    if(!localStorage.getItem('isActif')){
-                        console.log('isActif nest pas');
-                        localStorage.setItem('isActif', projet[0].id);
-                        // var isActif = localStorage.getItem('isActif');
-                    }else{
-                        console.log("isActif existe");
-                        var isActif = localStorage.getItem('isActif');
-                    }
-
-                    console.log(isActif);
-
-                    var html = '<option selected disabled>Choisir notre projet...</option>';
-                    for (var i = 0; i < projet.length; i++) {
-                        html += '<option value=' + projet[i].id;
-
-                        if (projet[i].id === isActif.toString()) {
-                            html += ' selected="selected"';
-                        }
-
-                        html += '>' + projet[i].nom + '</option>';
-                    }
-
-
-
-                    $('#listProjet').html(html);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.error(textStatus, errorThrown);
-                }
-            });
-        }
+        $('#projets').on('change', function() {
+            var projetActif = $(this).val();
+            // console.log(projetActif);
+            localStorage.removeItem('isActif');
+            localStorage.setItem('isActif', projetActif);
+            var isActif = localStorage.getItem('isActif');
+            console.log(isActif);
+            // Recharger la page
+            location.reload();
+        });
 
         $(document).ready(function() {
             // Appel de la fonction listHistorics() après le chargement complet de la page
             var isActif = localStorage.getItem('isActif');
-            console.log(isActif);
+
             var projet_id = isActif;
             var user_id = 1 ;
             listHistorics(projet_id);
             listRessource(user_id,projet_id);
-            listProjet(user_id);
-            $('.fa-spin').hide();
+            $('#form-edit-redaction').hide()
+
         });
 
         

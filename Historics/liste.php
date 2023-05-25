@@ -10,5 +10,5 @@ if(!empty($projet_id)){
     echo json_encode($select->fetchAll(PDO::FETCH_ASSOC), true);
     
 }else{
-    echo "Erreur";
+    echo json_encode("Erreur");
 }

@@ -44,7 +44,14 @@
                     $produit = $details['produit'];
                     $personae = $details['personae'];
 
-                    $description = json_decode($projet['description'], true);
+                    // $description = json_decode($projet['description'], true);
+                    $profil_type = isset($details['profil_type']) ? $details['profil_type'] : "";
+                    $recapitulatif = isset($details['recapitulatif']) ? $details['recapitulatif'] : "";
+
+                    $positionnements = isset($details['positionnements']) ? $details['positionnements'] : [];
+                    $motivations = isset($details['motivations']) ? $details['motivations'] : [];
+                    $profils = isset($details['profils']) ? $details['profils'] : [];
+                    $besoins = isset($details['besoins']) ? $details['besoins'] : [];
                     
                 ?>
 
@@ -384,10 +391,64 @@
                                         <div class="tab-pane fade" id="tab-description" role="tabpanel" aria-labelledby="description-tab">
                                             <div class="mt-3">
                                                 <div id="recapitulatif" class="mb-3">
-                                                    <?php if(isset($description['recapitulatif'])): ?>
-                                                        <h3>Récapitulatif</h3>
-                                                        <div><?php echo $description['recapitulatif'] ?></div>
+                                                    <?php if(isset($recapitulatif)): ?>
+                                                        <div id="recapitulatif" class="mb-3">
+                                                            <h3>Récapitulatif</h3>
+                                                            <?php echo $recapitulatif ?>
+                                                        </div>
                                                     <?php endif; ?>
+
+                                                    <?php if(isset($profil_type)): ?>
+                                                        <div id="profil_type" class="mb-3">
+                                                            <h3>Profil type</h3>
+                                                            <?php echo $profil_type ?>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <?php if(isset($motivations)): ?>
+                                                        <div id="motivations" class="mb-3">
+                                                            <h3>Motivations</h3>
+                                                            <ul>
+                                                                <?php foreach($motivations as $motivation): ?>
+                                                                    <li><?= $motivation['motivation'] ?></li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <?php if(isset($besoins)): ?>
+                                                        <div id="besoins" class="mb-3">
+                                                            <h3>Besoins</h3>
+                                                            <ul>
+                                                                <?php foreach($besoins as $besoin): ?>
+                                                                    <li><?= $besoin['besoin'] ?></li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <?php if(isset($positionnements)): ?>
+                                                        <div id="positionnements" class="mb-3">
+                                                            <h3>Positionnements</h3>
+                                                            <ul>
+                                                                <?php foreach($positionnements as $positionnement): ?>
+                                                                    <li><?= $positionnement['positionnement'] ?></li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <?php if(isset($profils)): ?>
+                                                        <div id="profils" class="mb-3">
+                                                            <h3>Profils</h3>
+                                                            <ul>
+                                                                <?php foreach($profils as $profil): ?>
+                                                                    <li><?= $profil['profil'] ?></li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
