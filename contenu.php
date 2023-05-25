@@ -46,11 +46,8 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                            <select class="form-select form-select-sm" aria-label="Bulk actions">
-                                                <option selected="">Projet 2023</option>
-                                                <option value="Refund">Projet 2025</option>
-                                                <option value="Delete">Projet 2027</option>
-                                            </select>
+                                        <select class="form-select form-select-sm" id="listProjet">
+                                        </select>
                                         </div>
                                         <!-- </div> -->
                                     </form>
@@ -59,20 +56,9 @@
                         </div>
                     </div>
                 </div>
-                <?php
-                        include('db_connexion.php');
-                        $id = 2;
-                        $sql = 'SELECT * FROM historics WHERE projet_id = :id ORDER BY id DESC LIMIT 1';
-                        // $stmt = $db->query($sql);
-                        // $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute(array(':id' => $id));
-                        $historics = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                    ?>
-
+                    
                 <div class="row g-0">
-                    <div class="col-lg-8 pe-lg-2">
+                    <div class="col-lg-8 pe-lg-2 partieContenu">
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <h5 class="mb-0">Contenu généré</h5>
@@ -112,13 +98,9 @@
                             <div class="card-body bg-light">
                                 <form class="row g-3">
                                     <div class="col-lg-12">
-                                        <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"><?php echo $historics['title'];?></h5></label>
+                                        <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"></h5></label>
                                         <textarea class="form-control py-4" readOnly id="details" name="intro" cols="30"
-                                            rows="13">
-                                            <?php if ($historics != null) :?>
-                                                <?php echo json_decode($historics['details']);?>
-                                           <?php endif;?>
-                                        </textarea>
+                                            rows="13"></textarea>
                                     </div>
                                     <!-- <div class="col-12 d-flex justify-content-end">
                                         <button class="btn btn-primary" type="submit">Update </button>
@@ -126,28 +108,15 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- <?php
-                            include('db_connexion.php');
-                            $projet_id = 2;
-                            $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id  ORDER BY id DESC';
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute(array(':projet_id' => $projet_id));
-                            $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            if($historics != null):
-                        ?> -->
+                       
                         <div class="card mb-3">
                             <div class="card-header">
-                                <h5 class="mb-0">Historique</h5>
+                                <h5 class="mb-0">Historiques</h5>
                             </div>
-                            <div class="card-body bg-light" id="historic">
-                            
-                            </div>
+                            <div class="card-body bg-light" id="historic"></div>
                         </div>
-                        <?php endif;?>
-
                     </div>
                   
-
                     <div class="col-lg-4 ps-lg-2">
                         <div class="sticky-sidebar">
                             <div class="card mb-3 overflow-hidden">
@@ -165,27 +134,10 @@
                                     </form>
                                 </div>
                             </div>
-                            <?php
-                                include('db_connexion.php');
-                                $projet_id = 2;
-                                $user_id = 1;
-                                $sql = 'SELECT * FROM contenu_web WHERE projet_id = :projet_id AND user_id = :user_id ORDER BY id DESC';
-                                $stmt = $db->prepare($sql);
-                                $stmt->execute(array(':projet_id' => $projet_id,':user_id'=>$user_id));
-                                $contentWeb = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                if($contentWeb != null):
-                            ?>
-                            <div class="card mb-3 overflow-hidden">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Ressources</h5>
-                                </div>
-                                
-                                <div class="card-body bg-light border-top" id="ressources">
-                                    
-                                </div>
-                               
+                            <div class="card mb-3 overflow-hidden" id="partieRessources">
+                                <div class="card-header"><h5 class="mb-0">Ressources</h5></div>
+                                <div class="card-body bg-light border-top" id="ressources"></div> 
                             </div>
-                            <?php endif ;?>
 
                             <div class="card mb-3">
                                 <div class="card-header">
@@ -241,14 +193,16 @@
         $('#btn-update').on('click', function() {
             $('#details').prop('readOnly', false);
         });
-        $('#btn-prompt').on('click', function() {
 
-            $('#form-activer-loader').hide();
+        $('#btn-prompt').on('click', function() {
+            var isActif = localStorage.getItem('isActif');
+
+            $('#form-activer-loader').show();
             $('.btn-falcon-primary').addClass('disabled');
             //on ajoute chaque élément dans la variable object prompt
             prompt_req = $('#prompt').val();
             user_id = 2 ;
-            projet_id = 2 ;
+            projet_id = isActif;
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'Projet/detail.php',
@@ -308,14 +262,15 @@
 
         $('#btn-ajouter').on('click', function() {
             //on ajoute chaque élément dans la variable object prompt
-          
+            var isActif = localStorage.getItem('isActif');
+
             const contentWeb = {
-                projet_id : 2,
+                projet_id : isActif,
                 user_id : 1,
                 titre : $('#titrePrompt').text(),
                 contenu : $('#details').val(),
             }
-            console.log(contentWeb);
+            // console.log(contentWeb);
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'ContentWeb/ajouter.php',
@@ -334,6 +289,17 @@
                 }
             });
         
+        });
+
+        $('#listProjet').on('change', function() {
+            var projetActif = $(this).val();
+            // console.log(projetActif);
+            localStorage.removeItem('isActif');
+            localStorage.setItem('isActif', projetActif);
+            var isActif = localStorage.getItem('isActif');
+            console.log(isActif);
+            // Recharger la page
+            location.reload();
         });
 
         async function send_request(prompt) {
@@ -358,23 +324,35 @@
 
         function listHistorics(projet_id){
              //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+             var isActif = localStorage.getItem('isActif');
+
+            console.log(isActif);
             $.ajax({
                 url: 'Historics/liste.php',
                 method: 'POST', 
-                data: { id: projet_id }, 
+                data: { id: isActif }, 
                 success: function(response) {
                     // $('#result').html(response);
                     var historics = JSON.parse(response);
-                    console.log(historics.length);
+                    var lastHistoric = historics[0];
+                    // console.log(historics[0]);
 
-                    var html = '';
-                    for (var i = 0; i < historics.length; i++) {
-                        html += '<div class="card-body bg-light border-top">' +
-                                    '<p class="fs-0">' + historics[i].title + '</p>' +
-                                '</div>';
+                    if (historics.length === 0) {
+                        $('#partieContenu').hide(); 
+                    } else {
+                        var html = '';
+                        for (var i = 0; i < historics.length; i++) {
+                            html += '<div class="card-body bg-light border-top">' +
+                                        '<p class="fs-0">' + historics[i].title + '</p>' +
+                                    '</div>';
+                        }
+
+                        $('#historic').html(html);
+                        $('#titrePrompt').html(lastHistoric.title);
+                        $('#details').html(JSON.parse(lastHistoric.details));
+                        $('#partieContenu').show(); 
+
                     }
-
-                    $('#historic').html(html);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -383,11 +361,14 @@
         }
 
         function listRessource(user_id,projet_id){
-             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
-             const data = {
-                projet_id : 2,
+            //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+            var isActif = localStorage.getItem('isActif');
+
+            const data = {
+                projet_id : isActif,
                 user_id : 1
-             }
+            }
+
             $.ajax({
                 url: 'ContentWeb/liste.php',
                 method: 'POST', 
@@ -395,15 +376,65 @@
                 success: function(response) {
                     // $('#result').html(response);
                     var contentWeb = JSON.parse(response);
+                    // console.log(contentWeb);
+                    if (contentWeb.length === 0) {
+                        $('#partieRessources').hide(); 
+                    } else {
+                        var html = '';
+                        for (var i = 0; i < contentWeb.length; i++) {
+                            html += '<div class="card-body bg-light border-top">' +
+                                        '<p class="fs-0">' + contentWeb[i].titre + '</p>' +
+                                    '</div>';
+                        }
 
-                    var html = '';
-                    for (var i = 0; i < contentWeb.length; i++) {
-                        html += '<div class="card-body bg-light border-top">' +
-                                    '<p class="fs-0">' + contentWeb[i].titre + '</p>' +
-                                '</div>';
+                        $('#ressources').html(html);
+                        $('#partieRessources').show(); 
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error(textStatus, errorThrown);
+                }
+            });
+        }
+
+        function listProjet(user_id){
+             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+             const data = {
+                user_id : 1
+             }
+            $.ajax({
+                url: 'Projet/liste.php',
+                method: 'POST', 
+                data: data, 
+                success: function(response) {
+                    // $('#result').html(response);
+                    var projet = JSON.parse(response);
+                    // Pour définir une variable de session
+                    if(!localStorage.getItem('isActif')){
+                        console.log('isActif nest pas');
+                        localStorage.setItem('isActif', projet[0].id);
+                        // var isActif = localStorage.getItem('isActif');
+                    }else{
+                        console.log("isActif existe");
+                        var isActif = localStorage.getItem('isActif');
                     }
 
-                    $('#ressources').html(html);
+                    console.log(isActif);
+
+                    var html = '<option selected disabled>Choisir notre projet...</option>';
+                    for (var i = 0; i < projet.length; i++) {
+                        html += '<option value=' + projet[i].id;
+
+                        if (projet[i].id === isActif.toString()) {
+                            html += ' selected="selected"';
+                        }
+
+                        html += '>' + projet[i].nom + '</option>';
+                    }
+
+
+
+                    $('#listProjet').html(html);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -413,10 +444,14 @@
 
         $(document).ready(function() {
             // Appel de la fonction listHistorics() après le chargement complet de la page
-            var projet_id = 2 ;
-            var user_id = 2 ;
+            var isActif = localStorage.getItem('isActif');
+            console.log(isActif);
+            var projet_id = isActif;
+            var user_id = 1 ;
             listHistorics(projet_id);
             listRessource(user_id,projet_id);
+            listProjet(user_id);
+            $('.fa-spin').hide();
         });
 
         
