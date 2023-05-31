@@ -294,18 +294,18 @@
                             Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : 
                             [{"id": 1, "besoin": ""}, ...]
                             Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`,
-                        `Voici les informations suivantes sur un projet e-commerce : ${projet}.
-                            En les utilisants génère moi des suggestions de motivations pour utiliser le ou les produit mise en jeu dans ce projet e-commerce !
-                            Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : 
-                            [{"id": 1, "motivation": ""}, ...],
+                            `Voici les informations suivantes sur un projet e-commerce : ${projet}.
+                                En les utilisants génère moi des suggestions de motivations pour utiliser le ou les produit mise en jeu dans ce projet e-commerce !
+                                Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : 
+                                [{"id": 1, "motivation": ""}, ...],
                             Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`,
                         `Voici les informations suivantes sur un projet e-commerce : ${projet}.
-                            En les utilisants génère moi des suggestions de positionnements devrant permettre l\'atteinte des objectifs de ce projet !
+                            En les utilisants génère moi des suggestions de positionnements devrant permettre l'atteinte des objectifs de ce projet !
                             Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci :
                             [{"id": 1, "positionnement": ""}, ...]
                             Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`,
                         `Voici les informations suivantes sur un projet e-commerce : ${projet}.
-                            En les utilisants, génère moi des suggestions des profils fictifs pouvant représenter un potentiel client pour notre projet en vue d\'atteindre notre objectif !
+                            En les utilisants, génère moi des suggestions des profils fictifs pouvant représenter un potentiel client pour notre projet en vue d'atteindre notre objectif !
                             Vous indiquerez un nom, un age dans la tranche spécifiée pour le projet, le genre en tenant compte du genre spécifié pour le projet et le profil même en question.
                             Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci :
                             [{"id": 1, "nom": "", "genre": "", "age": "", "profil": ""}, ..., {"id": 9, "nom": "", "genre": "", "age": "", "profil": ""}]
@@ -455,7 +455,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -474,7 +474,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -545,7 +545,7 @@
                 Voici les besoins satisfaits par le ou les produits impliqués dans ce projet ${selectedBesoins}.
                 Voici les motivations pour utiliser le ou les produits impliqués dans ce projet ${selectedMotivations}.
                 Voici les positionnement possibles pour le ou les produits impliqués dans ce projet ${selectedPositionnements}.
-                Voici les profils fictifs pouvant représenter un potentiel client pour notre projet en vue d\'atteindre notre objectif ${selectedProfils}.
+                Voici les profils fictifs pouvant représenter un potentiel client pour notre projet en vue d'atteindre notre objectif ${selectedProfils}.
                 A partir de ces informations, veuillez générer : un récapitulatif (structuré en html) du le projet, un profil type à partir des profils sélectionné et des suggestions sur :
                 - des objectifs à court terme intéressant,
                 - des tâches à réaliser pour l'atteinte de ces objectifs,
@@ -564,10 +564,6 @@
 
             const description = await send_request(prompt_description)
             console.log(description)
-
-            // const data = {
-            // }
-            // fin de la partie à revoir ***************************************************************
 
             $.ajax({
                 type: "POST",

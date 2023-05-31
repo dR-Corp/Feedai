@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "name": "Besoins satifaits par le produit",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${projet}. En les utilisants génère moi des suggestions de besoins principaux satisfaits par le ou les produit mise en jeu dans ce projet e-commerce ! Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : [{\"id\": 1, \"besoin\": \"\"}, ...]. Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 2,
+        "name": "Motivation à utiliser le produit le produit",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${projet}. En les utilisants génère moi des suggestions de motivations pour utiliser le ou les produit mise en jeu dans ce projet e-commerce ! Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : [{\"id\": 1, \"motivation\": \"\"}, ...]. Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 3,
+        "name": "Positionnement",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${projet}. En les utilisants génère moi des suggestions de positionnements devrant permettre l'atteinte des objectifs de ce projet ! Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : [{\"id\": 1, \"positionnement\": \"\"}, ...]. Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 4,
+        "name": "Profils fictifs",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${projet}. En les utilisants, génère moi des suggestions des profils fictifs pouvant représenter un potentiel client pour notre projet en vue d'atteindre notre objectif ! Vous indiquerez un nom, un age dans la tranche spécifiée pour le projet, le genre en tenant compte du genre spécifié pour le projet et le profil même en question. Veuillez renvoyer le résultat sous forme d'un objet JSON contenant les quatre catégories de résultats, avec une structure similaire à celle-ci : [{\"id\": 1, \"nom\": \"\", \"genre\": \"\", \"age\": \"\", \"profil\": \"\"}, ..., {\"id\": 9, \"nom\": \"\", \"genre\": \"\", \"age\": \"\", \"profil\": \"\"}]. Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 5,
+        "name": "Récapitulatif du projet et suggestions",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${projet}. Voici les besoins satisfaits par le ou les produits impliqués dans ce projet ${besoins}. Voici les motivations pour utiliser le ou les produits impliqués dans ce projet ${motivations}. Voici les positionnement possibles pour le ou les produits impliqués dans ce projet ${positionnements}. Voici les profils fictifs pouvant représenter un potentiel client pour notre projet en vue d'atteindre notre objectif ${profils}. A partir de ces informations, veuillez générer : un récapitulatif (structuré en html) du le projet, un profil type à partir des profils sélectionné et des suggestions sur : des objectifs à court terme intéressant, des tâches à réaliser pour l'atteinte de ces objectifs, des stratégies markétings intéressante à adopter dans la même optique. Veuillez renvoyer le résultat sous forme d'un objet JSON, avec la structure suivantes, et assurez-vous que ce résultat peut être analysé par un JSON.parse() sans erreur : {\"recapitulatif\": \"\",\"profil\": \"\",\"suggestions\": {\"objectifs\": [{\"id\": 1, \"objectif\": \"\"},...],\"taches\": [{\"id\": 1, \"tache\": \"\"},...],\"strategies\": [{\"id\": 1, \"strategie\": \"\"},...],\"titres\": [{\"id\": 1, \"titre\": \"\"},...]}}`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            },
+            {
+                "id": 2,
+                "name": "besoins",
+                "value": "",
+                "fillable": false
+            },
+            {
+                "id": 3,
+                "name": "motivations",
+                "value": "",
+                "fillable": false
+            },
+            {
+                "id": 4,
+                "name": "positionnements",
+                "value": "",
+                "fillable": false
+            },
+            {
+                "id": 5,
+                "name": "profils",
+                "value": "",
+                "fillable": false
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 6,
+        "name": "Rédaction d'un contenu web",
+        "content": "`Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}. À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer : ${prompt}. Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {\"titre\": \"\",\"body\":\"\"}. Le contenu de body doit âtre donc contenu web redigé de A à Z (article de blog ou fiche de produit, ...) et structuré en html avec titre (balises h3) et sous titre (balises h5). Assurez-vous que l'onjet final peut être analysé par JSON.parse() sans erreur.`",
+        "data": [
+            {
+                "id": 1,
+                "name": "projet",
+                "value": "",
+                "fillable": false
+            },
+            {
+                "id": 2,
+                "name": "prompt",
+                "value": "",
+                "fillable": true
+            }
+        ],
+        "output": "",
+        "status" : 0
+    },
+    {
+        "id": 7,
+        "name": "Optimisation d'une stratégie",
+        "content": "",
+        "data": "",
+        "output": "",
+        "status" : 0
+    }
+]

@@ -159,14 +159,13 @@
             taches: [],
             titres: []
         };
-        
-        load_projet(id_projet);
-
+                
         load_suggestions("objectifs", id_projet);
         load_suggestions("strategies", id_projet);
         load_suggestions("taches", id_projet);
         load_suggestions("titres", id_projet);
 
+        load_projet(id_projet);
         function load_projet (id_projet) {
 
             // on va selectionner a ce niveau le projet qui est censé etre actif
@@ -335,7 +334,7 @@
                             components += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
                                                     <div class="form-check mb-0 d-flex align-items-center">
                                                         <input onchange="toggle_element('${type_sug}', '${element.id}')" class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${element.id}" />
-                                                        <label class="form-check-label mb-0 p-3" for="objectif_${element.id}">${element.contenu}</label>
+                                                        <label class="form-check-label mb-0 p-3" for="${type_sug}_${element.id}">${element.contenu}</label>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <div class="hover-actions">
@@ -361,208 +360,6 @@
             });
 
         }
-
-        // load_objectifs(8)
-        // load_strategies(8)
-        // load_taches(8)
-        // load_titres(8)
-
-        // function load_titres (id_projet) {
-
-        //     $.ajax({
-        //         url: 'Suggestion/get_titres.php',
-        //         method: 'GET',
-        //         data: {
-        //             id_projet: id_projet
-        //         },
-        //         dataType: 'json',
-        //         success: function(titres) {
-                    
-        //             var titres_container = $('#titres');
-        //             var elements = ""
-
-        //             if(titres.length > 0) {
-
-        //                 $.each(titres, function(index, titre) {
-
-        //                     elements += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
-        //                                             <div class="form-check mb-0 d-flex align-items-center">
-        //                                                 <input class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${titre.id}" />
-        //                                                 <label class="form-check-label mb-0 p-3" for="objectif_${titre.id}">${titre.contenu}</label>
-        //                                             </div>
-        //                                             <div class="d-flex align-items-center">
-        //                                                 <div class="hover-actions">
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-trash"></span>
-        //                                                     </button>
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-check"></span>
-        //                                                     </button>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>`;
-
-        //                 });
-                        
-        //                 titres_container.html(elements);
-        //             }
-        //             else {
-        //                 titres_container.html('<div class="mt-3"><p>Aucune suggestion de strategie pour le moment</p></div>');
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log("Une erreur s'est produite : " + error);
-        //         }
-        //     });
-
-        // }
-
-        // function load_taches (id_projet) {
-
-        //     $.ajax({
-        //         url: 'Suggestion/get_taches.php',
-        //         method: 'GET',
-        //         data: {
-        //             id_projet: id_projet
-        //         },
-        //         dataType: 'json',
-        //         success: function(taches) {
-                    
-        //             var taches_container = $('#taches');
-        //             var elements = ""
-
-        //             if(taches.length > 0) {
-
-        //                 $.each(taches, function(index, tache) {
-
-        //                     elements += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
-        //                                             <div class="form-check mb-0 d-flex align-items-center">
-        //                                                 <input class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${tache.id}" />
-        //                                                 <label class="form-check-label mb-0 p-3" for="objectif_${tache.id}">${tache.contenu}</label>
-        //                                             </div>
-        //                                             <div class="d-flex align-items-center">
-        //                                                 <div class="hover-actions">
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-trash"></span>
-        //                                                     </button>
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-check"></span>
-        //                                                     </button>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>`;
-
-        //                 });
-                        
-        //                 taches_container.html(elements);
-        //             }
-        //             else {
-        //                 taches_container.html('<div class="mt-3"><p>Aucune suggestion de strategie pour le moment</p></div>');
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log("Une erreur s'est produite : " + error);
-        //         }
-        //     });
-        // }
-
-        // function load_strategies (id_projet) {
-
-        //     $.ajax({
-        //         url: 'Suggestion/get_strategies.php',
-        //         method: 'GET',
-        //         data: {
-        //             id_projet: id_projet
-        //         },
-        //         dataType: 'json',
-        //         success: function(strategies) {
-                    
-        //             var strategies_container = $('#strategies');
-        //             var elements = ""
-
-        //             if(strategies.length > 0) {
-
-        //                 $.each(strategies, function(index, strategie) {
-
-        //                     elements += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
-        //                                             <div class="form-check mb-0 d-flex align-items-center">
-        //                                                 <input class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${strategie.id}" />
-        //                                                 <label class="form-check-label mb-0 p-3" for="objectif_${strategie.id}">${strategie.contenu}</label>
-        //                                             </div>
-        //                                             <div class="d-flex align-items-center">
-        //                                                 <div class="hover-actions">
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-trash"></span>
-        //                                                     </button>
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-check"></span>
-        //                                                     </button>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>`;
-
-        //                 });
-                        
-        //                 strategies_container.html(elements);
-        //             }
-        //             else {
-        //                 strategies_container.html('<div class="mt-3"><p>Aucune suggestion de strategie pour le moment</p></div>');
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log("Une erreur s'est produite : " + error);
-        //         }
-        //     });
-        // }
-
-        // function load_objectifs (id_projet) {
-
-        //     $.ajax({
-        //         url: 'Suggestion/get_objectifs.php',
-        //         method: 'GET',
-        //         data: {
-        //             id_projet: id_projet
-        //         },
-        //         dataType: 'json',
-        //         success: function(objectifs) {
-
-        //             var objectifs_container = $('#objectifs');
-        //             var elements = ""
-
-        //             if(objectifs.length > 0) {
-
-        //                 $.each(objectifs, function(index, objectif) {
-
-        //                     elements += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
-        //                                             <div class="form-check mb-0 d-flex align-items-center">
-        //                                                 <input class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${objectif.id}" />
-        //                                                 <label class="form-check-label mb-0 p-3" for="objectif_${objectif.id}">${objectif.contenu}</label>
-        //                                             </div>
-        //                                             <div class="d-flex align-items-center">
-        //                                                 <div class="hover-actions">
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-trash"></span>
-        //                                                     </button>
-        //                                                     <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-        //                                                         <span class="fas fa-check"></span>
-        //                                                     </button>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>`;
-
-        //                 });
-                        
-        //                 objectifs_container.html(elements);
-        //             }
-        //             else {
-        //                 objectifs_container.html('<div class="mt-3"><p>Aucune suggestion d\'objectif pour le moment</p></div>');
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log("Une erreur s'est produite : " + error);
-        //         }
-        //     });
-        // }
 
     </script>
 

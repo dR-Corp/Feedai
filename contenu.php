@@ -462,7 +462,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
