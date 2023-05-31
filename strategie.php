@@ -37,8 +37,8 @@
                                         src="assets/img/illustrations/crm-bar-chart.png" alt="" width="90" />
                                     <div>
                                         <h6 class="text-primary fs--1 mb-0">Gestion de </h6>
-                                        <h4 class="text-primary fw-bold mb-0">Stratégie et <span
-                                                class="text-info fw-medium">marketing</span></h4>
+                                        <h4 class="text-primary fw-bold mb-0">stratégies et marketing <span
+                                                class="text-info fw-medium">ia</span></h4>
                                     </div><img class="ms-n4 d-md-none d-lg-block"
                                         src="assets/img/illustrations/crm-line-chart.png" alt="" width="150" />
                                 </div>
@@ -46,10 +46,7 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                            <select class="form-select form-select-sm" aria-label="Bulk actions">
-                                                <option selected="">Projet 2023</option>
-                                                <option value="Refund">Projet 2025</option>
-                                                <option value="Delete">Projet 2027</option>
+                                            <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
                                             </select>
                                         </div>
                                         <!-- </div> -->
@@ -175,7 +172,7 @@
                             </div>
                     </div>
                     <div class="col-lg-4 ps-lg-2">
-                        <!-- <div class="sticky-sidebar">
+                        <div class="sticky-sidebar">
                             <div class="card mb-3 overflow-hidden">
                                 <div class="card-header">
                                     <h5 class="mb-0">Prompt</h5>
@@ -183,13 +180,13 @@
                                 <div class="card-body bg-light">
                                     <form>
                                         <div class="mb-3">
-                                            <input class="form-control" id="old-password" type="password"
+                                            <input class="form-control" id="" type="text"
                                                 placeholder="Entre votre requête ici" />
                                         </div>
                                         <a class="btn btn-falcon-primary btn-sm" href="#!">Lancer</a>
                                     </form>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!-- <div class="card mb-3 overflow-hidden">
                                 <div class="card-header">
@@ -234,6 +231,7 @@
                             </div> -->
 
                     </div>
+                 </div>
 
                 <!-- footer -->
                 <?php include('footer.php') ?>
@@ -253,6 +251,17 @@
     <?php include('script.php') ?>
     <script>
     
+        $('#listProjet').on('change', function() {
+            var projetActif = $(this).val();
+            // console.log(projetActif);
+            localStorage.removeItem('isActif');
+            localStorage.setItem('isActif', projetActif);
+            var isActif = localStorage.getItem('isActif');
+            console.log(isActif);
+            // Recharger la page
+            location.reload();
+        });
+
             function listStrategy(projet_id){
                  //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
                 $.ajax({
@@ -279,11 +288,62 @@
                     }
                 });
             }
-    
+            
+            function listProjet(user_id){
+             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+                const data = {
+                    user_id : 1
+                }
+                $.ajax({
+                    url: 'Projet/liste.php',
+                    method: 'POST', 
+                    data: data, 
+                    success: function(response) {
+                        // $('#result').html(response);
+                        var projet = JSON.parse(response);
+                        // Pour définir une variable de session
+                        if(!localStorage.getItem('isActif')){
+                            console.log('isActif nest pas');
+                            localStorage.setItem('isActif', projet[0].id);
+                            // var isActif = localStorage.getItem('isActif');
+                        }else{
+                            console.log("isActif existe");
+                            var isActif = localStorage.getItem('isActif');
+                        }
+
+                        console.log(isActif);
+
+                        var html = '<option selected disabled>Choisir notre projet...</option>';
+                        for (var i = 0; i < projet.length; i++) {
+                            html += '<option value=' + projet[i].id;
+
+                            if (projet[i].id === isActif.toString()) {
+                                html += ' selected="selected"';
+                            }
+
+                            html += '>' + projet[i].nom + '</option>';
+                        }
+
+
+
+                        $('#listProjet').html(html);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error(textStatus, errorThrown);
+                    }
+                });
+            }
+
             $(document).ready(function() {
                 // Appel de la fonction listHistorics() après le chargement complet de la page
-                var projet_id = 2 ;
+                var isActif = localStorage.getItem('isActif');
+                console.log(isActif);
+
+                var projet_id = isActif ;
+                var user_id = 1 ;
+
                 listStrategy(projet_id);
+                listProjet(user_id);
             });
     
             

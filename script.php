@@ -34,6 +34,44 @@
         $('#action-loader').hide()
     }
     $('#action-loader').hide();
+
+</script>
+<script>
+    user_id = 1;
+    load_projet(user_id);
+    function load_projet(user_id){
+             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+        $.ajax({
+            url: 'Projet/liste.php',
+            method: 'POST', 
+            data: {user_id:user_id}, 
+            success: function(response) {
+                // $('#result').html(response);
+                var projet = JSON.parse(response);
+                // Pour définir une variable de session
+                if(!localStorage.getItem('isActif')){
+                    console.log('isActif nest pas');
+                    localStorage.setItem('isActif', projet[0].id);
+                    // var isActif = localStorage.getItem('isActif');
+                }else{
+                    console.log("isActif existe");
+                    var isActif = localStorage.getItem('isActif');
+                }
+
+                console.log(isActif);
+
+                var html = '<option selected disabled>Choisir notre projet...</option>';
+                for (var i = 0; i < projet.length; i++) {
+                    html += `<option ${isActif == projet[i].id ? 'selected' : ''} value="${projet[i].id}">${projet[i].nom}</option>`;
+                }
+
+                $('#projets').html(html);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus, errorThrown);
+            }
+        });
+    }
 </script>
 
 <script src="vendors/fullcalendar/main.min.js"></script>

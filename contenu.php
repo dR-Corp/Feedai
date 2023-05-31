@@ -46,11 +46,8 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                            <select class="form-select form-select-sm" aria-label="Bulk actions">
-                                                <option selected="">Projet 2023</option>
-                                                <option value="Refund">Projet 2025</option>
-                                                <option value="Delete">Projet 2027</option>
-                                            </select>
+                                        <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
+                                        </select>
                                         </div>
                                         <!-- </div> -->
                                     </form>
@@ -115,41 +112,20 @@
 
                                 <form id="form-edit-redaction" class="row g-3">
                                     <div class="col-lg-12">
-                                        <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"><?php echo $historics['title'];?></h5></label>
+                                        <label class="form-label" for="intro"><h5 class="fs-0" id="titrePrompt"></h5></label>
                                         <textarea class="form-control py-4" readOnly id="details" name="intro" cols="30"
-                                            rows="13">
-                                            <?php if ($historics != null) :?>
-                                                <?php echo json_decode($historics['details']);?>
-                                           <?php endif;?>
-                                        </textarea>
+                                            rows="13"></textarea>
                                     </div>
-                                    <!-- <div class="col-12 d-flex justify-content-end">
-                                        <button class="btn btn-primary" type="submit">Update </button>
-                                    </div> -->
                                 </form>
                             </div>
                         </div>
-                        <!-- <?php
-                            include('db_connexion.php');
-                            $projet_id = 8;
-                            $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id  ORDER BY id DESC';
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute(array(':projet_id' => $projet_id));
-                            $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            if($historics != null):
-                        ?> -->
+                    
                         <div class="card mb-3">
-                            <div class="card-header">
-                                <h5 class="mb-0">Historique</h5>
-                            </div>
-                            <div class="card-body bg-light" id="historic">
-                            
+                            <div class="card-header"> <h5 class="mb-0">Historique</h5></div>
+                            <div class="card-body bg-light" id="historic">   
                             </div>
                         </div>
-                        <?php endif;?>
-
                     </div>
-                  
 
                     <div class="col-lg-4 ps-lg-2">
                         <div class="sticky-sidebar">
@@ -168,28 +144,10 @@
                                     </form>
                                 </div>
                             </div>
-                            <?php
-                                include('db_connexion.php');
-                                $projet_id = 8;
-                                $user_id = 1;
-                                $sql = 'SELECT * FROM contenu_web WHERE projet_id = :projet_id AND user_id = :user_id ORDER BY id DESC';
-                                $stmt = $db->prepare($sql);
-                                $stmt->execute(array(':projet_id' => $projet_id,':user_id'=>$user_id));
-                                $contentWeb = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                if($contentWeb != null):
-                            ?>
                             <div class="card mb-3 overflow-hidden">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Ressources</h5>
-                                </div>
-                                
-                                <div class="card-body bg-light border-top" id="ressources">
-                                    
-                                </div>
-                               
+                                <div class="card-header"> <h5 class="mb-0">Ressources</h5> </div>
+                                <div class="card-body bg-light border-top" id="ressources"></div>
                             </div>
-                            <?php endif ;?>
-
                             <div class="card mb-3">
                                 <div class="card-header">
                                     <h5 class="mb-0">Suggestions de contenu</h5>
@@ -333,8 +291,6 @@
     <!-- script js -->
     <?php include('script.php') ?>
     <script>
-        
-        $('#form-edit-redaction').hide()
 
         $('#btn-update').on('click', function() {
             $('#details').prop('readOnly', false);
@@ -504,8 +460,9 @@
 
         function listRessource(user_id,projet_id){
              //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
+             var isActif = localStorage.getItem('isActif');
              const data = {
-                projet_id : 8,
+                projet_id : isActif,
                 user_id : 1
              }
             $.ajax({
@@ -531,12 +488,27 @@
             });
         }
 
+        $('#projets').on('change', function() {
+            var projetActif = $(this).val();
+            // console.log(projetActif);
+            localStorage.removeItem('isActif');
+            localStorage.setItem('isActif', projetActif);
+            var isActif = localStorage.getItem('isActif');
+            console.log(isActif);
+            // Recharger la page
+            location.reload();
+        });
+
         $(document).ready(function() {
             // Appel de la fonction listHistorics() après le chargement complet de la page
-            var projet_id = 8;
-            var user_id = 2 ;
+            var isActif = localStorage.getItem('isActif');
+
+            var projet_id = isActif;
+            var user_id = 1 ;
             listHistorics(projet_id);
             listRessource(user_id,projet_id);
+            $('#form-edit-redaction').hide()
+
         });
 
         
