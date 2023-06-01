@@ -54,10 +54,10 @@
         "id": 3,
         "name": "Santé et bien-être",
         "sous_categories": [
-            "Compléments alimentaires et vitamines", 
             "Aliments diététiques et sans allergènes",
-            "Produits de fitness et équipements d'exercice",
+            "Compléments alimentaires et vitamines", 
             "Huiles essentielles et aromathérapie",
+            "Produits de fitness et équipements d'exercice",
             "Thérapies alternatives et holistiques"
         ]
     },

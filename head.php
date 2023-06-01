@@ -1,4 +1,6 @@
-<?php  session_start();?>
+<?php  
+  session_start();
+?>
 
 <head>
     <meta charset="utf-8">
@@ -43,7 +45,25 @@
 
     
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet"> -->
+    
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+
+    <!-- Select2 -->
+    <!-- <link rel="stylesheet" href="vendors/select2/css/select2.min.css">
+    <link rel="stylesheet" href="vendors/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <script src="vendors/select2/js/select2.full.min.js"></script> -->
+
+    <link href="vendors/choices/choices.min.css" rel="stylesheet" />
+    <script src="vendors/choices/choices.min.js"></script>
+    
+    <!-- Initialize Select2 -->
+    <!-- <script>  
+        $(document).ready(function () {
+            $('.select2').select2();
+        });
+    </script> -->
 
     
     <script>

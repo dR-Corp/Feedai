@@ -45,8 +45,7 @@
                             </div>
                             <div class="col-sm-auto px-3">
                                 <div class="row gx-2 align-items-center">
-                                    <div class="col-auto pe-0"><a class="text-600 px-1" href="kanban.php" data-bs-toggle="tooltip" title="Kanban"><span class="nav-link-icon"><span class="fab fa-trello"></span></a></div>
-                                    <div class="col-auto pe-0"><a class="text-600 px-1" href="add-projet.php" title="Créer un projet"><span class="fas fa-project-diagram"></span></a></div>
+                                    <div class="col-auto pe-0"><a class="text-600 px-1" href="add-projet.php" data-bs-toggle="tooltip" title="Créer un projet"><span class="fas fa-project-diagram"></span></a></div>
                                 </div>
                             </div>
                         </div>
@@ -59,96 +58,118 @@
                         $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     ?>
 
-                    <div class="card" id="TableCrmRecentLeads" data-list='{"valueNames":["name","email","status"],"page":8,"pagination":true}'>
-                        <div class="card-header d-flex flex-between-center py-2">
-                        <h6 class="mb-0">Les derniers projets</h6>
-                        <div class="dropdown font-sans-serif btn-reveal-trigger">
-                            <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="recent-leads-header-dropdownundefined" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="recent-leads-header-dropdownundefined"><a class="dropdown-item" href="#!">Afficher</a><a class="dropdown-item" href="#!">Activer</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Supprimer</a>
+                    <?php if(isset($projets) && !empty($projets)): ?>
+
+                        <div class="card" id="TableCrmRecentLeads" data-list='{"valueNames":["name","email","status"],"page":8,"pagination":true}'>
+                            <div class="card-header d-flex flex-between-center py-2">
+                            <h6 class="mb-0">Liste des projets</h6>
+                            <div class="dropdown font-sans-serif btn-reveal-trigger">
+                                <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="recent-leads-header-dropdownundefined" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                                <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="recent-leads-header-dropdownundefined"><a class="dropdown-item" href="#!">Afficher</a><a class="dropdown-item" href="#!">Activer</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Supprimer</a>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card-body px-0 py-0">
+                                <div class="table-responsive scrollbar">
+
+                                    <table class="table fs--1 mb-0">
+                                        <thead class="bg-200 text-800">
+                                            <tr>
+                                                <th hidden class="sort align-middle" data-sort="id">id</th>
+                                                <th class="py-3 white-space-nowrap" style="max-width: 30px;">
+                                                    <div class="form-check mb-0 d-flex align-items-center">
+                                                    <input class="form-check-input" id="checkbox-bulk-leads-select" type="checkbox" data-bulk-select='{"body":"table-recent-leads-body","actions":"table-recent-leads-actions","replacedElement":"table-recent-leads-replace-element"}' />
+                                                    </div>
+                                                </th>
+                                                <th class="sort align-middle" data-sort="nom">Nom</th>
+                                                <th class="sort align-middle" data-sort="type">Type</th>
+                                                <th class="sort align-middle" data-sort="progression">Progression</th>
+                                                <th class="sort align-middle" data-sort="etat">Etat</th>
+                                                <th class="sort align-middle text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="list" id="table-recent-leads-body">
+                                            
+                                            <?php foreach($projets as $projet): ?>
+                                            <tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                                                <td hidden class="align-middle white-space-nowrap"><?= $projet['id'] ?></td>
+                                                <td class="align-middle" style="max-width: 30px;">
+                                                    <div class="form-check mb-0">
+                                                    <input class="form-check-input" type="checkbox" id="recent-leads-0" data-bulk-select-row="data-bulk-select-row" />
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle white-space-nowrap">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar avatar-s">
+                                                            <img class="rounded" src="assets\img\icons\docs.png" alt="" />
+                                                        </div>
+                                                        <h6 class="mb-0 ps-2 text-800 name"><?= $projet['nom'] ?></h6>
+                                                    </div>
+                                                </td>
+
+                                                <td class="align-middle white-space-nowrap">
+                                                    <h6 class="mb-0 text-800 name"><?= $projet['type'] ?></h6>
+                                                </td>
+
+                                                <td class="align-middle white-space-nowrap">
+                                                    <?php if($projet['progression'] == NULL || $projet['progression'] == "" || $projet['progression'] == 0): ?>
+                                                    <small class="badge fw-semi-bold rounded-pill status badge-soft-secondary">EN ATTENTE</small>
+                                                    <?php endif; ?>
+                                                </td>
+
+                                                <td class="align-middle white-space-nowrap">
+                                                    <?php if($projet['etat'] == NULL || $projet['etat'] == "" || $projet['etat'] == 0): ?>
+                                                    <small class="badge fw-semi-bold rounded-pill status badge-soft-secondary">INACTIF</small>
+                                                    <?php else: ?>
+                                                    <small class="badge fw-semi-bold rounded-pill status badge-soft-success">ACTIF</small>
+                                                    <?php endif; ?>
+                                                </td>
+
+                                                <td class="align-middle white-space-nowrap text-end position-relative">
+                                                    <div class="hover-actions bg-100">
+                                                    <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm btn-supprimer">
+                                                        <span class="fas fa-trash text-danger"></span>
+                                                    </button>
+                                                    <?php if(!$projet['etat']): ?>
+                                                        <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm btn-activer">
+                                                            <span class="fas fa-check text-success"></span>
+                                                        </button>
+                                                    <?php endif; ?>
+                                                    </div>
+                                                    <a href="details-projet.php?id=<?= $projet['id'] ?>" class="btn btn-link text-600 btn-sm btn-reveal-sm transition-none"><span class="fas fa-folder-open text-primary"></span></a>
+                                                </td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                            
+                                        </tbody>
+                                    </table>
+                                                                
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light p-0">
+                                <!-- on affichera la pagination à ce niveau -->
                             </div>
                         </div>
-                        </div>
-                        <div class="card-body px-0 py-0">
-                        <div class="table-responsive scrollbar">
-                            <table class="table fs--1 mb-0">
-                            <thead class="bg-200 text-800">
-                                <tr>
-                                    <th hidden class="sort align-middle" data-sort="id">id</th>
-                                    <th class="py-3 white-space-nowrap" style="max-width: 30px;">
-                                        <div class="form-check mb-0 d-flex align-items-center">
-                                        <input class="form-check-input" id="checkbox-bulk-leads-select" type="checkbox" data-bulk-select='{"body":"table-recent-leads-body","actions":"table-recent-leads-actions","replacedElement":"table-recent-leads-replace-element"}' />
-                                        </div>
-                                    </th>
-                                    <th class="sort align-middle" data-sort="nom">Nom</th>
-                                    <th class="sort align-middle" data-sort="type">Type</th>
-                                    <th class="sort align-middle" data-sort="progression">Progression</th>
-                                    <th class="sort align-middle" data-sort="etat">Etat</th>
-                                    <th class="sort align-middle text-end">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="list" id="table-recent-leads-body">
-                                
-                                <?php foreach($projets as $projet): ?>
-                                <tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
-                                    <td hidden class="align-middle white-space-nowrap"><?= $projet['id'] ?></td>
-                                    <td class="align-middle" style="max-width: 30px;">
-                                        <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="recent-leads-0" data-bulk-select-row="data-bulk-select-row" />
-                                        </div>
-                                    </td>
-                                    <td class="align-middle white-space-nowrap">
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-s">
-                                                <img class="rounded" src="assets\img\icons\docs.png" alt="" />
-                                            </div>
-                                            <h6 class="mb-0 ps-2 text-800 name"><?= $projet['nom'] ?></h6>
-                                        </div>
-                                    </td>
 
-                                    <td class="align-middle white-space-nowrap">
-                                        <h6 class="mb-0 text-800 name"><?= $projet['type'] ?></h6>
-                                    </td>
-
-                                    <td class="align-middle white-space-nowrap">
-                                        <?php if($projet['progression'] == NULL || $projet['progression'] == "" || $projet['progression'] == 0): ?>
-                                        <small class="badge fw-semi-bold rounded-pill status badge-soft-secondary">EN ATTENTE</small>
-                                        <?php endif; ?>
-                                    </td>
-
-                                    <td class="align-middle white-space-nowrap">
-                                        <?php if($projet['etat'] == NULL || $projet['etat'] == "" || $projet['etat'] == 0): ?>
-                                        <small class="badge fw-semi-bold rounded-pill status badge-soft-secondary">INACTIF</small>
-                                        <?php else: ?>
-                                        <small class="badge fw-semi-bold rounded-pill status badge-soft-success">ACTIF</small>
-                                        <?php endif; ?>
-                                    </td>
-
-                                    <td class="align-middle white-space-nowrap text-end position-relative">
-                                        <div class="hover-actions bg-100">
-                                        <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm btn-supprimer">
-                                            <span class="fas fa-trash text-danger"></span>
-                                        </button>
-                                        <?php if(!$projet['etat']): ?>
-                                            <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm btn-activer">
-                                                <span class="fas fa-check text-success"></span>
-                                            </button>
-                                        <?php endif; ?>
-                                        </div>
-                                        <a href="details-projet.php?id=<?= $projet['id'] ?>" class="btn btn-link text-600 btn-sm btn-reveal-sm transition-none"><span class="fas fa-folder-open text-primary"></span></a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                                
-                            </tbody>
-                            </table>
-                                                        
+                    <?php else: ?>
+                        <div class="card">
+                            <div class="card-body overflow-hidden p-lg-6">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <a href="add-projet.php">
+                                        <img class="img-fluid" src="assets/img/icons/spot-illustrations/21.png" alt="" />
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 ps-lg-4 my-5 text-center text-lg-start">
+                                <h3 class="text-primary">Vous n'avez aucun projet !</h3>
+                                <p class="lead">Ajoutez en maintenant et faite un gain de temps en utilisant des fonctionnalités adaptées aux besoins de votre activité</p>
+                                <a class="btn btn-falcon-primary" href="add-projet.php">Créer</a>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        </div>
-                        <div class="card-footer bg-light p-0">
-                        <div class="pagination d-none"></div><a class="btn btn-sm btn-link d-block py-2" href="#!">Afficher la liste complète<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
-                        </div>
-                    </div>
+                    <?php endif; ?>
                     
                 </div>
 
@@ -455,7 +476,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -474,7 +495,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,

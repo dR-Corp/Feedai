@@ -4,7 +4,6 @@
 <!-- head -->
 <?php include('head.php') ?>
 
-
 <body>
 
     <!-- ===============================================-->
@@ -12,14 +11,6 @@
     <!-- ===============================================-->
     <main class="main" id="top">
         <div class="container" data-layout="container">
-            <script>
-            var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-            if (isFluid) {
-                var container = document.querySelector('[data-layout]');
-                container.classList.remove('container');
-                container.classList.add('container-fluid');
-            }
-            </script>
 
             <?php include('sidebar.php') ?>
 
@@ -46,31 +37,20 @@
                                     <form class="row gx-2">
                                         <div class="col-auto"><small>Projets : </small></div>
                                         <div class="col-auto">
-                                        <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions">
-                                        </select>
+                                            <select id="projets" class="form-select form-select-sm" aria-label="Bulk actions"></select>
                                         </div>
-                                        <!-- </div> -->
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php
-                        include('db_connexion.php');
-                        $projet_id = 8;
-                        $sql = 'SELECT * FROM historics WHERE projet_id = :projet_id ORDER BY projet_id DESC LIMIT 1';
-                        // $stmt = $db->query($sql);
-                        // $historics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute(array(':projet_id' => $projet_id));
-                        $historics = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                    ?>
+
+                <div id="no-project"></div>
 
                 <div class="row g-0">
                     <div class="col-lg-8 pe-lg-2">
-                        <div class="card mb-3">
+                        <div id="card-contenu-genere" class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <h5 class="mb-0">Contenu généré</h5>
                                 <div class="d-flex">
@@ -120,154 +100,40 @@
                             </div>
                         </div>
                     
-                        <div class="card mb-3">
+                        <div id="card-historique" class="card mb-3">
                             <div class="card-header"> <h5 class="mb-0">Historique</h5></div>
-                            <div class="card-body bg-light" id="historic">   
-                            </div>
+                            <div class="card-body bg-light" id="historic"></div>
                         </div>
                     </div>
 
                     <div class="col-lg-4 ps-lg-2">
                         <div class="sticky-sidebar">
                             <div class="card mb-3 overflow-hidden">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Prompt</h5>
-                                </div>
+                                
                                 <div class="card-body bg-light">
                                     <form>
                                         <div class="mb-3">
-                                            <!-- <label class="form-label" for="old-password">Votre requête</label> -->
-                                            <input class="form-control" id="prompt" type="text" name="prompt"
-                                                placeholder="Entre votre requête ici" />
+                                            <h5 class="mb-3">Prompt</h5>
+                                            <input class="form-control" id="prompt" type="text" name="prompt" placeholder="Entrez votre requête ici" />
                                         </div>
                                         <a class="btn btn-falcon-primary btn-sm" id="btn-prompt" ><i id="form-activer-loader" class="fas fa-spinner fa-pulse"></i> Lancer</a>
                                     </form>
                                 </div>
                             </div>
-                            <div class="card mb-3 overflow-hidden">
-                                <div class="card-header"> <h5 class="mb-0">Ressources</h5> </div>
-                                <div class="card-body bg-light border-top" id="ressources"></div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Suggestions de contenu</h5>
-                                </div>
-                                <div id="suggestions" class="card-body bg-light"></div>
-                            </div>
 
-                            <script>
-
-                                var projet_id = 8;
-
-                                function rediger_suggestion(id) {
-                                    
-                                    $.ajax({
-                                        url: 'get_titre_suggestion.php',
-                                        method: 'GET',
-                                        data: {
-                                            id: id
-                                        },
-                                        dataType: 'json',
-                                        success: function(response) {
-                                            console.log(response);
-                                            var titre = response;
-                                            var prompt = 'Redige moi un contenu web sur le titre ' + titre.contenu
-                                            
-                                            $("#prompt").val(prompt)
-                                            supprimer_suggestion(titre.id)
-                                        },
-                                        error: function(xhr, status, error) {
-                                            console.log("Une erreur s'est produite : " + error);
-                                        }
-                                    });
-
-                                }
-                                
-                                function supprimer_suggestion(id) {
-                                    
-                                    $.ajax({
-                                        url: 'del_titres_suggestions.php',
-                                        method: 'GET',
-                                        data: {
-                                            id: id
-                                        },
-                                        dataType: 'json',
-                                        success: function(response) {
-                                            console.log(response);
-                                            // actualisation de la liste des suggestions
-                                            show_titres_suggestions(projet_id);
-                                            // $("#suggestion_"+id).hide()
-                                        },
-                                        error: function(xhr, status, error) {
-                                            console.log("Une erreur s'est produite : " + error);
-                                        }
-                                    });
-
-                                }
-
-                                $(document).ready(function() {
-                                    projet_id = 8;
-                                    show_titres_suggestions(projet_id);
-                                });
-
-                                function show_titres_suggestions(projet_id) { 
-
-                                    var id_projet = 8; // à récupérer du projet actif
-
-                                    $.ajax({
-                                        url: 'get_titres_suggestions.php',
-                                        method: 'GET',
-                                        data: {
-                                            id_projet: id_projet
-                                        },
-                                        dataType: 'json',
-                                        success: function(response) {
-                                            var titres = response;
-
-                                            var cardBody = $('#suggestions');
-                                            cardBody.html("")
-
-                                            if(titres.length > 0) {
-
-                                                $.each(titres, function(index, titre) {
-                                                    var suggestion = $('<div id="suggestion_'+titre.id+'" class="suggestion"></div>');
-                                                    var fsContainer = $('<div class="fs--1 d-flex justify-content-start align-items-start"></div>');
-                                                    var iconContainer = $('<div class="d-flex px-2"></div>');
-                                                    var redigerLink = $('<a href="#!" onclick="rediger_suggestion(' + titre.id + ')" class="mx-2" title="rediger"><i class="fas fa-pen"></i></a>');
-                                                    var supprimerLink = $('<a href="#!" onclick="supprimer_suggestion(' + titre.id + ')" title="supprimer"><i class="fas fa-trash text-secondary"></i></a>');
-                                                    var titreElement = $('<p></p>').text(titre.contenu);
-                                                    var borderDiv = $('<div class="border-dashed-bottom mb-3"></div>');
-
-                                                    iconContainer.append(redigerLink, supprimerLink);
-                                                    fsContainer.append(iconContainer, titreElement);
-                                                    suggestion.append(fsContainer, borderDiv);
-                                                    cardBody.append(suggestion);
-                                                });
-                                            }
-                                            else {
-                                                cardBody.html('<div class="fs--1"><p>Aucune suggestion</p></div>');
-                                            }
-                                        },
-                                        error: function(xhr, status, error) {
-                                            console.log("Une erreur s'est produite : " + error);
-                                        }
-                                    });
-                                }
-
-                            </script>
-
-                            <!-- <div class="card mb-3 overflow-hidden">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Titre à rediger</h5>
-                                </div>
+                            <div id="card-ressources" class="card mb-3 overflow-hidden">
                                 <div class="card-body bg-light border-top">
-                                    <p class="fs-0">Un premier titre.</p>
-                                    <hr>
-                                    <p class="fs-0">Un deuxième titre.</p>
-                                    <hr>
-                                    <p class="fs-0">Un troisième rapport.</p>
+                                    <h5 class="mb-3">Ressources</h5>
+                                    <div id="ressources"></div>
                                 </div>
-                            </div> -->
+                            </div>
+
+                            <div class="card mb-3">
+                                <div class="card-body bg-light">
+                                    <h5 class="mb-3">Suggestions de contenu</h5>
+                                    <div id="suggestions"></div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -290,28 +156,55 @@
 
     <!-- script js -->
     <?php include('script.php') ?>
-    <script>
 
+    <script>
+        // console.log("ID projet", projet_id, ";");
+        
+        $('#form-activer-loader').hide();
+        $('#form-edit-redaction').hide()
+
+        if(projet_id) {
+            listHistorics(projet_id);
+
+            listRessource(user_id, projet_id);
+
+            show_titres_suggestions(projet_id);
+        }
+        else {
+
+            // $('#card-contenu-genere').attr('disabled', "disabled");
+            $('#card-contenu-genere :button').prop('disabled', true);
+
+            $('#prompt').attr('readonly', 'readonly');
+
+            $('#btn-prompt').addClass('disabled');
+
+            $('#no-project').html(`<div class="card g-3 mb-3">
+                                        <div class="bg-holder bg-card" style="background-image:url(assets/img/icons/spot-illustrations/corner-1.png);"></div>
+                                        <div class="card-header z-index-1">
+                                            <h5 class="text-warning">Aucun projet ! </h5>
+                                            <h6 class="text-600">Veuillez en rajouter pour continuer à travailler </h6>
+                                        </div>
+                                    </div>`)
+
+        }
+                
         $('#btn-update').on('click', function() {
             $('#details').prop('readOnly', false);
             $('#form-edit-redaction').show()
             $('#div-redaction').hide()
         });
         
-        $('#form-activer-loader').hide();
-        // $('#div-redaction').hide()
-
         $('#btn-prompt').on('click', function() {
             
             $('#form-edit-redaction').hide()
-
             $('#form-activer-loader').show();
             $('.btn-falcon-primary').addClass('disabled');
 
             //on ajoute chaque élément dans la variable object prompt
             prompt_req = $('#prompt').val();
             user_id = 1;
-            projet_id = 8;
+            
             //on fait une requete ajax, pour ajouter à la base de données
             $.ajax({
                 url: 'Projet/detail.php',
@@ -322,14 +215,6 @@
                     console.log(prompt_req);
 
                     projet = JSON.parse(response);
-
-                    let prompt = 'Soit les informations suivantes sur un projet e-commerce. ' + JSON.stringify(projet) + '. ';
-
-                    // const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
-                    //     À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
-                    //     ${prompt_req} 
-                    //     Veuillez renvoyer le résultat sous forme d'un objet JSON avec une structure similaire à celle-ci : {"titre": "","body":""}
-                    //     Assurez-vous que le résultat peut être analysé par JSON.parse() sans erreur.`;
 
                     const prompt_all = `Voici les informations suivantes sur un projet e-commerce : ${JSON.stringify(projet)}.
                         À partir de ces informations, veuillez utiliser vos connaissances sur les projets e-commerce et le web marketing pour générer :
@@ -418,7 +303,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify({
                     prompt: prompt,
@@ -432,16 +317,18 @@
             return JSON.parse(response)
         }
 
-        function listHistorics(projet_id){
+        function listHistorics(projet_id) {
+            
              //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
             $.ajax({
                 url: 'Historics/liste.php',
                 method: 'POST', 
-                data: { id: projet_id }, 
-                success: function(response) {
+                data: { projet_id: projet_id }, 
+                dataType: 'json',
+                success: function(historics) {
                     // $('#result').html(response);
-                    var historics = JSON.parse(response);
-                    console.log(historics.length);
+                    // var historics = JSON.parse(response);
+                    // console.log(historics.length);
 
                     var html = '';
                     for (var i = 0; i < historics.length; i++) {
@@ -451,6 +338,9 @@
                     }
 
                     $('#historic').html(html);
+
+                    historics.length == 0 ? $('#card-historique').hide() : $('#card-historique').show();
+
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -481,6 +371,9 @@
                     }
 
                     $('#ressources').html(html);
+
+                    contentWeb.length == 0 ? $('#card-ressources').hide() : $('#card-ressources').show();
+
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -488,30 +381,96 @@
             });
         }
 
-        $('#projets').on('change', function() {
-            var projetActif = $(this).val();
-            // console.log(projetActif);
-            localStorage.removeItem('isActif');
-            localStorage.setItem('isActif', projetActif);
-            var isActif = localStorage.getItem('isActif');
-            console.log(isActif);
-            // Recharger la page
-            location.reload();
-        });
+        function rediger_suggestion(id) {
+            
+            $.ajax({
+                url: 'get_titre_suggestion.php',
+                method: 'GET',
+                data: {
+                    id: id
+                },
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
+                    var titre = response;
+                    var prompt = 'Redige moi un contenu web sur le titre ' + titre.contenu
+                    
+                    $("#prompt").val(prompt)
+                    supprimer_suggestion(titre.id)
+                },
+                error: function(xhr, status, error) {
+                    console.log("Une erreur s'est produite : " + error);
+                }
+            });
 
-        $(document).ready(function() {
-            // Appel de la fonction listHistorics() après le chargement complet de la page
-            var isActif = localStorage.getItem('isActif');
+        }
 
-            var projet_id = isActif;
-            var user_id = 1 ;
-            listHistorics(projet_id);
-            listRessource(user_id,projet_id);
-            $('#form-edit-redaction').hide()
+        function supprimer_suggestion(id) {
+            
+            $.ajax({
+                url: 'del_titres_suggestions.php',
+                method: 'GET',
+                data: {
+                    id: id
+                },
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
+                    // actualisation de la liste des suggestions
+                    show_titres_suggestions(projet_id);
+                    // $("#suggestion_"+id).hide()
+                },
+                error: function(xhr, status, error) {
+                    console.log("Une erreur s'est produite : " + error);
+                }
+            });
 
-        });
+        }
 
-        
+        function show_titres_suggestions(projet_id) { 
+
+            var id_projet = 8; // à récupérer du projet actif
+
+            $.ajax({
+                url: 'get_titres_suggestions.php',
+                method: 'GET',
+                data: {
+                    id_projet: id_projet
+                },
+                dataType: 'json',
+                success: function(response) {
+                    var titres = response;
+
+                    var cardBody = $('#suggestions');
+                    cardBody.html("")
+
+                    if(titres.length > 0) {
+
+                        $.each(titres, function(index, titre) {
+                            var suggestion = $('<div id="suggestion_'+titre.id+'" class="suggestion"></div>');
+                            var fsContainer = $('<div class="fs--1 d-flex justify-content-start align-items-start"></div>');
+                            var iconContainer = $('<div class="d-flex px-2"></div>');
+                            var redigerLink = $('<a href="#!" onclick="rediger_suggestion(' + titre.id + ')" class="mx-2" title="rediger"><i class="fas fa-pen"></i></a>');
+                            var supprimerLink = $('<a href="#!" onclick="supprimer_suggestion(' + titre.id + ')" title="supprimer"><i class="fas fa-trash text-secondary"></i></a>');
+                            var titreElement = $('<p></p>').text(titre.contenu);
+                            var borderDiv = $('<div class="border-dashed-bottom mb-3"></div>');
+
+                            iconContainer.append(redigerLink, supprimerLink);
+                            fsContainer.append(iconContainer, titreElement);
+                            suggestion.append(fsContainer, borderDiv);
+                            cardBody.append(suggestion);
+                        });
+                    }
+                    else {
+                        cardBody.html('<div class="fs--1"><p>Aucune suggestion</p></div>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log("Une erreur s'est produite : " + error);
+                }
+            });
+        }
+                
     </script>
 
 </body>

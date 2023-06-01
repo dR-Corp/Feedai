@@ -43,26 +43,26 @@
                             niche: '',
                             sous_categorie_niche: '',
                             personae: {
-                                positionnement: '',
+                                positionnement: [],
                                 personnalite: {
-                                    traits_caractere: '',
-                                    interets_personnels: '',
-                                    qualite: '',
-                                    defaut: '',
-                                    passion: '',
-                                    peur: ''
-                                },
+                                    traits_caractere: [],
+                                    interets_personnels: [],
+                                    qualite: [],
+                                    defaut: [],
+                                    passion: [],
+                                    peur: []
+                                }
                             },
                             produit: {
                                 type: '',
                                 concept : '',
                                 liste: '',
                                 cibles: {
-                                    canaux_achat: '',
-                                    frequence_achat: '',
-                                    montant_moyen: '',
-                                    tranche_age: '',
-                                    genre: ''
+                                    canaux_achat: [],
+                                    frequence_achat: [],
+                                    montant_moyen: [],
+                                    tranche_age: [],
+                                    genre: []
                                 }
                             }
                         }
@@ -183,7 +183,7 @@
                                         <form class="form-validation">
 
                                             <div class="mb-3">
-                                                <label class="form-label" for="type-produit">Produit*</label>
+                                                <label class="form-label" for="type-produit">Type produit*</label>
                                                 <select class="form-select" name="gender" id="type-produit" required="required" data-wizard-validate-email="true">
                                                     <option value=""></option>
                                                     <option value="mono">Mono produit</option>
@@ -214,8 +214,7 @@
                                                 ?>
                                                             <div class="mb-3 ml-3">
                                                                 <label class="form-label" for="<?= $cible->slug ?>"><?= $cible->name ?>*</label>
-                                                                <select class="form-select" name="gender" id="<?= $cible->slug ?>" required="required" data-wizard-validate-email="true">
-                                                                    <option value=""></option>
+                                                                <select class="form-select js-choices" size="1" data-options='{"removeItemButton":true,"placeholder":true}' multiple="multiple" id="<?= $cible->slug ?>" required="required" data-wizard-validate-email="true">
                                                                     <?php
                                                                         foreach($cible->elements as $element):
                                                                             echo '<option value="'.$element.'">'.$element.'</option>';
@@ -227,7 +226,32 @@
                                                         endforeach;
                                                 ?>
                                             </fieldset>
+                                            <script>
 
+                                                document.addEventListener('DOMContentLoaded', function() {
+
+                                                    var selectElements = document.querySelectorAll('.js-choices');
+
+                                                    selectElements.forEach(function(selectElement) {
+                                                    
+                                                        var choice = new Choices(selectElement, {
+                                                            removeItemButton: true,
+                                                            placeholder: true,
+                                                        });
+ 
+                                                        selectElement.addEventListener('change', function(e) {
+                                                            var selectedValues = choice.getValue(true);
+                                                            var elementId = event.target.id;
+                                                            projet.details.produit.cibles[elementId] = selectedValues
+                                                            console.log(projet.details.produit.cibles);
+                                                            
+                                                        });
+
+                                                    });
+
+                                                });
+
+                                            </script>
                                         </form>
                                     </div>
                                     <div class="tab-pane px-sm-3 px-md-5" role="tabpanel"
@@ -380,11 +404,15 @@
                             <div class="flex-1">
                                 <h5 class="mb-2 fs-0"><?= $niche->name ?></h5>
                                 <div class="fs--2 mt-3">
-                                    <?php foreach($niche->sous_categories as $sous_categorie): ?>
+                                    <?php
+                                        foreach($niche->sous_categories as $sous_categorie):
+                                            $sous_categorie_text = str_replace("'", "\\'", $sous_categorie);
+                                            $niche_name = str_replace("'", "\\'", $niche->name);
+                                    ?>
                                         <div class="d-flex align-items-center">
                                             <span class="dot bg-300"></span>
                                             <span class="fw-semi-bold">
-                                                <a onclick="choisirNiche(event, '<?= $niche->id ?>', '<?= $niche->name ?>', '<?= $sous_categorie ?>' )" href="#"><?= $sous_categorie ?></a>
+                                                <a onclick="choisirNiche(event, '<?= $niche->id ?>', '<?= $niche_name ?>', '<?= $sous_categorie_text ?>' )" href="#"><?= $sous_categorie ?></a>
                                             </span>
                                         </div>
                                     <?php endforeach; ?>
@@ -421,6 +449,15 @@
                 success: function(response) {
                     // console.log(response);
                     $('#personeas_element').html(response)
+                    // on réinitialise les personae qui avait été choisi avant le changement de la niche 
+                    projet.details.personae.personnalite = {
+                        traits_caractere: [],
+                        interets_personnels: [],
+                        qualite: [],
+                        defaut: [],
+                        passion: [],
+                        peur: []
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
@@ -428,18 +465,35 @@
             });
 
         }
+
+        
+        function toggleElement(array, element) {
+            if(array.includes(element))
+                array.splice(array.indexOf(element), 1)
+            else
+                array.push(element)
+        }
+
         function choisirElementPersonea(event, elementPersonnalite, personae_id, personae_slug) {
             
             event.preventDefault();
 
             personae_id = JSON.parse(personae_id)
             personae_slug = JSON.parse(personae_slug)
-            $("#modal-list-personae-"+personae_id).modal('hide')
-            elementPersonnaliteChoisie = JSON.parse(elementPersonnalite)
-            var choosed_personae_element = $("#choosed-personae-element-"+personae_id)
-            choosed_personae_element.html(elementPersonnaliteChoisie.name)
 
-            projet.details.personae.personnalite[personae_slug] = elementPersonnaliteChoisie.name
+            // $("#modal-list-personae-"+personae_id).modal('hide')
+
+            elementPersonnaliteChoisie = JSON.parse(elementPersonnalite)
+
+            toggleElement(projet.details.personae.personnalite[personae_slug], elementPersonnaliteChoisie.name)
+            event.target.classList.toggle("text-success")
+
+            
+            var choosed_personae_element = $("#choosed-personae-element-"+personae_id)
+            choosed_personae_element.html(projet.details.personae.personnalite[personae_slug].join(", "))
+
+
+            console.log(projet.details.personae.personnalite[personae_slug]);
 
         }
 
@@ -453,11 +507,11 @@
             
             projet.details.produit.type = $('#type-produit').val()
             projet.details.produit.concept = $('#concept').val()
-            projet.details.produit.cibles.canaux_achat = $('#canaux_achat').val()
-            projet.details.produit.cibles.frequence_achat = $('#frequence_achat').val()
-            projet.details.produit.cibles.montant_moyen = $('#montant_moyen').val()
-            projet.details.produit.cibles.genre = $('#genre').val()
-            projet.details.produit.cibles.tranche_age = $('#tranche_age').val()
+            // projet.details.produit.cibles.canaux_achat = $('#canaux_achat').val()
+            // projet.details.produit.cibles.frequence_achat = $('#frequence_achat').val()
+            // projet.details.produit.cibles.montant_moyen = $('#montant_moyen').val()
+            // projet.details.produit.cibles.genre = $('#genre').val()
+            // projet.details.produit.cibles.tranche_age = $('#tranche_age').val()
 
             console.log(projet);
 

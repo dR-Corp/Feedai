@@ -12,14 +12,6 @@
     <!-- ===============================================-->
     <main class="main" id="top">
         <div class="container" data-layout="container">
-            <script>
-            var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-            if (isFluid) {
-                var container = document.querySelector('[data-layout]');
-                container.classList.remove('container');
-                container.classList.add('container-fluid');
-            }
-            </script>
 
             <?php include('sidebar.php') ?>
 
@@ -57,14 +49,16 @@
                     </div>
                 </div>
 
+                <div id="no-project"></div>
+
                 <div class="row g-0">
                     <div class="col-lg-8 pe-lg-2">
-                        <div class="mb-3">
+                        <div class="mb-3 suggestions-cards">
                             <div class="card h-100">
                                 <div class="card-header d-flex flex-between-center border-bottom border-200">
                                     <h5 class="mb-0">Objectifs</h5>
                                     <div class="dropdown font-sans-serif btn-reveal-trigger">
-                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="crm-lead-conversion" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="objectifs-options" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
                                         <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-lead-conversion">
                                             <a onclick="validate_selected('objectifs')" class="dropdown-item" href="#!">Valider</a>
                                             <div class="dropdown-divider"></div>
@@ -76,12 +70,12 @@
                             </div>
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 suggestions-cards">
                             <div class="card h-100">
                                 <div class="card-header d-flex flex-between-center border-bottom border-200">
                                     <h5 class="mb-0">Stratégies</h5>
                                     <div class="dropdown font-sans-serif btn-reveal-trigger">
-                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="crm-lead-conversion" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="strategies-options" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
                                         <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-lead-conversion">
                                             <a onclick="validate_selected('strategies')" class="dropdown-item" href="#!">Valider</a>
                                             <div class="dropdown-divider"></div>
@@ -93,12 +87,12 @@
                             </div>
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 suggestions-cards">
                             <div class="card h-100">
                                 <div class="card-header d-flex flex-between-center border-bottom border-200">
                                     <h5 class="mb-0">Tâches à réaliser</h5>
                                     <div class="dropdown font-sans-serif btn-reveal-trigger">
-                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="crm-lead-conversion" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="taches-options" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
                                         <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-lead-conversion">
                                             <a onclick="validate_selected('taches')" class="dropdown-item" href="#!">Valider</a>
                                             <div class="dropdown-divider"></div>
@@ -110,12 +104,12 @@
                             </div>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 suggestions-cards">
                             <div class="card h-100">
                                 <div class="card-header d-flex flex-between-center border-bottom border-200">
                                     <h5 class="mb-0">Titre à rédiger</h5>
                                     <div class="dropdown font-sans-serif btn-reveal-trigger">
-                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="crm-lead-conversion" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                                        <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="titres-options" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
                                         <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-lead-conversion">
                                             <a onclick="validate_selected('titres')" class="dropdown-item" href="#!">Valider</a>
                                             <div class="dropdown-divider"></div>
@@ -151,53 +145,39 @@
 
     <script>
 
-        id_projet = 8
-
-        var selected_elements = {
-            objectifs: [],
-            strategies: [],
-            taches: [],
-            titres: []
-        };
-                
-        load_suggestions("objectifs", id_projet);
-        load_suggestions("strategies", id_projet);
-        load_suggestions("taches", id_projet);
-        load_suggestions("titres", id_projet);
-
-        load_projet(id_projet);
-        function load_projet (id_projet) {
-
-            // on va selectionner a ce niveau le projet qui est censé etre actif
-            $.ajax({
-                url: 'Projet/list.php',
-                method: 'GET',
-                data: {},
-                dataType: 'json',
-                success: function(projets) {
-
-                    console.log(projets);                   
-                    var elements_container = $('#projets');
-                    var components = ""
-
-                    if(projets.length > 0) {
-
-                        $.each(projets, function(index, projet) {
-                            components += `<option ${id_projet == projet.id ? 'selected' : ''} value="${projet.id}">${projet.nom}</option>`;
-                        });
-                        
-                        elements_container.html(components);
-                    }
-
-                },
-                error: function(xhr, status, error) {
-                    console.log("Une erreur s'est produite : " + error);
-                }
-            });
-
+        if(projet_id) {
+            
+            var selected_elements = {
+                objectifs: [],
+                strategies: [],
+                taches: [],
+                titres: []
+            };
+            
+            load_suggestions("objectifs", id_projet);
+            load_suggestions("strategies", id_projet);
+            load_suggestions("taches", id_projet);
+            load_suggestions("titres", id_projet);
 
         }
+        else {
 
+            // $('#card-contenu-genere :button').prop('disabled', true);
+
+            // $('#prompt').attr('readonly', 'readonly');
+
+            $('.suggestions-cards').hide();
+
+            $('#no-project').html(`<div class="card g-3 mb-3">
+                                        <div class="bg-holder bg-card" style="background-image:url(assets/img/icons/spot-illustrations/corner-1.png);"></div>
+                                        <div class="card-header z-index-1">
+                                            <h5 class="text-warning">Aucun projet ! </h5>
+                                            <h6 class="text-600">Veuillez en rajouter pour continuer à travailler </h6>
+                                        </div>
+                                    </div>`)
+
+        }
+                
         function validate_suggestion(type_sug, id) {
             $.ajax({
                 url: 'Suggestion/validate.php',
@@ -222,50 +202,57 @@
 
         function validate_selected (type_sug) {
 
-            $.ajax({
-                url: 'Suggestion/validate_multiple.php',
-                method: 'GET',
-                data: {
-                    ids: selected_elements[type_sug].join(',')
-                },
-                dataType: 'json',
-                success: function(response) {
-                    console.log(response);
+            if(selected_elements[type_sug].length > 0) {
+                $.ajax({
+                    url: 'Suggestion/validate_multiple.php',
+                    method: 'GET',
+                    data: {
+                        ids: selected_elements[type_sug].join(',')
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
 
-                    toast(response)
-                    load_suggestions(type_sug, id_projet)
-                    selected_elements[type_sug] = []
-                    console.log(selected_elements);
+                        toast(response)
+                        load_suggestions(type_sug, id_projet)
+                        selected_elements[type_sug] = []
+                        console.log(selected_elements);
 
-                },
-                error: function(xhr, status, error) {
-                    console.log("Une erreur s'est produite : " + error);
-                }
-            });
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Une erreur s'est produite : " + error);
+                    }
+                });
+            }
         }
 
         function delete_selected (type_sug) {
 
-            $.ajax({
-                url: 'Suggestion/delete_multiple.php',
-                method: 'GET',
-                data: {
-                    ids: selected_elements[type_sug].join(',')
-                },
-                dataType: 'json',
-                success: function(response) {
-                    console.log(response);
+            if(selected_elements[type_sug].length > 0) {
 
-                    toast(response)
-                    load_suggestions(type_sug, id_projet)
-                    selected_elements[type_sug] = []
-                    console.log(selected_elements);
+                $.ajax({
+                    url: 'Suggestion/delete_multiple.php',
+                    method: 'GET',
+                    data: {
+                        ids: selected_elements[type_sug].join(',')
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
 
-                },
-                error: function(xhr, status, error) {
-                    console.log("Une erreur s'est produite : " + error);
-                }
-            });
+                        toast(response)
+                        load_suggestions(type_sug, id_projet)
+                        selected_elements[type_sug] = []
+                        console.log(selected_elements);
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Une erreur s'est produite : " + error);
+                    }
+                });
+
+            }
+
         }
 
         function delete_suggestion(type_sug, id) {
@@ -289,21 +276,7 @@
                 }
             });
         }
-
-        function toast (response) {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'bottom-end',
-                showConfirmButton: false,
-                timer: 3000,
-            })
-
-            Toast.fire({
-                icon: response.alert,
-                title: response.alert_message
-            })
-        }
-        
+               
         function toggle_element(type_sug, id) {
             selected_elements[type_sug].includes(id) ? selected_elements[type_sug].splice(selected_elements[type_sug].indexOf(id), 1) : selected_elements[type_sug].push(id)
             console.log(selected_elements);
@@ -351,7 +324,9 @@
                         elements_container.html(components);
                     }
                     else {
-                        elements_container.html('<div class="mt-3"><p>Aucune suggestion de strategie pour le moment</p></div>');
+                        // on ne peut pas toucher aux options si il n'y a pas de suggestion
+                        $("#"+type_sug+"-options").prop('disabled', true);
+                        elements_container.html('<div class="mt-3 px-card fs--1"><p>Aucune suggestion </p></div>');
                     }
                 },
                 error: function(xhr, status, error) {

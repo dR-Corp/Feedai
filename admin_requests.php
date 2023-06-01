@@ -297,38 +297,38 @@
 
         }
 
-        load_projet(id_projet);
-        function load_projet (id_projet) {
+        // load_projet(id_projet);
+        // function load_projet (id_projet) {
 
-            // on va selectionner a ce niveau le projet qui est censé etre actif
-            $.ajax({
-                url: 'Projet/list.php',
-                method: 'GET',
-                data: {},
-                dataType: 'json',
-                success: function(projets) {
+        //     // on va selectionner a ce niveau le projet qui est censé etre actif
+        //     $.ajax({
+        //         url: 'Projet/list.php',
+        //         method: 'GET',
+        //         data: {},
+        //         dataType: 'json',
+        //         success: function(projets) {
 
-                    console.log(projets);                   
-                    var elements_container = $('#projets');
-                    var components = ""
+        //             console.log(projets);                   
+        //             var elements_container = $('#projets');
+        //             var components = ""
 
-                    if(projets.length > 0) {
+        //             if(projets.length > 0) {
 
-                        $.each(projets, function(index, projet) {
-                            components += `<option ${id_projet == projet.id ? 'selected' : ''} value="${projet.id}">${projet.nom}</option>`;
-                        });
+        //                 $.each(projets, function(index, projet) {
+        //                     components += `<option ${id_projet == projet.id ? 'selected' : ''} value="${projet.id}">${projet.nom}</option>`;
+        //                 });
                         
-                        elements_container.html(components);
-                    }
+        //                 elements_container.html(components);
+        //             }
 
-                },
-                error: function(xhr, status, error) {
-                    console.log("Une erreur s'est produite : " + error);
-                }
-            });
+        //         },
+        //         error: function(xhr, status, error) {
+        //             console.log("Une erreur s'est produite : " + error);
+        //         }
+        //     });
 
 
-        }
+        // }
 
         function toggle_element(id) {
 

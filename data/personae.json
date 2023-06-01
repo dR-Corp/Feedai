@@ -49,7 +49,7 @@
             },
             {
                 "id": 3,
-                "name": "Qualités ",
+                "name": "Qualités",
                 "slug": "qualite",
                 "elements": [
                     {
@@ -227,7 +227,7 @@
             },
             {
                 "id": 3,
-                "name": "Qualités ",
+                "name": "Qualités",
                 "slug": "qualite",
                 "elements": [
                     {
@@ -510,8 +510,8 @@
                     }
                 ]
             },{
-                "id": 3,
-                "name": "Défauts ",
+                "id": 4,
+                "name": "Défauts",
                 "slug": "defaut",
                 "elements": [
                     {
@@ -1359,7 +1359,7 @@
                 ]
             },
             {
-                "id": 3,
+                "id": 4,
                 "name": "Défauts",
                 "slug": "defaut",
                 "elements": [

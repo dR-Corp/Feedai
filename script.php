@@ -11,16 +11,86 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
 <script src="vendors/list.js/list.min.js"></script>
 <script src="assets/js/theme.js"></script>
-<!-- <script src="vendor/jquery/jquery.js"></script> -->
-
+<script src="vendors/fullcalendar/main.min.js"></script>
+<script src="assets/js/flatpickr.js"></script>
+<script src="vendors/dayjs/dayjs.min.js"></script>
+<script src="vendors/lottie/lottie.min.js"> </script>
+<script src="vendors/prism/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
 
 <script>
-    //gestion du loader
+
+    //gestion du chargement de projet
+
+    function load_projet(user_id) {
+    
+        $.ajax({
+            url: 'Projet/liste.php',
+            method: 'POST', 
+            data: {user_id:user_id},
+            dataType: 'json',
+            success: function(projets) {
+
+                var projects_select = $('#projets');
+                var projects_elements = ""
+                if(projets.length > 0) {
+
+                    if(!localStorage.getItem('active_project')) localStorage.setItem('active_project', projets[0].id);
+                    
+                    active_project = localStorage.getItem('active_project');
+
+                    $.each(projets, function(index, projet) {
+                        projects_elements += `<option ${active_project == projet.id ? 'selected' : ''} value="${projet.id}">${projet.nom}</option>`;
+                    });
+
+                    projects_select.html(projects_elements);
+
+                }
+                else {
+                    projects_select.html('<option selected disabled>Aucun projet !</option>');
+                }
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus, errorThrown);
+            }
+        });
+
+    }      
+
+    // INITIALISATION DES VALEURS
+
+    var user_id = 1;
+
+    var active_project = ""
+
+    var projet_id = ""
+
+    load_projet(user_id); // la valeur de active_project sera initialisée à ce niveau 
+
+    var projet_id = active_project;
+
+    // on va aussi procéder à une révision de cette façon de faire la chose, car si une mise à jour est faire par l'utilisateur dans le localStorage, il pourrait y faire un injection
+
+    // en cas de sélection d'un nouveau projet
+    
+    $('#projets').on('change', function() {
+
+        var active_project = $(this).val();
+        
+        localStorage.removeItem('active_project');
+
+        localStorage.setItem('active_project', active_project);
+        
+        location.reload();
+    });
+
+
+</script>
+
+<script>
+    // gestion du loader
     var setLoader = (element, text) => {
-        // element.prepend('<div id="action-loader" class="text-center fa-2x text-secondary h-100 w-100" style="padding-top: 40vh; position: fixed; z-index: 99999; top: 0; left: 0; background-color: rgba(0,0,0,0.8);">'+
-        //     '<i id="loader-icon" class="fas fa-spinner fa-2x fa-spin mt-1"></i>'+
-        //     '<div id="loader-text" class="text-sm mt-3">'+text+'</div>'+
-        // '</div>');
         $('#action-loader').show()
     }
     var setLoaderText = (text) => {
@@ -35,53 +105,18 @@
     }
     $('#action-loader').hide();
 
-</script>
-<script>
-    user_id = 1;
-    load_projet(user_id);
-    function load_projet(user_id){
-             //on fait une requete ajax, pour récupérer une liste des historiques à la base de données
-        $.ajax({
-            url: 'Projet/liste.php',
-            method: 'POST', 
-            data: {user_id:user_id}, 
-            success: function(response) {
-                // $('#result').html(response);
-                var projet = JSON.parse(response);
-                // Pour définir une variable de session
-                if(!localStorage.getItem('isActif')){
-                    console.log('isActif nest pas');
-                    localStorage.setItem('isActif', projet[0].id);
-                    // var isActif = localStorage.getItem('isActif');
-                }else{
-                    console.log("isActif existe");
-                    var isActif = localStorage.getItem('isActif');
-                }
+    // gestion du toast
+    function toast (response) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            showConfirmButton: false,
+            timer: 3000,
+        })
 
-                console.log(isActif);
-
-                var html = '<option selected disabled>Choisir notre projet...</option>';
-                for (var i = 0; i < projet.length; i++) {
-                    html += `<option ${isActif == projet[i].id ? 'selected' : ''} value="${projet[i].id}">${projet[i].nom}</option>`;
-                }
-
-                $('#projets').html(html);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error(textStatus, errorThrown);
-            }
-        });
+        Toast.fire({
+            icon: response.alert,
+            title: response.alert_message
+        })
     }
 </script>
-
-<script src="vendors/fullcalendar/main.min.js"></script>
-<script src="assets/js/flatpickr.js"></script>
-<script src="vendors/dayjs/dayjs.min.js"></script>
-<script src="vendors/lottie/lottie.min.js"> </script>
-<script src="vendors/prism/prism.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
-
-<!-- <div id="action-loader" class="text-center h-100 w-100" style="padding-top: 40vh; position: fixed; z-index: 99999; top: 0; left: 0; background-color: rgba(0,0,0,0.25);">
-    <div class="lottie mx-auto" style="width: 100px; height: 100px" data-options='{"path":"assets/img/animated-icons/loading-square.json"}'></div>
-</div> -->
