@@ -32,6 +32,8 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link href="vendors/choices/choices.min.css" rel="stylesheet">
+    <link href="vendors/prism/prism-okaidia.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
@@ -42,29 +44,10 @@
 
     <link href="vendors/fullcalendar/main.min.css" rel="stylesheet">
     <link href="vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
-
     
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
     
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-
-    <!-- Select2 -->
-    <!-- <link rel="stylesheet" href="vendors/select2/css/select2.min.css">
-    <link rel="stylesheet" href="vendors/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <script src="vendors/select2/js/select2.full.min.js"></script> -->
-
-    <link href="vendors/choices/choices.min.css" rel="stylesheet" />
     <script src="vendors/choices/choices.min.js"></script>
-    
-    <!-- Initialize Select2 -->
-    <!-- <script>  
-        $(document).ready(function () {
-            $('.select2').select2();
-        });
-    </script> -->
-
     
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));

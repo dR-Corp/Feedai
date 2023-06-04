@@ -33,7 +33,40 @@
 
                 <script>
 
-                    var produits = [];
+                    // var produits = [];
+
+                    var projet_old = {
+                        nom : '',
+                        type: '',
+                        details: {
+                            id_niche: '',
+                            niche: '',
+                            sous_categorie_niche: '',
+                            personae: {
+                                positionnement: [],
+                                personnalite: {
+                                    traits_caractere: [],
+                                    interets_personnels: [],
+                                    qualite: [],
+                                    defaut: [],
+                                    passion: [],
+                                    peur: []
+                                }
+                            },
+                            produit: {
+                                type: '',
+                                concept : '',
+                                liste: '',
+                                cibles: {
+                                    canaux_achat: [],
+                                    frequence_achat: [],
+                                    montant_moyen: [],
+                                    tranche_age: [],
+                                    genre: []
+                                }
+                            }
+                        }
+                    }
 
                     var projet = {
                         nom : '',
@@ -56,7 +89,7 @@
                             produit: {
                                 type: '',
                                 concept : '',
-                                liste: '',
+                                produits: [],
                                 cibles: {
                                     canaux_achat: [],
                                     frequence_achat: [],
@@ -195,9 +228,7 @@
                                                     Ajouter un produit
                                                 </button>
                                                 
-                                                <div class="mt-2">
-                                                    <ul id="list-produit"></ul>
-                                                </div>
+                                                <div id="list-produit" class="mt-2"></div>
 
                                                 <div class="my-3">
                                                     <label class="form-label" for="concept">Concept*</label>
@@ -214,7 +245,7 @@
                                                 ?>
                                                             <div class="mb-3 ml-3">
                                                                 <label class="form-label" for="<?= $cible->slug ?>"><?= $cible->name ?>*</label>
-                                                                <select class="form-select js-choices" size="1" data-options='{"removeItemButton":true,"placeholder":true}' multiple="multiple" id="<?= $cible->slug ?>" required="required" data-wizard-validate-email="true">
+                                                                <select class="form-select js-choice" size="1" multiple="multiple" id="<?= $cible->slug ?>" required="required">
                                                                     <?php
                                                                         foreach($cible->elements as $element):
                                                                             echo '<option value="'.$element.'">'.$element.'</option>';
@@ -230,7 +261,7 @@
 
                                                 document.addEventListener('DOMContentLoaded', function() {
 
-                                                    var selectElements = document.querySelectorAll('.js-choices');
+                                                    var selectElements = document.querySelectorAll('.js-choice');
 
                                                     selectElements.forEach(function(selectElement) {
                                                     
@@ -244,7 +275,6 @@
                                                             var elementId = event.target.id;
                                                             projet.details.produit.cibles[elementId] = selectedValues
                                                             console.log(projet.details.produit.cibles);
-                                                            
                                                         });
 
                                                     });
@@ -354,29 +384,49 @@
         $('#btn-add-produit').hide()
 
         $('#type-produit').on('change', function() {
-            $('#btn-add-produit').show()
+            $(this).val() ? $('#btn-add-produit').show() : $('#btn-add-produit').hide()
         })
 
         function ajouterProduit(event) {
             event.preventDefault()
 
             $('#modal-add-produit').modal('hide')
-            produits.push({
+            projet.details.produit.produits.push({
                 nom: $('#nom-produit').val(),
                 description: $('#description-produit').val()
             })
 
-            $('#list-produit').append('<li>'+$('#nom-produit').val()+'</li>')
+            showProductsList(projet.details.produit.produits);
 
             $('#nom-produit').val('')
             $('#description-produit').val('')
 
-            if($('#type-produit').val() == 'mono')
-                $('#btn-add-produit').hide()
+            if($('#type-produit').val() == 'mono') $('#btn-add-produit').hide()
 
-            projet.details.produit.liste = produits
+            console.log(projet.details.produit.produits);
+        }
 
-            // console.log(produits);
+        function showProductsList(produits) {
+            $('#list-produit').html(`${produits.length > 0 ? `<div class="">
+                                        <h5 class="mb-2">${produits.length > 1 ? 'Produits' : 'Produit'}</h5>
+                                    </div>
+                                    <div class="list-group">
+                                        ${produits.map(produit => {
+                                            return `<a class="list-group-item list-group-item-action flex-column align-items-start p-2 p-sm-3" href="#">
+                                                        <div class="d-flex flex-column flex-sm-row justify-content-between mb-1 mb-md-0">
+                                                            <h5 class="mb-1">${produit.nom}</h5>
+                                                        </div>
+                                                        <label class="form-check-label mb-1">${produit.description}</label>
+                                                        <button type="button" onclick="supprimerProduit(event, ${JSON.stringify(produit.nom).replace(/"/g, '&quot;')})" class="btn btn-sm btn-danger px-2 fsp-75 badge-soft-info border-white"><i class="fas fa-trash"></i> Supprimer</button>
+                                                    </a>`;
+                                        }).join('')}
+                                    </div>` : ``}`);
+        }
+
+        function supprimerProduit(event, nom) {
+            projet.details.produit.produits = projet.details.produit.produits.filter(item => item.nom !== nom );
+            showProductsList(projet.details.produit.produits);
+            if(projet.details.produit.produits.length == 0 && $('#type-produit').val() == 'mono') $('#btn-add-produit').show()
         }
 
     </script>
@@ -477,23 +527,30 @@
         function choisirElementPersonea(event, elementPersonnalite, personae_id, personae_slug) {
             
             event.preventDefault();
-
-            personae_id = JSON.parse(personae_id)
-            personae_slug = JSON.parse(personae_slug)
-
             // $("#modal-list-personae-"+personae_id).modal('hide')
 
-            elementPersonnaliteChoisie = JSON.parse(elementPersonnalite)
+            id = JSON.parse(personae_id)
+            slug = JSON.parse(personae_slug)
+            name = JSON.parse(elementPersonnalite)
 
-            toggleElement(projet.details.personae.personnalite[personae_slug], elementPersonnaliteChoisie.name)
-            event.target.classList.toggle("text-success")
+            toggleElement(projet.details.personae.personnalite[slug], name)
 
+            $.each($(".element-personae-"+slug), function(index, element) {
+                if(element.innerText.trim() === name) element.classList.toggle("text-success")
+            });
             
-            var choosed_personae_element = $("#choosed-personae-element-"+personae_id)
-            choosed_personae_element.html(projet.details.personae.personnalite[personae_slug].join(", "))
+            $("#choosed-personae-element-"+id).html(`
+                ${projet.details.personae.personnalite[slug]
+                    .map( item => {
+                        name = JSON.stringify(item)
+                        return `<span class="badge badge-soft-info">
+                                    ${item} <a href="#!"><i onclick="choisirElementPersonea(event, ${JSON.stringify(name).replace(/"/g, '&quot;')}, ${JSON.stringify(personae_id).replace(/"/g, '&quot;')}, ${JSON.stringify(personae_slug).replace(/"/g, '&quot;')})" class="fas fa-times"></i></a>
+                                </span>`;
+                    })
+                    .join(" ")}
+            `);
 
-
-            console.log(projet.details.personae.personnalite[personae_slug]);
+            console.log(projet.details.personae.personnalite[slug]);
 
         }
 
@@ -503,7 +560,7 @@
 
             projet.nom = $('#nom-projet').val()
             projet.type = $('#type-projet').val()
-            projet.details.personae.positionnement = $('#positionnement').val()
+            // projet.details.personae.positionnement = $('#positionnement').val()
             
             projet.details.produit.type = $('#type-produit').val()
             projet.details.produit.concept = $('#concept').val()

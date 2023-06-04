@@ -21,7 +21,7 @@
                 data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span
                         class="toggle-line"></span></span></button>
         </div>
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="dashboard.php">
             <div class="d-flex align-items-center py-3"><img class="me-2"
                     src="assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span
                     class="font-sans-serif">feedall</span>
@@ -32,7 +32,7 @@
         <div class="navbar-vertical-content scrollbar">
             <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="index.php" role="button"
+                    <a class="nav-link" href="dashboard.php" role="button"
                         aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span
                                 class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">Dashboard</span>

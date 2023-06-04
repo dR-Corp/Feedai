@@ -236,6 +236,33 @@
     <!-- script js -->
     <?php include('script.php') ?>
 
+    <script id="RequestElement" type="text/x-handlebars-template">
+        {{#each requests}}        
+        <div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
+            <div class="form-check mb-0 d-flex align-items-center">
+                <input onchange="toggle_element('{{id}}')" class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_{{id}}" />
+                <label class="form-check-label mb-0 p-3" for="request_{{id}}">{{name}}</label>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="hover-actions">
+                    {{#if status}}
+                    <button onclick="invalidate_request('{{id}}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        <span class="fas fa-times text-warning"></span>
+                    </button>
+                    {{^}}
+                    <button onclick="validate_request('{{id}}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        <span class="fas fa-check text-success"></span>
+                    </button>
+                    {{/if}}
+                    <button onclick="edit_request('{{id}}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        <span class="fas fa-edit text-primary"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
     <script>
 
         id_projet = 8
@@ -258,33 +285,36 @@
 
                     if(requests.length > 0) {
 
-                        $.each(requests, function(index, element) {
+                        // $.each(requests, function(index, element) {
 
-                            validate_btn = `<button onclick="validate_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-                                                <span class="fas fa-check text-success"></span>
-                                            </button>`
-                            invalidate_btn = `<button onclick="invalidate_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-                                                <span class="fas fa-times text-warning"></span>
-                                            </button>`
+                        //     validate_btn = `<button onclick="validate_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        //                         <span class="fas fa-check text-success"></span>
+                        //                     </button>`
+                        //     invalidate_btn = `<button onclick="invalidate_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        //                         <span class="fas fa-times text-warning"></span>
+                        //                     </button>`
 
-                            components += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
-                                                    <div class="form-check mb-0 d-flex align-items-center">
-                                                        <input onchange="toggle_element('${element.id}')" class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${element.id}" />
-                                                        <label class="form-check-label mb-0 p-3" for="request_${element.id}">${element.name}</label>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="hover-actions">
-                                                            ${!element.status ? validate_btn : invalidate_btn}
-                                                            <button onclick="edit_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
-                                                                <span class="fas fa-edit text-primary"></span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>`;
+                        //     components += `<div class="d-flex justify-content-between hover-actions-trigger btn-reveal-trigger px-card hover-bg-100">
+                        //                             <div class="form-check mb-0 d-flex align-items-center">
+                        //                                 <input onchange="toggle_element('${element.id}')" class="form-check-input rounded-3 p-2 mt-0" type="checkbox" id="objectif_${element.id}" />
+                        //                                 <label class="form-check-label mb-0 p-3" for="request_${element.id}">${element.name}</label>
+                        //                             </div>
+                        //                             <div class="d-flex align-items-center">
+                        //                                 <div class="hover-actions">
+                        //                                     ${!element.status ? validate_btn : invalidate_btn}
+                        //                                     <button onclick="edit_request('${element.id}')" class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        //                                         <span class="fas fa-edit text-primary"></span>
+                        //                                     </button>
+                        //                                 </div>
+                        //                             </div>
+                        //                         </div>`;
 
-                        });
+                        // });
                         
-                        requests_container.html(components);
+                        // requests_container.html(components);
+
+                        createHTML("RequestElement", "requetes", { "requests" : requests })
+                        console.log(requests);
                     }
                     else {
                         requests_container.html('<div class="mt-3"><p>Aucune suggestion de strategie pour le moment</p></div>');
